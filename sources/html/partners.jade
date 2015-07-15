@@ -1,0 +1,26 @@
+include includes/header
+- active = 2
+<body class="content">
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-md-9.col-lg-6
+					.page__content
+						.page__title
+							h1 Партнеры
+						.partners
+							.row
+								- var n = 0
+								while n < 16
+									- id = n < 4 || n > 7 && n < 12 ? 4 - (n % 4) : (n % 4) + 1
+									.col-lg-3.col-md-4.col-sm-4.col-xs-6
+										a.partner(href="#")
+											img(src="/layout/images/logo-#{id}.png")
+									- n++
+								
+				.col-md-3.col-lg-6
+					.page__side(style="background-image: url(/layout/images/partners-bg.jpg)")
+
+include includes/footer

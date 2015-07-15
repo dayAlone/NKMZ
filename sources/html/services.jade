@@ -1,0 +1,51 @@
+include includes/header
+- active = 1
+- sub_active = 2
+<body class="content">
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-md-9.col-lg-6
+					.page__content
+						.page__title
+							h1 Сервисные центры
+						include includes/sub_nav
+						.services.text
+							- var title = [ "Организация", "Услуги", "Контакты", "Руководитесь" ]
+							.services__title.visible-lg
+								.row
+									each t in title
+										.col-lg-3= t
+							- var i = 1
+							while i < 10
+								.service
+									.service__content
+										.row
+											each t, key in title
+												.col-sm-3.hidden-lg.service__title= t
+												.col-sm-9.col-lg-3
+													if key == 0
+														span.service__name ООО «Национальная Сервисная Компания» 
+													if key == 1
+														span Реставрация Постпродажное обслуживание
+													if key == 2
+														span
+															| 345675 г. Барнаул, ул. Северо-Западная, 54
+															br
+															a.service__map(href="#") Открыть карту
+															br
+															| Тел.: +7 (3852) 
+															nobr 36-20-02
+													if key == 3
+														span Константинопольский Константин Константинович
+												.service__divider.hidden-lg
+
+								- i++
+				.col-md-3.col-lg-6
+					.page__side(style="background-image: url(/layout/images/contacts-bg.jpg)")
+			.page__modal
+							
+						//#map(data-coords="56.11400541, 54.28644567" data-zoom="15", data-map, data-lang="ru_RU", data-text="ООО «НКМЗ-Групп»")
+include includes/footer

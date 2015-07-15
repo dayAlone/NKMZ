@@ -1,0 +1,89 @@
+
+html, body
+	height 100%
+body
+	font-family 'HelveticaNeue', 'Helvetica Neue', 'Arial', sans-serif
+	font-weight 300
+	min-height 100%
+	min-width 320px
+	color black
+	-webkit-font-smoothing: subpixel-antialiased
+	background blue_bg
+	font-size 13px
+	@media (min-width: 375px)
+		font-size 16px
+	@media (min-width: scr_md)
+		font-size 14px
+	@media (min-width: nav_rows)
+		font-size 16px
+.container
+	@media (min-width: scr_lg)
+		width 100%
+		width calc(100% - 30px)
+
+svg
+	t fill
+	path, g
+		t fill
+
+
+.dropdown
+	position relative
+	z-index 60
+
+	&__trigger
+		position relative
+		z-index 10
+		transition-delay .3s
+	&__frame
+		z-index -1
+		opacity 0
+		position absolute
+		t all
+		transition-delay .3s
+		pointer-events none
+		top 0px
+		left 0
+		overflow scroll
+		min-width 100%
+	&__item
+		background-color gray
+		display block
+		line-height 1
+		padding 10px 10px 7px
+		font-size 12px
+		width 100%
+	&:hover
+		z-index 70
+		.dropdown
+			&__frame
+				pointer-events all
+				z-index 1
+				opacity 1
+				top 100%
+
+
+.scroll-fix
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	z-index 300000
+	pointer-events none
+	.bx-ie
+		display none
+	&--on
+		pointer-events initial
+
+.wrap
+	full-width()
+	min-height 100%
+	padding-bottom 60px
+	margin-bottom -60px
+	position relative
+	&:after
+		content ""
+		display block
+	background-repeat no-repeat
+	background-position center center

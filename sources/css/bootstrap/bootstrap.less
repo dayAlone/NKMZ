@@ -1,0 +1,78 @@
+// Core variables and mixins
+
+@folder: '../../../bower_components/bootstrap/less/';
+
+@import "@{folder}variables.less";
+@grid-gutter-width         : 14px;
+@container-tablet          : (720px + @grid-gutter-width);
+@container-desktop         : (940px + @grid-gutter-width);
+@container-large-desktop   : (1140px + @grid-gutter-width);
+@navbar-padding-horizontal : floor((@grid-gutter-width / 2));
+
+@font-size-base:          16px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+
+@import "@{folder}mixins.less";
+
+// Reset and dependencies
+@import "@{folder}normalize.less";
+@import "@{folder}print.less";
+//@import "@{folder}glyphicons.less";
+
+// Core CSS
+@import "@{folder}scaffolding.less";
+@import "@{folder}type.less";
+@import "@{folder}code.less";
+@import "@{folder}grid.less";
+@import "@{folder}tables.less";
+@import "@{folder}forms.less";
+//@import "@{folder}buttons.less";
+
+// Components
+@import "@{folder}component-animations.less";
+@import "@{folder}responsive-embed.less";
+/*@import "@{folder}dropdowns.less";
+@import "@{folder}button-groups.less";
+@import "@{folder}input-groups.less";
+@import "@{folder}navs.less";
+@import "@{folder}navbar.less";
+@import "@{folder}breadcrumbs.less";
+@import "@{folder}pagination.less";
+@import "@{folder}pager.less";
+@import "@{folder}labels.less";
+@import "@{folder}badges.less";
+@import "@{folder}jumbotron.less";
+@import "@{folder}thumbnails.less";
+@import "@{folder}alerts.less";
+@import "@{folder}progress-bars.less";
+@import "@{folder}media.less";
+@import "@{folder}list-group.less";
+@import "@{folder}panels.less";
+
+@import "@{folder}wells.less";
+@import "@{folder}close.less";*/
+
+// Components w/ JavaScript
+@import "@{folder}modals.less";
+@import "@{folder}tooltip.less";
+/*
+@import "@{folder}popovers.less";
+@import "@{folder}carousel.less";
+*/
+// Utility classes
+@import "@{folder}utilities.less";
+@import "@{folder}responsive-utilities.less";

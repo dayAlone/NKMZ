@@ -1,0 +1,35 @@
+- var nav = [ {name:"Продукция", url:"/catalog.html"}, {name:"О компании", url:"/about.html"}, {name:"Партнеры", url:"/partners.html"}, {name:"Пресс-центр", url:"/press.html"}, {name:"Контакты", url:"/contacts.html"}]
+- var sub_nav_1 = [{url:"/achivments.html", name:"Лицензии"}, {url:"/achivments.html", name:"Достижения и награды"}, {url:"/services.html", name:"Сервисные центры"}, {url:"/vacancys.html", name:"Вакансии"}, {url:"#", name:"Фотогалерея"}]
+.toolbar
+	.container
+		.toolbar__logo
+			a(href="/").logo
+				include ../../../public_html/layout/images/svg/logo.svg
+		.toolbar__api.right
+			span.api
+				include ../../../public_html/layout/images/svg/logo-api.svg
+				.api__text
+					American American Petroleum Institute Certification
+		.toolbar__nav
+			.nav
+				each val, key in nav
+					- var c = key == active ? "nav__item--active" : ""
+					a(href="#{val.url}", class="nav__item #{c}")= val.name
+		.toolbar__tools.right
+			a.nav-trigger(href="#")
+				span Меню
+				include ../../../public_html/layout/images/svg/nav.svg
+			.visible-md.visible-lg
+				span.lang
+					a.lang__trigger(href="#")
+						span RU
+						include ../../../public_html/layout/images/svg/down.svg	
+				a.toolbar__link(href="#")
+					include ../../../public_html/layout/images/svg/search.svg
+		.toolbar__contacts.right
+			span.toolbar__block
+				a.toolbar__link(href="#") +7 (34783) 2-02-29
+				a.toolbar__link(href="#") po@nkmz.ru
+				a.toolbar__link(href="#") Обратная связь
+			
+				

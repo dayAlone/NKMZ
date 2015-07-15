@@ -1,0 +1,23 @@
+.footer
+	full-width()
+	font-size 11px
+	padding-top 17px
+	&, a
+		color #585b63
+		font-weight 300
+	a:hover
+		color blue
+	@media (max-width: scr_sm)
+		font-size 12px
+		padding-bottom 15px
+		text-align center
+		a
+			margin 0 10px
+		.row
+			> [class*='col-']
+				margin-top 10px
+	@media (min-width: scr_lg) and (max-width: hide_feedback)
+		.col-lg-2:nth-child(2)
+			width 22%
+		.col-lg-2:nth-child(3)
+			width 11.4%

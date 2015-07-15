@@ -1,0 +1,43 @@
+include includes/header
+- active = 4
+<body class="content">
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-md-9.col-lg-6
+					.page__content
+						.page__title
+							h1 Контакты
+						.text
+							.row
+								.col-sm-8
+									p.s-margin-bottom 452683, РФ, Республика Башкортостан, <br>г. Нефтекамск, ул. Магистральная, д. 19
+									p.s-margin-bottom Тел.: +7 (34783) 2-11-99<br>Факс: +7 (34783) 2-04-82
+									p E-mail: 
+										a(href="mailto:po@nkmz.ru") po@nkmz.ru
+								.col-sm-4.sm-right
+									a.button(href="#") Напишите нам
+							.contacts
+								- var contacts = ["Генеральный директор","Заместитель генерального директора","Руководитель отдела закупок","Руководитель технического отдела","Отдел снабжения","Отдел проектирования"]
+								each c in contacts
+									.contact
+										.contact__content
+											.row
+												.col-sm-4.col-lg-3
+													span.contact__title= c
+												.col-sm-4.col-lg-3
+													span.contact__name Константинопольский Константин Константинович
+												.col-sm-4.col-lg-6.sm-right.lg-left
+													.row.contact__connect
+														.col-lg-6
+															span.contact__phone +7 (34793) 2-11-99 
+																nobr доб. 0123
+														.col-lg-6
+															span.contacts__email
+																a(href="#") konstantin@nkmz.ru
+				.col-md-3.col-lg-6
+					.page__side(style="background-image: url(/layout/images/contacts-bg.jpg)")
+						#map(data-coords="56.11400541, 54.28644567" data-zoom="15", data-map, data-lang="ru_RU", data-text="ООО «НКМЗ-Групп»")
+include includes/footer

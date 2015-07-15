@@ -1,0 +1,58 @@
+change_service = 1400px
+.services
+	font-size 13px
+	margin-bottom 30px
+	margin-top 20px
+	&__title
+		padding-bottom 10px
+		font-weight 400
+		color black
+		@media (min-width: scr_lg) and (max-width: change_service)
+			display none !important
+	@media (min-width: change_service) and (max-width: 1470px)
+		font-size 12px
+	.service
+		position relative
+		padding 15px 0 10px
+		border-top 1px solid #cbd2d7
+		border-bottom 1px solid #cbd2d7
+		&__name
+			@media (min-width: change_service)
+				margin-left -15px
+		&__title
+			color black
+			font-weight 400
+		&__divider
+			margin-bottom 5px
+			full-width()
+			&:last-of-type
+				margin-bottom 0px
+		& + .service
+			border-top 0
+		span
+			line-height 1.5
+			display inline-block
+			vertical-align middle
+	@media (min-width: scr_lg) and (max-width: change_service)
+		&__title
+			display none
+		.hidden-lg
+			display block !important
+		.col-lg-3
+			width (100/4)*3%
+	@media (min-width: change_service)
+		.service__content, &__title
+			table-layout: fixed
+			width 100%
+			display table
+			> .row
+				display table-row
+				width 100%
+				> .col-lg-3
+					float none
+					display table-cell
+					vertical-align middle
+					&:last-of-type
+						padding-right 0px
+					&:first-of-type
+						padding-left 0px

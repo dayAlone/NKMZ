@@ -1,0 +1,87 @@
+include includes/header
+<body class="index">
+- var type = ["Пакерно-якорное оборудова&shy;ние", "Копмоновки для газовых скважин", "Клапаны <nobr>и скважинная</nobr> оснастка", "Многопакер&shy;ные компо&shy;новки"]
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-lg-6.col-md-4
+					.index__slider.slider(data-height="641", data-width="100%", data-loop="true", data-transition-duration="600" data-transition="dissolve", data-autoplay="true", data-nav="false")
+						each val, key in type
+							.slider__item
+								.slider__image(style="background-image: url(/layout/images/slider-bg.jpg)")
+								.slider__content
+									h2.slider__title!= val
+									.slider__text
+										p Разработка, производство, комплексная реализация, инженерно-технологическое сопровождение, сервисное обслуживание, ремонт, аренда
+									a.slider__button(href="#") Подробнее
+					.news-list.visible-md.visible-lg.news-list--slider
+						.news
+							.news__date 12.07.2015
+							a.news__title(href="#") Завершен проект по строительству комплекса газодобычи на Таймырском полуострове и использованием оборудования “НКМЗ”.
+						a.news-list__more(href="#") К другим новостям
+							
+								
+				.col-lg-6.col-md-8
+					.sections
+						.row
+							each val, key in type
+								.col-xs-6.col-sm-3
+									a.section(href="#")
+										.section__image(style="background-image: url(/layout/images/catalog-#{key+1}.png)")
+										.section__name 
+											span!= val
+					.filter
+						.filter__title
+							.row
+								.col-xs-6
+									| Подбор оборудования
+								.col-xs-6.right
+									a.filter__link(href="#")
+										include ../../public_html/layout/images/svg/pdf.svg	
+										span Скачать каталог
+						.row
+							- var downs = [ "Область применения", "Компоновка", "Перепад давления", "Проходной канал" ]
+							each val, key in downs
+								.col-sm-6.col-lg-3
+									.filter__dropdown.dropdown
+										a.dropdown__trigger(href="#")
+											span!= val
+											include ../../public_html/layout/images/svg/down.svg	
+										.dropdown__frame
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент
+											a.dropdown__item(href="#") 
+												span Тестовый выпадающий элемент				
+						.row
+							.col-lg-3.col-sm-4
+								a.filter__submit(href="#") Найти
+							.col-lg-9.col-sm-8
+								.filter__description Для подбора оборудования необходимо выбрать хотя бы один пункт формы. Для более точного поиска необходимо указать максимальное количество параметров. 
+			.news-list.hidden-md.hidden-lg.news-list--mobile
+				.news-list__title
+					.row
+						.col-xs-6
+							| Новости
+						.col-xs-6.right
+							a.news-list__more(href="#") К другим новостям
+				.row
+					.col-sm-6
+						.news
+							.news__date 12.07.2015
+							a.news__title(href="#") Завершен проект по строительству комплекса газодобычи на Таймырском полуострове и использованием оборудования “НКМЗ”.
+					.col-sm-6
+						.news
+							.news__date 12.07.2015
+							a.news__title(href="#") Завершен проект по строительству комплекса газодобычи на Таймырском полуострове и использованием оборудования “НКМЗ”.
+										
+include includes/footer

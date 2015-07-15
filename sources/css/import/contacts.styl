@@ -1,0 +1,54 @@
+#map
+	min-height 400px
+	max-height 400px
+	t all
+	@media (min-width: scr_md)
+		max-height none
+		position absolute
+		top 0
+		left 0
+		height 100%
+		width 100%
+
+.contacts
+	font-size 13px
+	margin-bottom 30px
+	margin-top 20px
+	@media (min-width: scr_lg) and (max-width: 1270px)
+		font-size 12px
+	.contact
+		position relative
+		padding 20px 0 15px
+		border-top 1px solid #cbd2d7
+		border-bottom 1px solid #cbd2d7
+		@media (min-width: scr_sm)
+			&__content
+				table-layout: fixed
+				width 100%
+				display table
+				> .row
+					display table-row
+					width 100%
+					> .col-lg-3, > .col-lg-6
+						float none
+						display table-cell
+						vertical-align middle
+					> .col-lg-6
+						padding-right 0px
+					> .col-lg-3
+						&:first-of-type
+							padding-left 0px
+		span
+			line-height 1.3
+			display inline-block
+			vertical-align middle
+
+		&__title
+			font-weight 400
+			color black
+			max-width 90%
+		&__connect
+			@media (min-width: scr_sm) and (max-width: scr_lg)
+				line-height 2
+		& + .contact
+			border-top 0

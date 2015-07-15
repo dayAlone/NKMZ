@@ -1,0 +1,23 @@
+/*
+ * Модификаторы плагинов
+ */
+.fotorama__arr,.fotorama__fullscreen-icon,.fotorama__video-close,.fotorama__video-play
+	background-image url(../images/plugins/fotorama.png)
+	@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi)
+		background-image url(../images/plugins/fotorama@2x.png)
+
+.ps-container, .ps-container:hover, .ps-container.ps-in-scrolling
+	> .ps-scrollbar-y-rail
+		top 0 !important
+		right 0px !important
+		background #eceef1
+		opacity 1
+		border-radius 0
+		t height
+		>.ps-scrollbar-y
+			opacity 1
+			t height
+			right 0px
+			width 4px
+			border-radius 0
+			background-color blue2 !important
