@@ -1,0 +1,71 @@
+include includes/header
+- active = 0
+- sub_active = 1
+<body class="catalog catalog--list">
+- var type = ["Пакерно-якорное оборудова&shy;ние", "Копмоновки для газовых скважин", "Клапаны <nobr>и скважинная</nobr> оснастка", "Многопакер&shy;ные компо&shy;новки"]
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-lg-8
+					.page__content
+						.page__title
+							h1 Пакерно-якорное оборудование
+						- var sub_nav_1 = type.map(function(el){ return { url:"#", name: el } })
+						include includes/sub_nav
+						.products
+							- var i = 0
+							while i < 6
+								.product
+									.row.product__title
+										.col-md-7.col-lg-6
+											h3
+												a(href="/product.html") Пакер осевой механический ПМ-Р (ГРП)
+										.col-md-5.col-lg-6.right
+											a.product__image(href="#")
+												img(src="/layout/images/product.png")
+									.product__description
+										p Предназначен для длительного герметичного разобщения интервалов эксплуатационной колонны и защиты ее внутреннего пространства от динамического и агрессивного воздействия скважинной среды в процессе проведения различных технологических операций по воздействию на призабойную зону.
+								- i++
+								
+				.col-lg-4
+					.filter
+						.filter__content
+							.filter__title
+								.row
+									.col-xs-6
+										| Подбор оборудова&shy;ния
+									.col-xs-6.right
+										a.filter__link(href="#")
+											include ../../public_html/layout/images/svg/pdf.svg	
+											span Скачать каталог
+							.row
+								- var downs = [ "Область применения", "Компоновка", "Перепад давления", "Проходной канал" ]
+								each val, key in downs
+									.col-sm-6.col-lg-3
+										.filter__dropdown.dropdown
+											a.dropdown__trigger(href="#")
+												span!= val
+												include ../../public_html/layout/images/svg/down.svg	
+											.dropdown__frame
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент
+												a.dropdown__item(href="#") 
+													span Тестовый выпадающий элемент				
+							.row
+								.col-lg-3.col-sm-4
+									a.filter__submit(href="#") Найти
+								.col-lg-9.col-sm-8
+									.filter__description Для подбора оборудования необходимо выбрать хотя бы один пункт формы. Для более точного поиска необходимо указать максимальное количество параметров.  
+			
+										
+include includes/footer

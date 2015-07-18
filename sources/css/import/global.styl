@@ -14,7 +14,9 @@ body
 		font-size 16px
 	@media (min-width: scr_md)
 		font-size 14px
-	@media (min-width: nav_rows)
+	@media (min-width: scr_lg)
+		font-size 15px
+	@media (min-width: hide_feedback)
 		font-size 16px
 .container
 	@media (min-width: scr_lg)
@@ -30,21 +32,18 @@ svg
 .dropdown
 	position relative
 	z-index 60
-
 	&__trigger
 		position relative
 		z-index 10
-		transition-delay .3s
 	&__frame
 		z-index -1
 		opacity 0
 		position absolute
 		t all
-		transition-delay .3s
 		pointer-events none
 		top 0px
 		left 0
-		overflow scroll
+		overflow hidden
 		min-width 100%
 	&__item
 		background-color gray
@@ -53,8 +52,8 @@ svg
 		padding 10px 10px 7px
 		font-size 12px
 		width 100%
-	&:hover
-		z-index 70
+	 &--active
+		z-index 700
 		.dropdown
 			&__frame
 				pointer-events all
@@ -79,8 +78,11 @@ svg
 .wrap
 	full-width()
 	min-height 100%
-	padding-bottom 60px
-	margin-bottom -60px
+	padding-bottom 93px
+	margin-bottom -93px
+	@media (min-width: scr_md)
+		padding-bottom 60px
+		margin-bottom -60px
 	position relative
 	&:after
 		content ""

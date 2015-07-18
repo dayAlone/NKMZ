@@ -1,0 +1,28 @@
+include includes/header
+- active = 1
+- sub_active = 0
+<body class="content">
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-md-9.col-lg-6
+					.page__content
+						.page__title
+							h1 Лицензии
+						include includes/sub_nav
+						.licencies
+							- var names = ["Лицензия на программное обеспечение","Лицензия на нефтепродукты", "Лицензия на продажу и доставку нефтепродуктов", "Лицензия на программное обеспечение", "Лицензия на утилизацию сырья", "Лицензия на утилизацию сырья"]
+							each name, key in names
+								- var i = key % 2 ? 1 : 2
+								a.licence(href="#", data-pictures='[{"small":"http:\/\/ggo.ru\/upload\/resize_cache\/iblock\/e01\/400_400_175511db9cefbc414a902a46f1b8fae16\/e0175b399d4069c5309eda36edc7ac81.jpg","src":"http:\/\/ggo.ru\/upload\/iblock\/e01\/e0175b399d4069c5309eda36edc7ac81.jpg","h":"800","w":"561","title":null},{"small":"http:\/\/ggo.ru\/upload\/resize_cache\/iblock\/fd8\/400_400_175511db9cefbc414a902a46f1b8fae16\/fd84e0edbcc25543850316d20f661c62.jpg","src":"http:\/\/ggo.ru\/upload\/iblock\/fd8\/fd84e0edbcc25543850316d20f661c62.jpg","h":"800","w":"582","title":null},{"small":"http:\/\/ggo.ru\/upload\/resize_cache\/iblock\/dbe\/400_400_175511db9cefbc414a902a46f1b8fae16\/dbe67c851bed22b2b482e61ad20e5f43.jpg","src":"http:\/\/ggo.ru\/upload\/iblock\/dbe\/dbe67c851bed22b2b482e61ad20e5f43.jpg","h":"800","w":"582","title":null}]')
+									.licence__image
+										img(src="/layout/images/licence-#{i}.jpg")
+									span.licence__name= name
+										
+										
+										
+				.col-md-3.col-lg-6
+					.page__side(style="background-image: url(/layout/images/docs-bg.jpg)")
+include includes/footer

@@ -1,6 +1,7 @@
 gulp         = require 'gulp'
 
 autoprefixer = require 'gulp-autoprefixer'
+cache        = require 'gulp-cached'
 cmq          = require 'gulp-combine-media-queries'
 csscomb      = require 'gulp-csscomb'
 coffee       = require 'gulp-coffee'
@@ -62,6 +63,7 @@ loadPlugins = (x, y)->
 
 gulp.task 'html', ->
 	gulp.src("#{path.html}*.jade")
+	.pipe cache('html')
 	.pipe plumber
 		errorHandler: notify.onError("Error: <%= error.message %>")
 	.pipe jade

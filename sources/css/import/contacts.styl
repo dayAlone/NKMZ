@@ -1,14 +1,22 @@
 #map
-	min-height 400px
-	max-height 400px
+	.page__side &
+		min-height 400px
+		max-height 400px
+		position relative
+		@media (min-width: scr_md)
+			max-height none
+			position absolute
 	t all
-	@media (min-width: scr_md)
+	&.fullscreen
 		max-height none
 		position absolute
 		top 0
 		left 0
 		height 100%
 		width 100%
+#map
+	@media (min-width: scr_md)
+		@extend #map.fullscreen
 
 .contacts
 	font-size 13px
@@ -21,7 +29,9 @@
 		padding 20px 0 15px
 		border-top 1px solid #cbd2d7
 		border-bottom 1px solid #cbd2d7
+		line-height 2.5
 		@media (min-width: scr_sm)
+			line-height inherit
 			&__content
 				table-layout: fixed
 				width 100%

@@ -2,4 +2,4 @@
 	each item, key in sub_nav_1
 		- var c = key == sub_active ? "nav__item--active" : ""
 		a(href="#{item.url}", class="nav__item #{c}")
-			nobr= item.name
+			nobr!= item.name

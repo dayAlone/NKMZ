@@ -1,0 +1,25 @@
+.vacancies
+	.vacancy
+		position relative
+		margin-bottom 12px
+		padding-top 15px
+		padding-right 40px
+		&:after
+			@extend .content .news:after
+			top 12px
+		&:first-of-type
+			padding-top 0px
+		&--active
+			&:after
+				@extend .content .news--active:after
+				top 50%
+				margin-top -6px
+		& + .vacancy
+			border-top 1px solid #cbd2d7
+		&__title
+			color blue2
+			font-style 16px
+			@media (min-width: scr_sm)
+				font-size 20px
+			&:hover
+				color blue

@@ -1,0 +1,168 @@
+.catalog
+	&--list
+		.filter
+			display none
+			@media (min-width: scr_lg)
+				display block
+	.page
+		padding-top 82px
+		@media (min-width: scr_sm)
+			padding-top 0px
+	@media (min-width: scr_lg)
+		.page > .container > .row
+			> .col-lg-8
+				width 80%
+			> .col-lg-4
+				width 20%
+	.sections
+		@extend .index .sections
+		@media (min-width: scr_lg)
+			margin-bottom 0px
+		.section
+			background-image url("/layout/images/catalog-section-bg.jpg")
+			float left
+			@media (min-width: scr_lg)
+				min-height 641px
+			&__name
+				@media (min-width: scr_lg)
+					font-size 28px
+					font-weight 200
+					padding-right 20%
+					height 140px
+					line-height 145px
+					padding-left 30px
+					bottom 115px
+					span
+						line-height 1
+	.filter
+		@extend .index .filter
+		position relative
+		t min-height
+		@media (min-width: scr_sm) and (max-width: scr_md)
+			.col-sm-6
+				margin-top 17px
+			.col-sm-8, .col-sm-4
+				margin-top 25px
+		@media (min-width: scr_md) and (max-width: scr_lg)
+			min-height 100px
+			.col-sm-8
+				width 75%
+			.col-sm-6, .col-sm-4
+				width 25%
+			.col-sm-6
+				margin-top 20px
+			.col-sm-8, .col-sm-4
+				margin-top 30px
+		@media (min-width: scr_lg)
+			min-height 641px
+		@media (min-width: scr_lg)
+			background url("/layout/images/catalog-section-bg.jpg")
+			background-size cover
+
+			.col-lg-3, .col-xs-6
+				width 100%
+				position static
+			&__description
+				display none
+			&__title
+				border-bottom 0
+				font-size 34px
+				white-space inherit
+				font-weight 200
+				line-height 1
+				height auto
+				margin-bottom 30px
+				.row
+					position static
+			&__submit
+				font-size 23px
+				line-height 56px
+				height 50px
+				margin-top 10px
+			.dropdown
+				margin-bottom 20px
+				&__trigger
+					line-height 55px
+					font-size 14px
+					height 50px
+					padding 0 30px 0 15px
+					svg
+						top 21px
+						right 15px
+						width 9px
+						height 9px
+			&__link
+				position absolute
+				bottom 0px
+				top auto
+				left 20px
+				height 40px
+				line-height 1
+				font-size 15px
+				span
+					color white
+					border-line alpha(@color, .5)
+			&__content
+				position absolute
+				top 50%
+				width 100%
+				t all
+				left 0
+				padding 0 20px
+				transform translateY(-50%)
+				padding-bottom 80px
+		@media (min-width: hide_feedback)
+			&__title
+				font-size 47px
+				margin-bottom 35px
+			&__submit
+				font-size 28px
+			.dropdown
+				&__trigger
+					font-size 16px
+					svg
+						top 21px
+						right 15px
+						width 12px
+						height 12px
+		.dropdown
+			@extend .index .filter .dropdown
+
+.products
+	padding-bottom 40px
+	.product
+		padding 30px 0 15px
+		&__title
+
+			@media (min-width: scr_md)
+				display table
+				table-layout: fixed
+				width 100%
+				.col-lg-6
+					display table-cell
+					float none
+					vertical-align middle
+			h3
+				font-weight 300
+				margin-top 0px
+				margin-bottom 30px
+				@media (min-width: scr_md)
+					margin-bottom 0px
+			a
+				color blue_bg
+				&:hover
+					color blue
+		&__title
+			margin-bottom 30px
+		&__image
+			& + .product__description
+				margin-top 30px
+			img
+				max-width 100%
+		&__description
+			p:last-of-type
+				margin-bottom 0px
+
+		& + .product
+			margin-top 20px
+			border-top 1px solid #cbd2d7

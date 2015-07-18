@@ -13,7 +13,7 @@ include includes/header
 							h1 Сервисные центры
 						include includes/sub_nav
 						.services.text
-							- var title = [ "Организация", "Услуги", "Контакты", "Руководитесь" ]
+							- var title = [ "Организация", "Услуги", "Контакты", "Руководитель" ]
 							.services__title.visible-lg
 								.row
 									each t in title
@@ -46,6 +46,7 @@ include includes/header
 				.col-md-3.col-lg-6
 					.page__side(style="background-image: url(/layout/images/contacts-bg.jpg)")
 			.page__modal
-							
-						//#map(data-coords="56.11400541, 54.28644567" data-zoom="15", data-map, data-lang="ru_RU", data-text="ООО «НКМЗ-Групп»")
+				a.modal-close(href="#") Скрыть карту
+				.moda__content
+					#map(data-coords="56.11400541, 54.28644567" data-zoom="15", data-map, data-lang="ru_RU", data-text="ООО «НКМЗ-Групп»")
 include includes/footer

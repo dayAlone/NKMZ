@@ -8,12 +8,19 @@
 
 .ps-container, .ps-container:hover, .ps-container.ps-in-scrolling
 	> .ps-scrollbar-y-rail
-		top 0 !important
+		.page__content&
+			top 0 !important
 		right 0px !important
 		background #eceef1
 		opacity 1
 		border-radius 0
+		width 4px
 		t height
+		.dropdown__frame&
+			background transparent
+		.catalog &
+			@media (max-width: scr_lg)
+				right 7px !important
 		>.ps-scrollbar-y
 			opacity 1
 			t height

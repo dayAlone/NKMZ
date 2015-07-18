@@ -1,0 +1,129 @@
+include includes/header
+- active = 1
+- sub_active = 3
+<body class="content">
+.wrap
+	include includes/toolbar
+	.page
+		.container
+			.row
+				.col-md-9.col-lg-6
+					.page__content
+						.page__title
+							h1 Вакансии
+						include includes/sub_nav
+						.text.xxl-margin-bottom
+							p Сегодня в нашей компании открыты следующие вакансии:
+						.vacancies
+							- var list = ["Руководитель отдела продаж", "Менеджер по развитию агентской сети", "Маркетолог", "Менеджер по утилизации и закупкам сырья", "Руководитель отдела безналичных продаж нефтепродуктов"]
+							each v in list
+								.vacancy
+									a.vacancy__title(href="#")= v
+										
+				.col-md-3.col-lg-6
+					.page__side(style="background-image: url(/layout/images/vacancy-bg.jpg)")
+			.page__modal.page__modal--text
+				.modal__content
+					.right.xxl-margin-bottom
+						a.close(href="#") Закрыть описание
+					.text
+						small Вакансия
+						h2.xxl-margin-bottom.xs-margin-top Менеджер по развитию агентской сети
+						h5 Обязанности:
+						ul
+							li Управление отделом и продажами на основе сформированной стратегии развития продаж;
+							li Контроль за выполнением плановых показателей, обеспечение четкого взаимодействия между сотрудниками, участвующими в бизнес-процессе;
+							li Анализ продаж, разработка перспективных планов, организация, координация и контроль работы отдела продаж. Подготовка отчетности для руководства;
+							li Переговоры с ключевыми клиентами, личный контроль сделок с клиентами категории А;
+
+						h5 Требования:
+						ul
+							li Высшее образование (желательно техническое);
+							li Опыт управления отделом отдела продаж численностью не менее 10-15 человек;
+							li Опыт продаж в сфере промышленных продуктов (b2b-рынок);
+							li Опыт ведения переговоров с первыми лицами компаний;
+
+						h5 Условия:
+						ul
+							li Официальное трудоустройство;
+							li Возможны командировки;
+							li График работы: понедельник-пятница с 08.00 до 17.00.
+						a.button.button--blue(href="#Career", data-toggle="modal") Откликнуться на вакансию
+
+.modal.fade(id="Career", tabindex="-1", role="dialog" aria-hidden="true", data-parsley-validate)
+	.modal-dialog.modal-lg
+		.modal-content
+			.right.xs-margin-top.xl-margin-bottom
+				a.close(data-dismiss="modal", href="#") Закрыть форму
+			.vacancy-popup
+				.modal__success
+					h3.center Ваша заявка успешно отправлена.
+					p.center
+						| В ближайшее время представители нашей компании свяжутся с вами. Благодарим за обращение.
+				form.modal__form.visible(data-parsley-validate='', enctype='multipart/form-data')
+					h3.center Отправка резюме в базу соискателей
+					input(type='hidden', name='group_id', value='6')
+					input(type='hidden', name='vacancy', value='')
+					.row
+						.col-sm-12
+							label
+								| представьтесь, пожалуйста 
+								span *
+							input(name='name', type='text', required='')
+					.row
+						.col-sm-6
+							label
+								| номер телефона для связи с вами 
+								span *
+							input(name='phone', required='', type='text', data-parsley-pattern='/^((8|+7)[- ]?)?((?d{3})?[- ]?)?[d- ]{7,10}/', data-parsley-trigger='change')
+						.col-sm-6
+							label e-mail для связи с вами
+							input(name='email', type='email')
+					.row
+						.col-sm-6
+							label расскажите немного о себе, пожалуйста
+							textarea(name='message')
+						.col-sm-6
+							.file
+								.row
+									.col-xs-6
+										label(for='file')
+											| приложите, пожалуйста, ваше резюме 
+											span *
+									.col-xs-6.right
+										input.hidden(type='file', name='resume', required='', accept='application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+										a.file__trigger(href='#') Загрузить файл
+								.file__name
+								.file__description
+									| Обратите внимание, мы принимаем файлы в форматах PDF, DOC, DOCX, размером не более 5 Мб.
+									br
+									| Мы не рассматриваем заявки без резюме.
+					.modal__footer
+						.row
+							.col-sm-3.hidden-xs
+								span.modal__required
+									| Поля, отмеченные
+									br
+									| 	знаком 
+									span *
+									| 	обязательны
+									br
+									| 	к заполнению.
+							.col-sm-3
+								label.left
+									| введите 
+									span.hidden-xs данный
+									|	код
+							
+								.captcha(style='background-image:url(/include/captcha.php?captcha_sid=<?=$code?>)')
+								input(type='hidden', name='captcha_code', value='<?=$code?>')
+								a.captcha__refresh(href='#')
+									include ../../public_html/layout/images/svg/refresh.svg
+							.col-sm-3
+								label.right в это поле
+								input(name='captcha_word', type='text', required='')
+							.col-sm-3
+								input(type='submit', value='Отправить')
+
+
+include includes/footer
