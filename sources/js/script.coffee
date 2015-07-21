@@ -1,4 +1,23 @@
+@spinOptions =
+	lines     : 13
+	length    : 21
+	width     : 2
+	radius    : 24
+	corners   : 0
+	rotate    : 0
+	direction : 1
+	color     : '#3160b7'
+	speed     : 1
+	trail     : 68
+	shadow    : false
+	hwaccel   : false
+	className : 'spinner'
+	zIndex    : 2e9
+	top       : '50%'
+	left      : '50%'
+
 @end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
+
 @map = undefined
 
 @galleryOptions =
@@ -27,12 +46,11 @@
 		$('.page').elem('modal').mod 'active', true
 	$('.content').mod 'modal', true
 
-	if $('.gallery').length > 0
-		initGallery()
+	initCloseButtons el
 
+@initCloseButtons = (el)->
 	$('.page .modal-close, .page .close').one 'click', (e)->
-		if el.length > 0
-			closeModal el
+		closeModal el
 		e.preventDefault()
 
 @initGallery = ->
@@ -41,8 +59,8 @@
 		elem          = $('.pswp')[0];
 		items         = $(this).block().data 'pictures'
 		options       = galleryOptions
-		#options.index = $('.picture__small--active').index()
-
+		options.index = $(this).index()
+		console.log items
 		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
 		gallery.init()
 
@@ -52,9 +70,12 @@
 
 	$('.licence').click (e)->
 		elem          = $('.pswp')[0];
-		items         = $(this).data 'pictures'
 		options       = galleryOptions
-		#options.index = $('.picture__small--active').index()
+		if $(this).parents('.licencies').hasMod 'show-all'
+			items = $(this).parents('.licencies').data 'pictures'
+			options.index = $(this).index()
+		else
+			items = $(this).data 'pictures'
 
 		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
 		gallery.init()
@@ -68,8 +89,29 @@
 		if !block.hasMod 'active'
 			$('.vacancy').mod 'active', false
 			block.mod 'active', true
-			openModal block
+			loadElement $(this).attr 'href'
 		e.preventDefault()
+
+@loadElement = (href)->
+	$el = $(".page a[href^='#{href}']")
+
+	block = $el.parent() if $el.length > 0
+	block.mod 'active', true
+	$('.modal__content').html("").spin spinOptions
+
+	href = "#{href}?#{location.href.split("?")[1]}" if location.href.split("?")[1]
+	$.get "/ajax" + href, (data)->
+		$('.modal__content').html data
+		title = $(data).find('h2').text()
+		if History.enabled
+			History.pushState { 'url' : href }, title, href
+		document.title = title + " | " + document.title.split(' | ')[1]
+		initCloseButtons block
+		initGallery() if $('.gallery').length > 0
+
+
+	if $('.modal__content').is ':hidden'
+		openModal block
 
 @initNews = ->
 	$('.news').elem('title').click (e)->
@@ -77,7 +119,7 @@
 		if !block.hasMod 'active'
 			$('.news').mod 'active', false
 			block.mod 'active', true
-			openModal block
+			loadElement $(this).attr 'href'
 		e.preventDefault()
 
 @initServices = ->
@@ -113,7 +155,7 @@
 					@map.geoObjects.add mark
 					@map.container.fitToViewport()
 @size = ->
-	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15
+	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height()
 	if $(window).height() > 800 && $(window).width() >= 1024
 		$('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css 'min-height', height
 		$('.page__content').css 'max-height', height
@@ -151,23 +193,21 @@
 	if @map
 		@map.container.fitToViewport()
 
-$('.index').elem('slider').on("fotorama:show", ->
-	size()
-).fotorama();
-
-#7283343
 delay 500, ->
 	initScroll()
 
 delay 300, ()->
 	size()
+	$('.index').elem('slider').on("fotorama:show", ->
+		size()
+	).fotorama();
 
 $('.dropdown').hoverIntent({
-		over: ->
-			$(this).mod 'active', true
-		out: ->
-			el = $(this)
-			el.mod 'active', false
+	over: ->
+		$(this).mod 'active', true
+	out: ->
+		el = $(this)
+		el.mod 'active', false
 
 }).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
 

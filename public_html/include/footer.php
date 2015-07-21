@@ -1,16 +1,18 @@
+		</div>
+	</div>
 </div>
 <div class="scroll-fix"></div>
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 col-md-3 col-lg-2">© <?=date("Y")?> <?=GetMessage('NAME')?></div>
-      <div class="col-sm-4 col-lg-2"><?=GetMessage('ADDRESS')?></div>
+      <div class="col-sm-4 col-md-3 col-lg-2">© <?=date("Y")?> <?=COption::GetOptionString("grain.customsettings", 'name_'.LANGUAGE_ID)?></div>
+      <div class="col-sm-4 col-lg-2"><?=COption::GetOptionString("grain.customsettings", 'address_'.LANGUAGE_ID)?></div>
       <div class="col-sm-4 col-lg-2 col-md-2 sm-right md-left">
-		  	<a href="tel:<?=preg_replace("/[^0-9+]/", "", GetMessage('PHONE'))?>"><?=GetMessage('PHONE')?></a>
+		  	<a href="tel:<?=preg_replace("/[^0-9+]/", "", COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID))?>"><?=COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID)?></a>
 		  	<br class="hidden-xs">
-			<a href="mailto:<?=GetMessage('EMAIL')?>"><?=GetMessage('EMAIL')?></a>
+			<a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?>"><?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?></a>
 	  </div>
-      <div class="col-sm-3 col-lg-1 md-right lg-left hidden-sm"><a href="#"><?=GetMessage('SITEMAP')?></a></div>
+      <div class="col-sm-3 col-lg-1 md-right lg-left hidden-sm"><a href="/sitemap/"><?=(LANGUAGE_ID=='ru'?"Карта сайта":"Sitemap")?></a></div>
     </div>
   </div>
 </footer>
@@ -47,5 +49,7 @@
       </div>
     </div>
   </div>
-</div></body>
+</div>
+<?$APPLICATION->ShowViewContent('footer');?>
+</body>
 </html>

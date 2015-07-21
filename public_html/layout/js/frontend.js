@@ -28878,6 +28878,25 @@ return PhotoSwipeUI_Default;
 (function() {
   var resizeTimer, scrollTimer, transTimer;
 
+  this.spinOptions = {
+    lines: 13,
+    length: 21,
+    width: 2,
+    radius: 24,
+    corners: 0,
+    rotate: 0,
+    direction: 1,
+    color: '#3160b7',
+    speed: 1,
+    trail: 68,
+    shadow: false,
+    hwaccel: false,
+    className: 'spinner',
+    zIndex: 2e9,
+    top: '50%',
+    left: '50%'
+  };
+
   this.end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd';
 
   this.map = void 0;
@@ -28911,13 +28930,12 @@ return PhotoSwipeUI_Default;
       return $('.page').elem('modal').mod('active', true);
     });
     $('.content').mod('modal', true);
-    if ($('.gallery').length > 0) {
-      initGallery();
-    }
+    return initCloseButtons(el);
+  };
+
+  this.initCloseButtons = function(el) {
     return $('.page .modal-close, .page .close').one('click', function(e) {
-      if (el.length > 0) {
-        closeModal(el);
-      }
+      closeModal(el);
       return e.preventDefault();
     });
   };
@@ -28928,6 +28946,8 @@ return PhotoSwipeUI_Default;
       elem = $('.pswp')[0];
       items = $(this).block().data('pictures');
       options = galleryOptions;
+      options.index = $(this).index();
+      console.log(items);
       gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
       gallery.init();
       return e.preventDefault();
@@ -28938,8 +28958,13 @@ return PhotoSwipeUI_Default;
     return $('.licence').click(function(e) {
       var elem, gallery, items, options;
       elem = $('.pswp')[0];
-      items = $(this).data('pictures');
       options = galleryOptions;
+      if ($(this).parents('.licencies').hasMod('show-all')) {
+        items = $(this).parents('.licencies').data('pictures');
+        options.index = $(this).index();
+      } else {
+        items = $(this).data('pictures');
+      }
       gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
       gallery.init();
       return e.preventDefault();
@@ -28953,10 +28978,41 @@ return PhotoSwipeUI_Default;
       if (!block.hasMod('active')) {
         $('.vacancy').mod('active', false);
         block.mod('active', true);
-        openModal(block);
+        loadElement($(this).attr('href'));
       }
       return e.preventDefault();
     });
+  };
+
+  this.loadElement = function(href) {
+    var $el, block;
+    $el = $(".page a[href^='" + href + "']");
+    if ($el.length > 0) {
+      block = $el.parent();
+    }
+    block.mod('active', true);
+    $('.modal__content').html("").spin(spinOptions);
+    if (location.href.split("?")[1]) {
+      href = href + "?" + (location.href.split("?")[1]);
+    }
+    $.get("/ajax" + href, function(data) {
+      var title;
+      $('.modal__content').html(data);
+      title = $(data).find('h2').text();
+      if (History.enabled) {
+        History.pushState({
+          'url': href
+        }, title, href);
+      }
+      document.title = title + " | " + document.title.split(' | ')[1];
+      initCloseButtons(block);
+      if ($('.gallery').length > 0) {
+        return initGallery();
+      }
+    });
+    if ($('.modal__content').is(':hidden')) {
+      return openModal(block);
+    }
   };
 
   this.initNews = function() {
@@ -28966,7 +29022,7 @@ return PhotoSwipeUI_Default;
       if (!block.hasMod('active')) {
         $('.news').mod('active', false);
         block.mod('active', true);
-        openModal(block);
+        loadElement($(this).attr('href'));
       }
       return e.preventDefault();
     });
@@ -29030,7 +29086,7 @@ return PhotoSwipeUI_Default;
 
   this.size = function() {
     var bg, height;
-    height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15;
+    height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height();
     if ($(window).height() > 800 && $(window).width() >= 1024) {
       $('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css('min-height', height);
       $('.page__content').css('max-height', height);
@@ -29078,16 +29134,15 @@ return PhotoSwipeUI_Default;
     }
   };
 
-  $('.index').elem('slider').on("fotorama:show", function() {
-    return size();
-  }).fotorama();
-
   delay(500, function() {
     return initScroll();
   });
 
   delay(300, function() {
-    return size();
+    size();
+    return $('.index').elem('slider').on("fotorama:show", function() {
+      return size();
+    }).fotorama();
   });
 
   $('.dropdown').hoverIntent({
