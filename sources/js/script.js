@@ -70,7 +70,6 @@
       items = $(this).block().data('pictures');
       options = galleryOptions;
       options.index = $(this).index();
-      console.log(items);
       gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
       gallery.init();
       return e.preventDefault();
@@ -152,12 +151,29 @@
   };
 
   this.initServices = function() {
+    $('.service').elem('gallery').click(function(e) {
+      var elem, gallery, items, options;
+      elem = $('.pswp')[0];
+      options = galleryOptions;
+      items = $(this).data('pictures');
+      gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+      return e.preventDefault();
+    });
     return $('.service').elem('map').click(function(e) {
-      var block;
+      var block, coords;
       block = $(this).block();
       if (!block.hasMod('active')) {
         $('.service').mod('active', false);
         block.mod('active', true);
+        coords = $(this).data('coords').split(',');
+        mark.geometry.setCoordinates(coords);
+        mark.properties.set({
+          hintContent: block.elem('name').text()
+        });
+        map.setCenter(coords, map.getZoom(), {
+          duration: 300
+        });
         openModal(block);
       } else {
         closeModal(block);
@@ -188,13 +204,12 @@
         }
         return $.getScript("http://api-maps.yandex.ru/2.1/?lang=" + lang, function() {
           return ymaps.ready(function() {
-            var mark;
             this.map = new ymaps.Map($map.attr('id'), {
               center: $map.data('coords').split(','),
               zoom: $map.data('zoom'),
               controls: ['geolocationControl', 'zoomControl']
             });
-            mark = new ymaps.Placemark(map.getCenter(), {
+            this.mark = new ymaps.Placemark(map.getCenter(), {
               hintContent: $map.data('text')
             }, {
               preset: "twirl#nightDotIcon"
@@ -246,7 +261,6 @@
         $('.catalog .section, .catalog .filter').css('min-height', height);
       }
     } else if ($(window).width() > 700) {
-      console.log(1);
       $('.catalog .filter').removeAttr('style');
       $('.catalog .section').css('min-height', height - $('.catalog .filter').outerHeight() - 15);
     } else {

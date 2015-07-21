@@ -54,20 +54,17 @@
 		e.preventDefault()
 
 @initGallery = ->
-
 	$('.gallery').elem('item').click (e)->
 		elem          = $('.pswp')[0];
 		items         = $(this).block().data 'pictures'
 		options       = galleryOptions
 		options.index = $(this).index()
-		console.log items
 		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
 		gallery.init()
 
 		e.preventDefault()
 
 @initLicencies = ->
-
 	$('.licence').click (e)->
 		elem          = $('.pswp')[0];
 		options       = galleryOptions
@@ -123,11 +120,24 @@
 		e.preventDefault()
 
 @initServices = ->
+	$('.service').elem('gallery').click (e)->
+		elem          = $('.pswp')[0];
+		options       = galleryOptions
+		items = $(this).data 'pictures'
+		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
+		gallery.init()
+
+		e.preventDefault()
+		
 	$('.service').elem('map').click (e)->
 		block = $(this).block()
 		if !block.hasMod 'active'
 			$('.service').mod 'active', false
 			block.mod 'active', true
+			coords = $(this).data('coords').split(',')
+			mark.geometry.setCoordinates coords
+			mark.properties.set { hintContent: block.elem('name').text() }
+			map.setCenter coords, map.getZoom(), { duration: 300 }
 			openModal block
 		else
 			closeModal block
@@ -151,7 +161,7 @@
 						zoom: $map.data('zoom'),
 						controls: ['geolocationControl', 'zoomControl']
 					}
-					mark = new ymaps.Placemark map.getCenter(), { hintContent: $map.data('text') }, { preset: "twirl#nightDotIcon" }
+					@mark = new ymaps.Placemark map.getCenter(), { hintContent: $map.data('text') }, { preset: "twirl#nightDotIcon" }
 					@map.geoObjects.add mark
 					@map.container.fitToViewport()
 @size = ->
@@ -185,7 +195,6 @@
 		if $(window).height() > 800
 			$('.catalog .section, .catalog .filter').css 'min-height', height
 	else if $(window).width() > 700
-		console.log(1)
 		$('.catalog .filter').removeAttr('style')
 		$('.catalog .section').css 'min-height', height - $('.catalog .filter').outerHeight() - 15
 	else

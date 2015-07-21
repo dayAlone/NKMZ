@@ -10,6 +10,7 @@ $APPLICATION->IncludeComponent("bitrix:news.detail","news",Array(
 	"CACHE_TYPE"    => "A",
 	"CACHE_TIME"    => "36000",
 	"TEXT"          => "Вакансия",
-	"CLOSE"         => "Закрыть описание"
+	"CLOSE"         => "Закрыть описание",
+	"AFTER"         => '<a href="#Career" data-toggle="modal" class="button button--blue">Откликнуться на вакансию</a>'
 ));
 ?>

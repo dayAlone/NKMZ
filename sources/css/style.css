@@ -3022,7 +3022,8 @@ svg g {
   background-color: rgba(203,210,215,0.2);
 }
 @media (min-width: 1400px) {
-  .services .service__name {
+  .services .service__name,
+  .services .service__gallery {
     margin-left: -15px;
   }
 }
