@@ -64,10 +64,21 @@
 
 		e.preventDefault()
 
+@initAlbums = ->
+	$('.album').click (e)->
+		elem    = $('.pswp')[0];
+		options = galleryOptions
+		items   = $(this).data 'pictures'
+
+		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
+		gallery.init()
+
+		e.preventDefault()
+
 @initLicencies = ->
 	$('.licence').click (e)->
-		elem          = $('.pswp')[0];
-		options       = galleryOptions
+		elem    = $('.pswp')[0];
+		options = galleryOptions
 		if $(this).parents('.licencies').hasMod 'show-all'
 			items = $(this).parents('.licencies').data 'pictures'
 			options.index = $(this).index()
@@ -128,7 +139,7 @@
 		gallery.init()
 
 		e.preventDefault()
-		
+
 	$('.service').elem('map').click (e)->
 		block = $(this).block()
 		if !block.hasMod 'active'
@@ -233,6 +244,9 @@ if $('.content .news').length > 0
 
 if $('.vacancies').length > 0
 	initVacancies()
+
+if $('.albums').length > 0
+	initAlbums()
 
 transTimer = []
 $('.page__content, .page__side, .page__modal, .catalog .filter').on @end, ->

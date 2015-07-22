@@ -76,6 +76,18 @@
     });
   };
 
+  this.initAlbums = function() {
+    return $('.album').click(function(e) {
+      var elem, gallery, items, options;
+      elem = $('.pswp')[0];
+      options = galleryOptions;
+      items = $(this).data('pictures');
+      gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+      return e.preventDefault();
+    });
+  };
+
   this.initLicencies = function() {
     return $('.licence').click(function(e) {
       var elem, gallery, items, options;
@@ -312,6 +324,10 @@
 
   if ($('.vacancies').length > 0) {
     initVacancies();
+  }
+
+  if ($('.albums').length > 0) {
+    initAlbums();
   }
 
   transTimer = [];
