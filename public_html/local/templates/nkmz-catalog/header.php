@@ -9,14 +9,16 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
                   "IBLOCK_TYPE"         => "content_".LANGUAGE_ID,
                   "IBLOCK_ID"           => 3,
                   "CACHE_TYPE"          => "A",
-                  "CACHE_TIME"          => "36000"
+                  "CACHE_TIME"          => "36000",
+                  "SECTION_ID"          => 0,
+                  "FILTER_NAME"         => "arCatalogFilter"
               )
           );
     ?>
   </div>
   <div class="col-lg-8 col-lg-pull-4">
       <?
-        if(!isset($_REQUEST['ELEMENT_CODE']) && !isset($_REQUEST['SECTION_CODE']) && !isset($_REQUEST['action']) && !@defined("ERROR_404")):
+        if(!isset($_REQUEST['ELEMENT_CODE']) && !isset($_REQUEST['SECTION_CODE']) && !isset($_REQUEST['set_filter']) && !@defined("ERROR_404")):
         	$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sections", array(
 			    "IBLOCK_TYPE"  => "content_".LANGUAGE_ID,
 			    "IBLOCK_ID"    => "3",

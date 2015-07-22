@@ -154,10 +154,18 @@
 			closeModal block
 		e.preventDefault()
 
-@delay = (ms, func) -> setTimeout func, ms
-
 @initScroll = ->
 	$('.page__content').perfectScrollbar({suppressScrollX: true, includePadding: true})
+
+@initFilter = ->
+	$('.filter .dropdown__item').click (e)->
+		$block = $(this).block()
+		id = $(this).data 'id'
+		$block.find('input').prop 'checked', false
+		$block.find("input[name='#{id}']").prop 'checked', true
+		$block.find('.dropdown__trigger span').text $(this).text()
+		$block.mod 'active', false
+		e.preventDefault()
 
 @mapInit = ->
 	if $('[data-map]').length > 0
@@ -175,6 +183,9 @@
 					@mark = new ymaps.Placemark map.getCenter(), { hintContent: $map.data('text') }, { preset: "twirl#nightDotIcon" }
 					@map.geoObjects.add mark
 					@map.container.fitToViewport()
+
+@delay = (ms, func) -> setTimeout func, ms
+
 @size = ->
 	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height()
 	if $(window).height() > 800 && $(window).width() >= 1024
@@ -247,6 +258,9 @@ if $('.vacancies').length > 0
 
 if $('.albums').length > 0
 	initAlbums()
+
+if $('.filter').length > 0
+	initFilter()
 
 transTimer = []
 $('.page__content, .page__side, .page__modal, .catalog .filter').on @end, ->

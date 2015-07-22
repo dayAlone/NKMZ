@@ -6390,6 +6390,7 @@ svg g {
 @media (min-width: 992px) {
   .page__side {
     min-height: 641px;
+    min-height: calc(100vh - 180px);
   }
 }
 .page__content,
@@ -6397,6 +6398,7 @@ svg g {
   background-color: #eceef1;
   padding: 70px 25px 20px;
   min-height: 641px;
+  min-height: calc(100vh - 180px);
 }
 @media (min-width: 768px) {
   .page__content,

@@ -194,14 +194,23 @@
     });
   };
 
-  this.delay = function(ms, func) {
-    return setTimeout(func, ms);
-  };
-
   this.initScroll = function() {
     return $('.page__content').perfectScrollbar({
       suppressScrollX: true,
       includePadding: true
+    });
+  };
+
+  this.initFilter = function() {
+    return $('.filter .dropdown__item').click(function(e) {
+      var $block, id;
+      $block = $(this).block();
+      id = $(this).data('id');
+      $block.find('input').prop('checked', false);
+      $block.find("input[name='" + id + "']").prop('checked', true);
+      $block.find('.dropdown__trigger span').text($(this).text());
+      $block.mod('active', false);
+      return e.preventDefault();
     });
   };
 
@@ -232,6 +241,10 @@
         });
       });
     }
+  };
+
+  this.delay = function(ms, func) {
+    return setTimeout(func, ms);
   };
 
   this.size = function() {
@@ -328,6 +341,10 @@
 
   if ($('.albums').length > 0) {
     initAlbums();
+  }
+
+  if ($('.filter').length > 0) {
+    initFilter();
   }
 
   transTimer = [];
