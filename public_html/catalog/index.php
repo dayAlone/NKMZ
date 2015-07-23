@@ -29,6 +29,8 @@ elseif(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['set_filter'])):
 	  ),
 	  false
 	);
+else:
+	$APPLICATION->SetPageProperty('body_class', "catalog catalog--list");
 endif;
 
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');

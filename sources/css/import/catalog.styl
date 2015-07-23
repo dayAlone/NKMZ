@@ -1,8 +1,7 @@
 .catalog
 	&--list
 		.filter
-			display none
-			@media (min-width: scr_lg)
+			@media (min-width: scr_md)
 				display block
 	.page
 		padding-top 82px
@@ -42,7 +41,6 @@
 		@extend .index .filter
 		position relative
 		t min-height
-		display none
 		@media (min-width: scr_sm) and (max-width: scr_md)
 			.col-sm-6
 				margin-top 17px
@@ -71,7 +69,7 @@
 				display none
 			&__title
 				border-bottom 0
-				font-size 34px
+				font-size 30px
 				white-space inherit
 				font-weight 200
 				line-height 1
@@ -116,6 +114,9 @@
 				padding 0 20px
 				transform translateY(-50%)
 				padding-bottom 80px
+		@media (min-width: nav_rows)
+			&__title
+				font-size 34px
 		@media (min-width: hide_feedback)
 			&__title
 				font-size 47px
