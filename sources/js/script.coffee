@@ -15,7 +15,7 @@
 	zIndex    : 2e9
 	top       : '50%'
 	left      : '50%'
-	
+
 @end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
 
 @map = undefined
@@ -30,6 +30,15 @@
 	style.cssText = 'pointer-events:auto';
 	return style.pointerEvents == 'auto';
 )();
+
+@getCaptcha = ()->
+	$.get '/include/captcha.php', (data)->
+		console.log data
+		setCaptcha data
+
+@setCaptcha = (code)->
+	$('input[name=captcha_sid], input[name=captcha_code]').val(code)
+	$('.captcha').css 'background-image', "url(/include/captcha.php?captcha_sid=#{code})"
 
 @closeModal = (el)->
 	$('.page').elem('modal').on(end, (->
@@ -232,6 +241,26 @@ delay 300, ()->
 	$('.index').elem('slider').on("fotorama:show", ->
 		size()
 	).fotorama();
+
+$('.modal').on 'show.bs.modal', ->
+	getCaptcha()
+
+$('.captcha__refresh').click (e)->
+	getCaptcha()
+	e.preventDefault()
+
+$('#Feedback form').submit (e)->
+		e.preventDefault()
+		request = $(this).serialize()
+		$.post '/include/send.php', request, (data) ->
+			console.log data
+			data = $.parseJSON(data)
+			if data.status == "ok"
+        		$('.feedback').elem('form').hide().addClass 'hidden'
+        		$('.feedback').elem('success').show().removeClass 'hidden'
+        	else if data.status == "error"
+        		$('input[name=captcha_word]').addClass('parsley-error')
+        		getCaptcha()
 
 $('.dropdown').hoverIntent({
 	over: ->

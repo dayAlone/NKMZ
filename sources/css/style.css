@@ -3212,15 +3212,18 @@ svg g {
   height: 32px;
   line-height: 33px;
 }
+.feedback__success {
+  display: none;
+}
 .modal-lg {
   width: 750px;
 }
-.modal h3 {
+.modal h4 {
   font-weight: 300;
   font-size: 32px;
   margin-bottom: 30px;
 }
-.modal h3 span {
+.modal h4 span {
   color: #309dff;
   font-size: 15px;
   width: 100%;

@@ -123,5 +123,6 @@
 </div>
 
 <?$APPLICATION->ShowViewContent('footer');?>
+<? require_once($_SERVER['DOCUMENT_ROOT'] . "/include/feedback-".LANGUAGE_ID.".php"); ?>
 </body>
 </html>

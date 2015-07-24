@@ -37,6 +37,18 @@
     return style.pointerEvents === 'auto';
   })();
 
+  this.getCaptcha = function() {
+    return $.get('/include/captcha.php', function(data) {
+      console.log(data);
+      return setCaptcha(data);
+    });
+  };
+
+  this.setCaptcha = function(code) {
+    $('input[name=captcha_sid], input[name=captcha_code]').val(code);
+    return $('.captcha').css('background-image', "url(/include/captcha.php?captcha_sid=" + code + ")");
+  };
+
   this.closeModal = function(el) {
     $('.page').elem('modal').on(end, (function() {
       return $(this).hide().off(end);
@@ -305,6 +317,32 @@
     return $('.index').elem('slider').on("fotorama:show", function() {
       return size();
     }).fotorama();
+  });
+
+  $('.modal').on('show.bs.modal', function() {
+    return getCaptcha();
+  });
+
+  $('.captcha__refresh').click(function(e) {
+    getCaptcha();
+    return e.preventDefault();
+  });
+
+  $('#Feedback form').submit(function(e) {
+    var request;
+    e.preventDefault();
+    request = $(this).serialize();
+    return $.post('/include/send.php', request, function(data) {
+      console.log(data);
+      data = $.parseJSON(data);
+      if (data.status === "ok") {
+        $('.feedback').elem('form').hide().addClass('hidden');
+        return $('.feedback').elem('success').show().removeClass('hidden');
+      } else if (data.status === "error") {
+        $('input[name=captcha_word]').addClass('parsley-error');
+        return getCaptcha();
+      }
+    });
   });
 
   $('.dropdown').hoverIntent({
