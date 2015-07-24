@@ -15,7 +15,7 @@
 	zIndex    : 2e9
 	top       : '50%'
 	left      : '50%'
-
+	
 @end = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
 
 @map = undefined
