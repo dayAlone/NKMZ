@@ -12,9 +12,8 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
 		<?=$item['~DETAIL_TEXT']?>
         <div class="params">
             <?
-            foreach ($item['PROPERTIES']['TABLE']['VALUE'] as $key => $row):
-                if($row['prop_title'] == "Y" && $key != 0):?></div><?endif;?>
-                <div class="param <?=($row['prop_title'] == "Y"?"param--title":"")?>">    
+            foreach ($item['PROPERTIES']['TABLE']['VALUE'] as $key => $row):?>
+                <div class="param <?=($row['prop_title'] == "Y"?"param--title":"")?>">
                 <?
                 unset($row['prop_title']);
                 foreach ($row as $k => $el) if(strlen($el) == 0) unset($row[$k]);
