@@ -6,7 +6,7 @@
 		<a href="<?=$section['SECTION_PAGE_URL']?>" class="section">
 			<div style="background-image: url(<?=$section['PICTURE']['SRC']?>)" class="section__image"></div>
 			<div class="section__name">
-				<span><?=html_entity_decode($section['NAME'])?></span>
+				<span><?=$section['~NAME']?></span>
 			</div>
 		</a>
 	  </div>
