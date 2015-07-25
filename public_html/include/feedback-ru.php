@@ -1,8 +1,7 @@
-
 <div id="Feedback" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade feedback">
   <div class="modal-dialog feedback__dialog">
     <div class="modal-content">
-		<div class="right l-margin-bottom">
+		<div class="right s-margin-top l-margin-bottom">
 			<a data-dismiss="modal" href="#" class="close">Закрыть окно</a>
 		</div>
     <div class="feedback__success">
@@ -10,7 +9,7 @@
       <p class="center">В ближайшее время представители нашей компании свяжутся с вами. Благодарим за обращение.</p>
     </div>
     <form class="feedback__form" data-parsley-validate>
-      <input type="hidden" name="group_id" value="<?=(SITE_ID == 's1'?"5":"18")?>">
+      <input type="hidden" name="group_id" value="1">
 	  <label>представьтесь, пожалуйста</label>
       <input name="name" type="text" required value="">
       <label>Ваш e-mail</label>

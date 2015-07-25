@@ -17,11 +17,6 @@ if($result['status'] == 'ok') {
 
 		require './mail/PHPMailerAutoload.php';
 
-		$mail = new PHPMailer;
-		$mail->isSendmail();
-		$mail->CharSet = 'UTF-8';
-
-
 		$text = array(
 			'name'    => 'Автор заявки',
 			'phone'   => 'Номер телефона',
@@ -40,33 +35,30 @@ if($result['status'] == 'ok') {
 
 		foreach ($_FILES as $key => $value):
 			if($text[$key]):
-				$name = $value['name'];
+				$name  = $value['name'];
 				$value = CFile::GetPath(CFile::SaveFile($value));
-				$body .=$text[$key].': <a href="http://'.$_SERVER['HTTP_HOST'].$value.'">'.$name."</a><br /><br />\r\n";
+				$body .= $text[$key].': <a href="http://'.$_SERVER['HTTP_HOST'].$value.'">'.$name."</a><br /><br />\r\n";
 			endif;
 		endforeach;
 		$body .= "<br /><hr><br />";
 
-
-		$rsSites = CSite::GetByID(SITE_ID);
-	    $arSite  = $rsSites->Fetch();
-		$mail->Subject = "Сообщение с сайта ".$arSite['NAME'];
-		$mail->setFrom("mailer@".$_SERVER['HTTP_HOST'], "Сайт ".$arSite['NAME']);
-
 		if ($result['status'] == 'ok') {
-			$rs_user = CUser::GetList(
-				($by = 'name'),
-				($order = 'asc'),
-				array(
-					'GROUPS_ID' => array($_REQUEST["group_id"])
-				)
-			);
+			$emails = preg_split("/(,\s|,)/", COption::GetOptionString("grain.customsettings","group_".$_REQUEST["group_id"]));
+			$rsSites = CSite::GetByID(SITE_ID);
+	    	$arSite  = $rsSites->Fetch();
+			foreach ($emails as $email):
+				if(filter_var($email, FILTER_VALIDATE_EMAIL)):
+					$mail = new PHPMailer;
+					$mail->isSendmail();
+					$mail->CharSet = 'UTF-8';
+					$mail->Subject = "Сообщение с сайта ".$arSite['NAME'];
+					$mail->setFrom("mailer@".$_SERVER['HTTP_HOST'], "Сайт ".$arSite['NAME']);
+					$mail->addAddress($email, $email);
+					$mail->msgHTML($body);
+					$mail->send();
+				endif;
+			endforeach;
 
-			while($ar_user = $rs_user->GetNext())
-				$mail->addAddress($ar_user['EMAIL'], $ar_user['LOGIN']);
-
-			$mail->msgHTML($body);
-			$mail->send();
 		}
 }
 print json_encode($result);
