@@ -1348,6 +1348,11 @@ a:hover {
     width: 11.4%;
   }
 }
+#panel {
+  position: fixed;
+  width: 100%;
+  z-index: 100000000;
+}
 html,
 body {
   height: 100%;
