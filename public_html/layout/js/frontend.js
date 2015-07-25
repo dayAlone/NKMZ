@@ -18455,6 +18455,124 @@ return function (global, window, document, undefined) {
     };
 }((window.jQuery || window.Zepto || window), window, document);
 }));
+/*!
+ * jQuery Cookie Plugin v1.4.1
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2013 Klaus Hartl
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		// CommonJS
+		factory(require('jquery'));
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
+
+	var pluses = /\+/g;
+
+	function encode(s) {
+		return config.raw ? s : encodeURIComponent(s);
+	}
+
+	function decode(s) {
+		return config.raw ? s : decodeURIComponent(s);
+	}
+
+	function stringifyCookieValue(value) {
+		return encode(config.json ? JSON.stringify(value) : String(value));
+	}
+
+	function parseCookieValue(s) {
+		if (s.indexOf('"') === 0) {
+			// This is a quoted cookie as according to RFC2068, unescape...
+			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		}
+
+		try {
+			// Replace server-side written pluses with spaces.
+			// If we can't decode the cookie, ignore it, it's unusable.
+			// If we can't parse the cookie, ignore it, it's unusable.
+			s = decodeURIComponent(s.replace(pluses, ' '));
+			return config.json ? JSON.parse(s) : s;
+		} catch(e) {}
+	}
+
+	function read(s, converter) {
+		var value = config.raw ? s : parseCookieValue(s);
+		return $.isFunction(converter) ? converter(value) : value;
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// Write
+
+		if (value !== undefined && !$.isFunction(value)) {
+			options = $.extend({}, config.defaults, options);
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setTime(+t + days * 864e+5);
+			}
+
+			return (document.cookie = [
+				encode(key), '=', stringifyCookieValue(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// Read
+
+		var result = key ? undefined : {};
+
+		// To prevent the for loop in the first place assign an empty array
+		// in case there are no cookies at all. Also prevents odd result when
+		// calling $.cookie().
+		var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			var name = decode(parts.shift());
+			var cookie = parts.join('=');
+
+			if (key && key === name) {
+				// If second argument (value) is a function it's a converter...
+				result = read(cookie, value);
+				break;
+			}
+
+			// Prevent storing a cookie that we couldn't decode.
+			if (!key && (cookie = read(cookie)) !== undefined) {
+				result[name] = cookie;
+			}
+		}
+
+		return result;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) === undefined) {
+			return false;
+		}
+
+		// Must not alter options, thus extending a fresh object...
+		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+		return !$.cookie(key);
+	};
+
+}));
+
 //Parsley localization for Russian language
 //Evgeni Makarov
 //github.com/emakarov
@@ -29137,12 +29255,29 @@ return PhotoSwipeUI_Default;
   };
 
   this.size = function() {
-    var bg, height;
+    var bg, catalogSectionHeight, cookie, height, indexSectionHeight;
     height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height();
+    indexSectionHeight = height - $('.index .filter').outerHeight() - 15;
+    catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 15;
+    cookie = JSON.parse($.cookie('height'));
+    if (cookie.height !== height) {
+      $.cookie('height', height, {
+        expires: 1,
+        path: '/'
+      });
+      $.cookie('index', indexSectionHeight, {
+        expires: 1,
+        path: '/'
+      });
+      $.cookie('catalog', catalogSectionHeight, {
+        expires: 1,
+        path: '/'
+      });
+    }
     if ($(window).height() > 800 && $(window).width() >= 1024) {
       $('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css('min-height', height);
       $('.page__content').css('max-height', height);
-      $('.index .section').css('min-height', height - $('.index .filter').outerHeight() - 15);
+      $('.index .section').css('min-height', indexSectionHeight);
     } else {
       bg = $('.page__side').css('background-image');
       $('.index .fotorama__stage, .index .fotorama__shaft, .index .section, .page__content, .page__side').removeAttr('style');
@@ -29176,7 +29311,7 @@ return PhotoSwipeUI_Default;
       }
     } else if ($(window).width() > 700) {
       $('.catalog .filter').removeAttr('style');
-      $('.catalog .section').css('min-height', height - $('.catalog .filter').outerHeight() - 15);
+      $('.catalog .section').css('min-height', catalogSectionHeight);
     } else {
       $('.catalog .section, .catalog .filter').removeAttr('style');
     }

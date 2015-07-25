@@ -197,10 +197,19 @@
 
 @size = ->
 	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height()
+	indexSectionHeight = height - $('.index .filter').outerHeight() - 15
+	catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 15
+
+	cookie = JSON.parse $.cookie 'height'
+	if cookie.height != height
+		$.cookie 'height', height, { expires: 1, path: '/' }
+		$.cookie 'index', indexSectionHeight, { expires: 1, path: '/' }
+		$.cookie 'catalog', catalogSectionHeight, { expires: 1, path: '/' }
+
 	if $(window).height() > 800 && $(window).width() >= 1024
 		$('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css 'min-height', height
 		$('.page__content').css 'max-height', height
-		$('.index .section').css 'min-height', height - $('.index .filter').outerHeight() - 15
+		$('.index .section').css 'min-height', indexSectionHeight
 	else
 		bg = $('.page__side').css 'background-image'
 		$('.index .fotorama__stage, .index .fotorama__shaft, .index .section, .page__content, .page__side').removeAttr 'style'
@@ -227,7 +236,7 @@
 			$('.catalog .section, .catalog .filter').css 'min-height', height
 	else if $(window).width() > 700
 		$('.catalog .filter').removeAttr('style')
-		$('.catalog .section').css 'min-height', height - $('.catalog .filter').outerHeight() - 15
+		$('.catalog .section').css 'min-height', catalogSectionHeight
 	else
 		$('.catalog .section, .catalog .filter').removeAttr 'style'
 	if @map
