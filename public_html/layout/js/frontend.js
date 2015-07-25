@@ -29257,8 +29257,8 @@ return PhotoSwipeUI_Default;
   this.size = function() {
     var bg, catalogSectionHeight, cookie, height, indexSectionHeight;
     height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height();
-    indexSectionHeight = height - $('.index .filter').outerHeight() - 15;
-    catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 15;
+    indexSectionHeight = height - $('.index .filter').outerHeight() - 16;
+    catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 16;
     cookie = JSON.parse($.cookie('height'));
     if (cookie.height !== height) {
       $.cookie('height', height, {

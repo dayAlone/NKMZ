@@ -5715,7 +5715,7 @@ svg g {
   .index .sections .section,
   .catalog .sections .section {
     min-height: 395px;
-    min-height: calc(100vh - 416px);
+    min-height: calc(100vh - 418px);
   }
 }
 .index .sections .section__name,
@@ -5815,7 +5815,7 @@ svg g {
   .index .slider .fotorama__stage,
   .index .slider .fotorama__shaft {
     min-height: 641px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 172px);
   }
 }
 .index .slider__image {
@@ -5854,7 +5854,7 @@ svg g {
 }
 @media (min-width: 768px) {
   .index .slider__content {
-    margin-top: 0px;
+    margin-top: -77px;
   }
 }
 @media (min-width: 992px) {
@@ -5878,7 +5878,7 @@ svg g {
 @media (min-width: 992px) {
   .index .slider__item {
     min-height: 641px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 172px);
   }
 }
 .index .slider__button {
@@ -6398,7 +6398,7 @@ svg g {
 @media (min-width: 992px) {
   .page__side {
     min-height: 641px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 172px);
   }
 }
 .page__content,
@@ -6406,7 +6406,7 @@ svg g {
   background-color: #eceef1;
   padding: 70px 25px 20px;
   min-height: 641px;
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 172px);
 }
 @media (min-width: 768px) {
   .page__content,
@@ -7159,7 +7159,7 @@ svg g {
 @media (min-width: 1200px) {
   .catalog .sections .section {
     min-height: 641px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 172px);
   }
 }
 @media (min-width: 1200px) {
@@ -7220,7 +7220,7 @@ svg g {
 @media (min-width: 1200px) {
   .catalog .filter {
     min-height: 641px;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 172px);
     display: block;
   }
 }
