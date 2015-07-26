@@ -7202,7 +7202,7 @@ svg g {
   .catalog .page__nav .nav__item:nth-child(2) {
     max-width: 245px;
   }
-  .catalog .page__nav .nav__item:nth-child(3) {
+  .catalog .page__nav .nav__item:nth-child(4) {
     max-width: 200px;
   }
   .catalog .page__nav .nav__item:hover {
@@ -7223,7 +7223,7 @@ svg g {
   .catalog .page__nav .nav__item:nth-child(2) {
     max-width: 290px;
   }
-  .catalog .page__nav .nav__item:nth-child(3) {
+  .catalog .page__nav .nav__item:nth-child(4) {
     max-width: 240px;
   }
 }
