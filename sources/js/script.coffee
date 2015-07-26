@@ -196,7 +196,7 @@
 @delay = (ms, func) -> setTimeout func, ms
 
 @size = ->
-	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 - $('#panel').height()
+	height = $(window).height() - $('.toolbar').outerHeight() - $('.footer').outerHeight() - 15 #- $('#panel').height()
 	indexSectionHeight = height - $('.index .filter').outerHeight() - 16
 	catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 16
 
