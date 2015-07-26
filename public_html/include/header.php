@@ -60,7 +60,7 @@
 		  <span class="toolbar__block">
 			  <a href="<?=preg_replace("/[^0-9+]/", "", COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID))?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID)?></a>
 			  <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?></a>
-			  <a href="#" class="toolbar__link">Обратная связь</a>
+			  <a href="#Feedback" data-toggle="modal" class="toolbar__link">Обратная связь</a>
 		  </span>
 	  </div>
     </div>
