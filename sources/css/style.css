@@ -2066,7 +2066,7 @@ svg g {
   font-weight: 300;
   height: 100px;
   line-height: 106px;
-  font-size: 16px;
+  font-size: 14px;
   -webkit-transition-property: background;
   -moz-transition-property: background;
   -o-transition-property: background;
@@ -2085,7 +2085,7 @@ svg g {
 @media (min-width: 1555px) {
   .index .sections .section__name,
   .catalog .sections .section__name {
-    font-size: 18px;
+    font-size: 17px;
     height: 110px;
     line-height: 116px;
   }
@@ -2095,6 +2095,21 @@ svg g {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.3;
+}
+.index .sections .section__logo,
+.catalog .sections .section__logo {
+  padding: 0 20px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  z-index: 20;
+}
+.index .sections .section__logo svg,
+.catalog .sections .section__logo svg {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
 }
 .index .sections .section__image,
 .catalog .sections .section__image {
@@ -2106,6 +2121,12 @@ svg g {
   -moz-background-size: contain;
   background-size: contain;
   background-position: center bottom;
+}
+@media (min-width: 1555px) {
+  .index .sections .section__image,
+  .catalog .sections .section__image {
+    top: 40px;
+  }
 }
 .index .sections .section:hover .section__name,
 .catalog .sections .section:hover .section__name {
@@ -3463,6 +3484,9 @@ svg g {
     display: block;
   }
 }
+.catalog--list .page {
+  padding-top: 82px;
+}
 @media (min-width: 768px) {
   .catalog .page {
     padding-top: 0px;
@@ -3564,17 +3588,33 @@ svg g {
   }
 }
 @media (min-width: 1200px) {
+  .catalog .sections .section__logo {
+    text-align: left;
+    position: absolute;
+    bottom: 190px;
+    left: 0px;
+    padding: 0 30px;
+  }
+}
+@media (max-width: 1200px) {
+  .catalog .sections .section__image {
+    top: 40px;
+  }
+}
+@media (min-width: 1200px) {
   .catalog .sections .section__name {
-    font-size: 28px;
+    font-size: 23px;
     font-weight: 200;
     padding-right: 30px;
-    height: 140px;
+    height: 200px;
     line-height: 145px;
     padding-left: 30px;
-    bottom: 115px;
+    padding-top: 90px;
+    bottom: 45px;
   }
   .catalog .sections .section__name span {
     line-height: 1;
+    vertical-align: top;
   }
 }
 .catalog .filter {

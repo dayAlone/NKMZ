@@ -26,7 +26,8 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
 			    "IBLOCK_ID"    => "3",
 			    "TOP_DEPTH"    => "1",
 			    "CACHE_TYPE"   => "A",
-			    "CACHE_TIME"   => "36000"
+			    "CACHE_TIME"   => "36000",
+                "SECTION_USER_FIELDS" => array('UF_SVG')
 			),
 			false
 			);

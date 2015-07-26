@@ -3,8 +3,9 @@
 		.filter
 			@media (min-width: scr_md)
 				display block
+		.page
+			padding-top 82px
 	.page
-		//padding-top 82px
 		@media (min-width: scr_sm)
 			padding-top 0px
 		&__content
@@ -74,17 +75,29 @@
 			@media (min-width: scr_lg)
 				min-height 641px
 				min-height calc(100vh - 172px)
+			&__logo
+				@media (min-width: scr_lg)
+					text-align left
+					position absolute
+					bottom 190px
+					left 0px
+					padding 0 30px
+			&__image
+				@media (max-width: scr_lg)
+					top 40px
 			&__name
 				@media (min-width: scr_lg)
-					font-size 28px
+					font-size 23px
 					font-weight 200
 					padding-right 30px
-					height 140px
+					height 200px
 					line-height 145px
 					padding-left 30px
-					bottom 115px
+					padding-top 90px
+					bottom 45px
 					span
 						line-height 1
+						vertical-align top
 	.filter
 		@extend .index .filter
 		position relative
