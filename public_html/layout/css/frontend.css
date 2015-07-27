@@ -7490,6 +7490,7 @@ svg g {
   -o-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  pointer-events: none;
   background: -webkit-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: -moz-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: -o-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
