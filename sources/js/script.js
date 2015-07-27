@@ -340,6 +340,27 @@
     return getCaptcha();
   });
 
+  scrollTimer = false;
+
+  $('.params').elem('frame').on('scroll', function() {
+    var el;
+    clearTimeout(scrollTimer);
+    el = $(this);
+    return scrollTimer = delay(50, function() {
+      if (el.scrollLeft() > 70) {
+        el.block().mod('left', true);
+      } else {
+        el.block().mod('left', false);
+      }
+      console.log(el.scrollLeft() + el.width(), el.find('.param').width());
+      if (el.scrollLeft() + el.width() === el.find('.param').width()) {
+        return el.block().mod('right', true);
+      } else {
+        return el.block().mod('right', false);
+      }
+    });
+  });
+
   $('.captcha__refresh').click(function(e) {
     getCaptcha();
     return e.preventDefault();

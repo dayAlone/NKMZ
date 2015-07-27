@@ -7462,6 +7462,11 @@ svg g {
 .params {
   margin: 30px 0;
   float: left;
+  position: relative;
+  width: 100%;
+}
+.params__frame {
+  float: left;
   overflow: scroll;
   width: 100%;
   position: relative;
@@ -7469,7 +7474,7 @@ svg g {
 .params:after,
 .params:before {
   content: "";
-  width: 60px;
+  width: 70px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -7484,7 +7489,7 @@ svg g {
 @media (min-width: 768px) {
   .params:after,
   .params:before {
-    display: none;
+    display: none !important;
   }
 }
 .params:before {
@@ -7495,6 +7500,15 @@ svg g {
   background: -o-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
   background: -ms-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
   background: linear-gradient(to right, #eceef1 0%, rgba(236,238,241,0) 100%);
+}
+.params:before {
+  display: none;
+}
+.params--right:after {
+  display: none;
+}
+.params--left:before {
+  display: block;
 }
 .params .param {
   float: left;

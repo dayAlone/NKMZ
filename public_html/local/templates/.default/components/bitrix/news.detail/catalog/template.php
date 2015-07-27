@@ -11,6 +11,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
 	<div class="product__description text">
 		<?=$item['~DETAIL_TEXT']?>
         <div class="params">
+            <div class="params__frame">
             <?
             foreach ($item['PROPERTIES']['TABLE']['VALUE'] as $key => $row):?>
                 <div class="param <?=($row['prop_title'] == "Y"?"param--title":"")?>">
@@ -26,6 +27,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
                 <?
             endforeach;
             ?>
+            </div>
         </div>
 	    <?=html_entity_decode(nl2br($item['PROPERTIES']['TEXT']['VALUE']['TEXT']))?>
     </div>

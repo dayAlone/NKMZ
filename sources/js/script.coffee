@@ -254,6 +254,22 @@ delay 300, ()->
 $('.modal').on 'show.bs.modal', ->
 	getCaptcha()
 
+scrollTimer = false
+$('.params').elem('frame').on 'scroll', ->
+	clearTimeout scrollTimer
+	el = $(this)
+	scrollTimer = delay 50, ()->
+		if el.scrollLeft() > 70
+			el.block().mod 'left', true
+		else
+			el.block().mod 'left', false
+
+		console.log el.scrollLeft() + el.width(), el.find('.param').width()
+		if el.scrollLeft() + el.width() == el.find('.param').width()
+			el.block().mod 'right', true
+		else
+			el.block().mod 'right', false
+
 $('.captcha__refresh').click (e)->
 	getCaptcha()
 	e.preventDefault()
