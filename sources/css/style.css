@@ -2118,7 +2118,7 @@ svg g {
 }
 .index .sections .section--6 .section__logo,
 .catalog .sections .section--6 .section__logo {
-  top: 2px;
+  margin-top: 2px;
 }
 .index .sections .section--4 .section__logo,
 .catalog .sections .section--4 .section__logo {
