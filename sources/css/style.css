@@ -2051,6 +2051,11 @@ svg g {
   .index .sections .section,
   .catalog .sections .section {
     min-height: 395px;
+  }
+}
+@media (min-width: 1200px) and (min-height: 700px) {
+  .index .sections .section,
+  .catalog .sections .section {
     min-height: calc(100vh - 418px);
   }
 }
@@ -2178,6 +2183,11 @@ svg g {
   .index .slider .fotorama__stage,
   .index .slider .fotorama__shaft {
     min-height: 641px;
+  }
+}
+@media (min-width: 992px) and (min-height: 700px) {
+  .index .slider .fotorama__stage,
+  .index .slider .fotorama__shaft {
     min-height: calc(100vh - 172px);
   }
 }
@@ -2241,6 +2251,10 @@ svg g {
 @media (min-width: 992px) {
   .index .slider__item {
     min-height: 641px;
+  }
+}
+@media (min-width: 992px) and (min-height: 700px) {
+  .index .slider__item {
     min-height: calc(100vh - 172px);
   }
 }
