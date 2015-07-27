@@ -7470,6 +7470,7 @@ svg g {
   overflow: scroll;
   width: 100%;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 .params:after,
 .params:before {
@@ -7546,6 +7547,10 @@ svg g {
   color: #000;
   font-size: 105%;
   border: 0;
+}
+.params .param--title a {
+  color: #000;
+  text-decoration: none;
 }
 .params .param--title + .param {
   border-top-color: #000;
