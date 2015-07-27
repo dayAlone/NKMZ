@@ -19,7 +19,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
                 foreach ($row as $k => $el) if(strlen($el) == 0) unset($row[$k]);
                 foreach ($row as $k => $el):
                 ?>
-                    <div class="param__col" style="width: <?=100/count($row)?>%"><?=$el?></div>
+                    <div class="param__col" style="width: <?=100/count($row)?>%"><span><?=$el?></span></div>
                 <?
                 endforeach;?>
                 </div>

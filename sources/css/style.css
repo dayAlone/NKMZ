@@ -3823,6 +3823,9 @@ svg g {
     -ms-transform: rotate(-90deg) translateX(30px) translateY(-28px);
     transform: rotate(-90deg) translateX(30px) translateY(-28px);
   }
+  .params .param--title .param__col span {
+    min-width: 60px;
+  }
 }
 .params .param--title + .param {
   border-top-color: #000;
