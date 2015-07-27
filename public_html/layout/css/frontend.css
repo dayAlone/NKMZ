@@ -7480,6 +7480,16 @@ svg g {
   top: 0;
   right: 0;
   z-index: 30;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -ms-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   background: -webkit-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: -moz-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: -o-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
@@ -7502,13 +7512,19 @@ svg g {
   background: linear-gradient(to right, #eceef1 0%, rgba(236,238,241,0) 100%);
 }
 .params:before {
-  display: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .params--right:after {
-  display: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .params--left:before {
-  display: block;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .params .param {
   float: left;
