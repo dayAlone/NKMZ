@@ -2763,6 +2763,10 @@ svg g {
 @media (min-width: 992px) {
   .page__side {
     min-height: 641px;
+  }
+}
+@media (min-width: 992px) and (min-height: 700px) {
+  .page__side {
     min-height: calc(100vh - 172px);
   }
 }
@@ -2771,7 +2775,12 @@ svg g {
   background-color: #eceef1;
   padding: 70px 25px 20px;
   min-height: 641px;
-  min-height: calc(100vh - 172px);
+}
+@media (min-height: 700px) {
+  .page__content,
+  .page__modal {
+    min-height: calc(100vh - 172px);
+  }
 }
 @media (min-width: 768px) {
   .page__content,
@@ -3590,6 +3599,10 @@ svg g {
 @media (min-width: 1200px) {
   .catalog .sections .section {
     min-height: 641px;
+  }
+}
+@media (min-width: 1200px) and (min-height: 700px) {
+  .catalog .sections .section {
     min-height: calc(100vh - 172px);
   }
 }
@@ -3667,8 +3680,12 @@ svg g {
 @media (min-width: 1200px) {
   .catalog .filter {
     min-height: 641px;
-    min-height: calc(100vh - 172px);
     display: block;
+  }
+}
+@media (min-width: 1200px) and (min-height: 700px) {
+  .catalog .filter {
+    min-height: calc(100vh - 172px);
   }
 }
 @media (min-width: 1200px) {
