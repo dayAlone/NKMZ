@@ -5818,6 +5818,10 @@ svg g {
     top: 40px;
   }
 }
+.index .sections .section--no-logo .section__image,
+.catalog .sections .section--no-logo .section__image {
+  top: 0 !important;
+}
 .index .sections .section:hover .section__name,
 .catalog .sections .section:hover .section__name {
   background: rgba(48,157,255,0.9);
