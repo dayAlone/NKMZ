@@ -5791,7 +5791,7 @@ svg g {
   background-size: contain;
   background-position: center bottom;
 }
-@media (min-width: 1555px) {
+@media (min-width: 1200px) {
   .index .sections .section__image,
   .catalog .sections .section__image {
     top: 40px;
