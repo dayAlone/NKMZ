@@ -27,7 +27,8 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
             endforeach;
             ?>
         </div>
-	</div>
+	    <?=$item['PROPERTIES']['TEXT']['VALUE']['~TEXT']?>
+    </div>
   </div>
 </div>
 <?if($gallery):?>

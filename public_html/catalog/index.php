@@ -10,7 +10,7 @@ if(isset($_REQUEST['ELEMENT_CODE'])):
 		"IBLOCK_TYPE"   => "content_".LANGUAGE_ID,
 		"SET_TITLE"     => "Y",
 		"FIELD_CODE"    => array("PREVIEW_PICTURE"),
-		"PROPERTY_CODE" => Array("TABLE"),
+		"PROPERTY_CODE" => Array("TABLE", "TEXT"),
 		"CACHE_TYPE"    => "A",
 		"CACHE_TIME"    => "36000"
 	));
