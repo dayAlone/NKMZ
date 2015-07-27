@@ -5395,6 +5395,9 @@ svg g {
     top: 18px;
   }
 }
+.index .page {
+  padding-top: 82px;
+}
 .index .wrap {
   max-height: 100vh;
 }
@@ -5790,6 +5793,12 @@ svg g {
   -moz-background-size: contain;
   background-size: contain;
   background-position: center bottom;
+}
+@media (max-width: 768px) {
+  .index .sections .section__image,
+  .catalog .sections .section__image {
+    top: 40px;
+  }
 }
 @media (min-width: 1200px) {
   .index .sections .section__image,
