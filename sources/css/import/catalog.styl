@@ -217,6 +217,11 @@
 			color black
 			font-size 105%
 			border 0
+			.param__col
+				@media (max-width: scr_sm)
+					font-size 13px
+					line-height 1
+					transform rotate(-90deg) translateX(30px) translateY(-28px)
 			& + .param
 				border-top-color black
 		&__col

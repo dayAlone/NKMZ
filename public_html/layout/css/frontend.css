@@ -7482,6 +7482,17 @@ svg g {
   font-size: 105%;
   border: 0;
 }
+@media (max-width: 768px) {
+  .params .param--title .param__col {
+    font-size: 13px;
+    line-height: 1;
+    -webkit-transform: rotate(-90deg) translateX(30px) translateY(-28px);
+    -moz-transform: rotate(-90deg) translateX(30px) translateY(-28px);
+    -o-transform: rotate(-90deg) translateX(30px) translateY(-28px);
+    -ms-transform: rotate(-90deg) translateX(30px) translateY(-28px);
+    transform: rotate(-90deg) translateX(30px) translateY(-28px);
+  }
+}
 .params .param--title + .param {
   border-top-color: #000;
 }
