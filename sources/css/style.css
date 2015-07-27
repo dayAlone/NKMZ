@@ -3812,6 +3812,12 @@ svg g {
   background: -ms-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: linear-gradient(to right, rgba(236,238,241,0) 0%, #eceef1 100%);
 }
+@media (min-width: 768px) {
+  .params:after,
+  .params:before {
+    display: none;
+  }
+}
 .params:before {
   right: auto;
   left: 0;
