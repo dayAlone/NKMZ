@@ -3797,7 +3797,8 @@ svg g {
   width: 100%;
   position: relative;
 }
-.params:after {
+.params:after,
+.params:before {
   content: "";
   width: 60px;
   height: 100%;
@@ -3810,6 +3811,15 @@ svg g {
   background: -o-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: -ms-linear-gradient(left, rgba(236,238,241,0) 0%, #eceef1 100%);
   background: linear-gradient(to right, rgba(236,238,241,0) 0%, #eceef1 100%);
+}
+.params:before {
+  right: auto;
+  left: 0;
+  background: -webkit-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
+  background: -moz-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
+  background: -o-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
+  background: -ms-linear-gradient(left, #eceef1 0%, rgba(236,238,241,0) 100%);
+  background: linear-gradient(to right, #eceef1 0%, rgba(236,238,241,0) 100%);
 }
 .params .param {
   float: left;
