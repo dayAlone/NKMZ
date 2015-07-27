@@ -202,12 +202,14 @@
 .params
 	margin 30px 0
 	float left
+	overflow scroll
 	.param
 		float left
 		width 100%
 		font-size 90%
 		border-top 1px solid #ccd2d7
 		padding-top 8px
+		min-width 600px
 		& + .param
 			margin-top 5px
 		&  + .param--title
@@ -217,13 +219,6 @@
 			color black
 			font-size 105%
 			border 0
-			.param__col
-				@media (max-width: scr_sm)
-					font-size 13px
-					line-height 1
-					transform rotate(-90deg) translateX(30px) translateY(-28px)
-					span
-						min-width 60px
 			& + .param
 				border-top-color black
 		&__col

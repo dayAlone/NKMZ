@@ -7462,6 +7462,7 @@ svg g {
 .params {
   margin: 30px 0;
   float: left;
+  overflow: scroll;
 }
 .params .param {
   float: left;
@@ -7469,6 +7470,7 @@ svg g {
   font-size: 90%;
   border-top: 1px solid #ccd2d7;
   padding-top: 8px;
+  min-width: 600px;
 }
 .params .param + .param {
   margin-top: 5px;
@@ -7481,20 +7483,6 @@ svg g {
   color: #000;
   font-size: 105%;
   border: 0;
-}
-@media (max-width: 768px) {
-  .params .param--title .param__col {
-    font-size: 13px;
-    line-height: 1;
-    -webkit-transform: rotate(-90deg) translateX(30px) translateY(-28px);
-    -moz-transform: rotate(-90deg) translateX(30px) translateY(-28px);
-    -o-transform: rotate(-90deg) translateX(30px) translateY(-28px);
-    -ms-transform: rotate(-90deg) translateX(30px) translateY(-28px);
-    transform: rotate(-90deg) translateX(30px) translateY(-28px);
-  }
-  .params .param--title .param__col span {
-    min-width: 60px;
-  }
 }
 .params .param--title + .param {
   border-top-color: #000;
