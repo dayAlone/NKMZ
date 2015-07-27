@@ -7551,6 +7551,7 @@ svg g {
 .params .param--title a {
   color: #000;
   text-decoration: none;
+  background: transparent;
 }
 .params .param--title + .param {
   border-top-color: #000;
