@@ -201,12 +201,10 @@
 	catalogSectionHeight = height - $('.catalog .filter').outerHeight() - 16
 
 	cookie = $.cookie 'height'
-	if cookie
-		cookie = JSON.parse cookie
-		if cookie.height != height
-			$.cookie 'height', height, { expires: 1, path: '/' }
-			$.cookie 'index', indexSectionHeight, { expires: 1, path: '/' }
-			$.cookie 'catalog', catalogSectionHeight, { expires: 1, path: '/' }
+	if cookie != height
+		$.cookie 'height', height, { expires: 1, path: '/' }
+		$.cookie 'index', indexSectionHeight, { expires: 1, path: '/' }
+		$.cookie 'catalog', catalogSectionHeight, { expires: 1, path: '/' }
 
 	if $(window).height() > 800 && $(window).width() >= 1024
 		$('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css 'min-height', height
