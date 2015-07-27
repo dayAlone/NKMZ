@@ -5785,6 +5785,16 @@ svg g {
   display: inline-block;
   vertical-align: bottom;
 }
+.index .sections .section--4 .section__image,
+.catalog .sections .section--4 .section__image,
+.index .sections .section--6 .section__image,
+.catalog .sections .section--6 .section__image {
+  top: 2px;
+}
+.index .sections .section--4 .section__image,
+.catalog .sections .section--4 .section__image {
+  padding: 0 29px;
+}
 .index .sections .section__image,
 .catalog .sections .section__image {
   position: absolute;
