@@ -27,7 +27,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
             endforeach;
             ?>
         </div>
-	    <?=$item['PROPERTIES']['TEXT']['VALUE']['~TEXT']?>
+	    <?=html_entity_decode($item['PROPERTIES']['TEXT']['VALUE']['TEXT'])?>
     </div>
   </div>
 </div>
