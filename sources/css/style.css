@@ -3324,6 +3324,7 @@ svg g {
   -ms-filter: none;
   filter: none;
   right: -11px;
+  top: -7px;
 }
 .modal h4 {
   font-weight: 300;
