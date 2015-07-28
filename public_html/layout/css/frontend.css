@@ -6982,6 +6982,10 @@ svg g {
     width: 750px;
   }
 }
+.modal .lang {
+  position: relative;
+  top: -3px;
+}
 .modal .lang__trigger {
   font-size: 13px;
   font-weight: 400;
