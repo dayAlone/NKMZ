@@ -29156,6 +29156,8 @@ return PhotoSwipeUI_Default;
     }
   };
 
+  $('#Nav').modal();
+
   this.initNews = function() {
     $('.years .dropdown__select').on('change', function() {
       return location.href = $(this).val();

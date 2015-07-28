@@ -23,9 +23,25 @@
 		line-height 33px
 .feedback__success
 	display none
+
 .modal
+	z-index 30000000
+	@media (max-width: scr_sm)
+		background-color #fefefe
+		.modal-dialog
+			padding 3px 10px
 	&-lg
-		width 750px
+		@media (min-width: scr_md)
+			width 750px
+	.lang
+		&__trigger
+			font-size 13px
+			font-weight 400
+			margin-right 15px
+			&:first-of-type:after
+				background-color blue
+				opacity 1
+				right -11px
 	h4
 		font-weight 300
 		font-size 32px

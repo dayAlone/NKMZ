@@ -50,6 +50,31 @@
     </div>
   </div>
 </div>
+<div id="Nav" tabindex="-1" role="dialog" aria-hidden="true" data-parsley-validate class="modal fade">
+  <div class="modal-dialog modal-lg">
+	  <div class="m-margin-top xl-margin-bottom row">
+		  <div class="col-xs-6">
+			  <span class="lang">
+  				<a href="#" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
+  				<a href="#" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
+  			  </span>
+		  </div>
+		  <div class="col-xs-6 right">
+		  	<a data-dismiss="modal" href="#" class="close">Закрыть</a>
+		  </div>
+	  </div>
+	  <?
+		  $APPLICATION->IncludeComponent("bitrix:main.map", ".default", Array(
+			  "LEVEL"	=>	"3",
+			  "COL_NUM"	=>	"1",
+			  "SHOW_DESCRIPTION"	=>	"Y",
+			  "SET_TITLE"	=>	"Y",
+			  "CACHE_TIME"	=>	"36000000"
+			  )
+		  );
+	  ?>
+  </div>
+</div>
 <div id="Career" tabindex="-1" role="dialog" aria-hidden="true" data-parsley-validate class="modal fade">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">

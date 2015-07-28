@@ -130,6 +130,8 @@
 	if $('.modal__content').is ':hidden'
 		openModal block
 
+$('#Nav').modal()
+
 @initNews = ->
 	$('.years .dropdown__select').on 'change', ->
 		location.href = $(this).val()

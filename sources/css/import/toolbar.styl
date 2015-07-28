@@ -146,39 +146,6 @@ nav_rows = 1330px
 					margin-right 14px
 				@media (min-width: scr_lg) and (max-width: nav_rows)
 					margin-right 17px
-	.lang
-		@extend .toolbar svg
-		margin-right 3px
-		&__trigger
-			color gray
-			font-size 10px
-			font-weight 400
-			margin-right 11px
-			position relative
-			padding-bottom 2px
-			&:hover
-				color blue
-			&--active, &:hover
-				border-bottom 1px solid blue
-			&:first-of-type
-				&:after
-					content ""
-					width 1px
-					height 25px
-					background-color white
-					position absolute
-					right -6px
-					top -8px
-					opacity .2
-					@media (min-width: scr_lg)
-						right -10px
-			@media (min-width: scr_lg)
-				margin-right 15px
-			svg
-				width 6px
-				margin-left 15px
-				path
-					fill blue
 	.nav-trigger
 		color gray
 		font-size 16px
@@ -203,3 +170,36 @@ nav_rows = 1330px
 					fill blue
 		@media (min-width: scr_md)
 			display none
+.lang
+	@extend .toolbar svg
+	margin-right 3px
+	&__trigger
+		color gray
+		font-size 10px
+		font-weight 400
+		margin-right 11px
+		position relative
+		padding-bottom 2px
+		&:hover
+			color blue
+		&--active, &:hover
+			border-bottom 1px solid blue
+		&:first-of-type
+			&:after
+				content ""
+				width 1px
+				height 25px
+				background-color white
+				position absolute
+				right -6px
+				top -8px
+				opacity .2
+				@media (min-width: scr_lg)
+					right -10px
+		@media (min-width: scr_lg)
+			margin-right 15px
+		svg
+			width 6px
+			margin-left 15px
+			path
+				fill blue

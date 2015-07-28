@@ -48,7 +48,7 @@
             false);
       ?>
       <div class="toolbar__tools right">
-		  <a href="#" class="nav-trigger"><span>Меню</span><?=svg('nav')?></a>
+		  <a href="#Nav" data-toggle="modal" class="nav-trigger"><span>Меню</span><?=svg('nav')?></a>
 		  <div class="visible-md visible-lg">
 			  <span class="lang">
 				  <a href="#" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
