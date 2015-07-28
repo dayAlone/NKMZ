@@ -414,7 +414,9 @@
     out: function() {
       var el;
       el = $(this);
-      return el.mod('active', false);
+      return delay(200, function() {
+        return el.mod('active', false);
+      });
     }
   }).elem('frame').perfectScrollbar({
     suppressScrollX: true,

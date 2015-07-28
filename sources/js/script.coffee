@@ -308,12 +308,14 @@ $('#Feedback form').submit (e)->
         		$('input[name=captcha_word]').addClass('parsley-error')
         		getCaptcha()
 
+
 $('.dropdown').hoverIntent({
 	over: ->
 		$(this).mod 'active', true
 	out: ->
 		el = $(this)
-		el.mod 'active', false
+		delay 200, ->
+			el.mod 'active', false
 
 }).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
 
