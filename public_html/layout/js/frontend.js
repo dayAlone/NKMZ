@@ -29355,7 +29355,8 @@ return PhotoSwipeUI_Default;
     return e.preventDefault();
   });
 
-  $('.modal').on('show.bs.modal', function() {
+  $('.modal').on('shown.bs.modal', function(e) {
+    $('input[name="vacancy"]').val($(e.relatedTarget).parent().find('h2').text());
     return getCaptcha();
   });
 
@@ -29371,7 +29372,6 @@ return PhotoSwipeUI_Default;
       } else {
         el.block().mod('left', false);
       }
-      console.log(el.scrollLeft() + el.width(), el.find('.param').width());
       if (el.scrollLeft() + el.width() === el.find('.param').width()) {
         return el.block().mod('right', true);
       } else {
@@ -29416,6 +29416,56 @@ return PhotoSwipeUI_Default;
   }).elem('frame').perfectScrollbar({
     suppressScrollX: true,
     includePadding: true
+  });
+
+  $('.file__trigger').click(function(e) {
+    $(this).parent().find('input[type=file]').trigger('click');
+    return e.preventDefault();
+  });
+
+  $('input[type=file]').on('change', function() {
+    $('.form .file__trigger').removeClass('error');
+    return $('.file__name').text($(this).val().replace(/.+[\\\/]/, ""));
+  });
+
+  $('.feedback').elem('form').submit(function(e) {
+    var data;
+    e.preventDefault();
+    data = $(this).serialize();
+    return $.post('/include/send.php', data, function(data) {
+      data = $.parseJSON(data);
+      if (data.status === "ok") {
+        $('.feedback').elem('form').hide().addClass('hidden');
+        return $('.feedback').elem('success').show().removeClass('hidden');
+      } else if (data.status === "error") {
+        $('input[name=captcha_word]').addClass('parsley-error');
+        return getCaptcha();
+      }
+    });
+  });
+
+  $('#Career .form').submit(function(e) {
+    var data;
+    data = new FormData(this);
+    return $.ajax({
+      type: 'POST',
+      url: '/include/send.php',
+      data: data,
+      cache: false,
+      contentType: false,
+      processData: false,
+      mimeType: 'multipart/form-data',
+      success: function(data) {
+        data = $.parseJSON(data);
+        if (data.status === "ok") {
+          $('#Career .form').hide();
+          return $('#Career .success').show();
+        } else if (data.status === "error") {
+          $('#Career input[name=captcha_word]').addClass('parsley-error');
+          return getCaptcha();
+        }
+      }
+    });
   });
 
   initMap();

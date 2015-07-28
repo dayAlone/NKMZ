@@ -272,7 +272,8 @@ if $.browser.mobile == true
 $('.dropdown').elem('trigger').click (e)->
 	e.preventDefault()
 
-$('.modal').on 'show.bs.modal', ->
+$('.modal').on 'shown.bs.modal', (e)->
+	$('input[name="vacancy"]').val $(e.relatedTarget).parent().find('h2').text()
 	getCaptcha()
 
 scrollTimer = false
@@ -285,7 +286,6 @@ $('.params').elem('frame').on 'scroll', ->
 		else
 			el.block().mod 'left', false
 
-		console.log el.scrollLeft() + el.width(), el.find('.param').width()
 		if el.scrollLeft() + el.width() == el.find('.param').width()
 			el.block().mod 'right', true
 		else
@@ -316,8 +316,47 @@ $('.dropdown').hoverIntent({
 		el = $(this)
 		delay 200, ->
 			el.mod 'active', false
-
 }).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
+
+$('.file__trigger').click (e)->
+	$(this).parent().find('input[type=file]').trigger 'click'
+	e.preventDefault()
+
+$('input[type=file]').on 'change', ()->
+	$('.form .file__trigger').removeClass 'error'
+	$('.file__name').text($(this).val().replace(/.+[\\\/]/, ""))
+
+$('.feedback').elem('form').submit (e)->
+		e.preventDefault()
+		data = $(this).serialize()
+		$.post '/include/send.php', data,
+	        (data) ->
+	        	data = $.parseJSON(data)
+	        	if data.status == "ok"
+	        		$('.feedback').elem('form').hide().addClass 'hidden'
+	        		$('.feedback').elem('success').show().removeClass 'hidden'
+	        	else if data.status == "error"
+	        		$('input[name=captcha_word]').addClass('parsley-error')
+	        		getCaptcha()
+
+$('#Career .form').submit (e)->
+	data = new FormData(this)
+	$.ajax
+		type        : 'POST'
+		url         : '/include/send.php'
+		data        : data
+		cache       : false
+		contentType : false
+		processData : false
+		mimeType    : 'multipart/form-data'
+		success     : (data) ->
+			data = $.parseJSON(data)
+			if data.status == "ok"
+				$('#Career .form').hide()
+				$('#Career .success').show()
+			else if data.status == "error"
+				$('#Career input[name=captcha_word]').addClass('parsley-error')
+				getCaptcha()
 
 initMap()
 

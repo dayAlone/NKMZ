@@ -3272,7 +3272,8 @@ svg g {
   display: none;
 }
 .parsley-errors-list.filled + a.file__trigger {
-  background: #f00 !important;
+  border-color: #f00 !important;
+  color: #f00 !important;
 }
 .file .row {
   margin-top: 4px;
