@@ -21,18 +21,27 @@
                   </a>
                   <select class="dropdown__select">
                       <option><?=GetMessage($item['CODE'])?></option>
-                      <?foreach($item['VALUES'] as $val):?>
-                        <option value="<?=$val['CONTROL_NAME']?>"><?=$val['VALUE']?></option>
-                      <?endforeach;?>
+                      <?
+                      foreach($item['VALUES'] as $val):
+                          if(strlen($val['VALUE'])>0):?>
+                            <option value="<?=$val['CONTROL_NAME']?>"><?=$val['VALUE']?></option><?
+                            endif;
+                        endforeach;?>
                   </select>
                   <div class="dropdown__frame">
-                      <?foreach($item['VALUES'] as $val):?>
-                        <a href="#" class="dropdown__item" data-id="<?=$val['CONTROL_NAME']?>"> <span><?=$val['VALUE']?></span></a>
-                      <?endforeach;?>
+                      <?
+                      foreach($item['VALUES'] as $val):
+                          if(strlen($val['VALUE'])>0):?>
+                            <a href="#" class="dropdown__item" data-id="<?=$val['CONTROL_NAME']?>"> <span><?=$val['VALUE']?></span></a><?
+                            endif;
+                        endforeach;?>
                       <div class="hidden">
-                          <?foreach($item['VALUES'] as $val):?>
-                            <input type="checkbox" name="<?=$val['CONTROL_NAME']?>" value="Y">
-                          <?endforeach;?>
+                          <?
+                          foreach($item['VALUES'] as $val):
+                              if(strlen($val['VALUE'])>0):?>
+                                <input type="checkbox" name="<?=$val['CONTROL_NAME']?>" value="Y"><?
+                                endif;
+                            endforeach;?>
                       </div>
                   </div>
               </div>
