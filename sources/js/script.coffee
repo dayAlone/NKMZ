@@ -130,7 +130,7 @@
 	if $('.modal__content').is ':hidden'
 		openModal block
 
-$('#Nav').modal()
+#$('#Nav').modal()
 
 @initNews = ->
 	$('.years .dropdown__select').on 'change', ->
