@@ -131,6 +131,8 @@
 		openModal block
 
 @initNews = ->
+	$('.years .dropdown__select').on 'change', ->
+		location.href = $(this).val()
 	$('.news').elem('title').click (e)->
 		block = $(this).block()
 		if !block.hasMod 'active'
@@ -166,17 +168,28 @@
 @initScroll = ->
 	$('.page__content').perfectScrollbar({suppressScrollX: true, includePadding: true})
 
+@setFilterValue = ($block, id, text)->
+	$block.find('input').prop 'checked', false
+	$block.find("input[name='#{id}']").prop 'checked', true
+	$block.find('.dropdown__trigger span').text text
+	$block.mod 'active', false
+
+
 @initFilter = ->
+	$('.filter .dropdown__select').on 'change', ->
+		$block = $(this).block()
+		id = $(this).val()
+		if id
+			$block.elem('trigger').mod 'active', false
+			setFilterValue $block, id, $(this).find('option:selected').text()
+
 	$('.filter .dropdown__item').click (e)->
 		$block = $(this).block()
 		id = $(this).data 'id'
-		$block.find('input').prop 'checked', false
-		$block.find("input[name='#{id}']").prop 'checked', true
-		$block.find('.dropdown__trigger span').text $(this).text()
-		$block.mod 'active', false
+		setFilterValue $block, id, $(this).text()
 		e.preventDefault()
 
-@mapInit = ->
+@initMap = ->
 	if $('[data-map]').length > 0
 		$('[data-map]').each ->
 			$map = $(this)
@@ -251,6 +264,12 @@ delay 300, ()->
 		size()
 	).fotorama();
 
+if $.browser.mobile == true
+	$('body').addClass 'mobile'
+
+$('.dropdown').elem('trigger').click (e)->
+	e.preventDefault()
+
 $('.modal').on 'show.bs.modal', ->
 	getCaptcha()
 
@@ -296,7 +315,7 @@ $('.dropdown').hoverIntent({
 
 }).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
 
-mapInit()
+initMap()
 
 if $('.services').length > 0
 	initServices()

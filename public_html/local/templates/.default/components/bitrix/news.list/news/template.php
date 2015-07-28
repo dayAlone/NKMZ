@@ -1,5 +1,5 @@
 <?if(count($arResult['ITEMS'])>0):?>
-<div class="news-list visible-md visible-lg news-list--slider">
+<div class="news-list <?=$arParams['CLASS']?>">
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div class="news">
 		  <div class="news__date"><?=date('d.m.Y', strtotime($item['ACTIVE_FROM']))?></div>

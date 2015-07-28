@@ -19,6 +19,12 @@
                   <a href="#" class="dropdown__trigger">
                       <span><?=($current ? $current : GetMessage($item['CODE']))?></span><?=svg('down')?>
                   </a>
+                  <select class="dropdown__select">
+                      <option><?=GetMessage($item['CODE'])?></option>
+                      <?foreach($item['VALUES'] as $val):?>
+                        <option value="<?=$val['CONTROL_NAME']?>"><?=$val['VALUE']?></option>
+                      <?endforeach;?>
+                  </select>
                   <div class="dropdown__frame">
                       <?foreach($item['VALUES'] as $val):?>
                         <a href="#" class="dropdown__item" data-id="<?=$val['CONTROL_NAME']?>"> <span><?=$val['VALUE']?></span></a>

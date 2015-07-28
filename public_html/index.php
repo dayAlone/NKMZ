@@ -31,6 +31,7 @@ $APPLICATION->SetPageProperty('body_class', "index");
 					"SET_TITLE"            => "N",
 					"SHOW_MORE"            => "Y",
 					"DISPLAY_BOTTOM_PAGER" => "N",
+					"CLASS"                => "visible-md visible-lg news-list--slider"
 				),
 				false
 			);
@@ -53,9 +54,11 @@ $APPLICATION->SetPageProperty('body_class', "index");
 			$APPLICATION->IncludeComponent("bitrix:catalog.smart.filter", "filter",
 				array(
 					"IBLOCK_TYPE"         => "content_".LANGUAGE_ID,
-					"IBLOCK_ID"           => 3,
-					"CACHE_TYPE"          => "A",
-					"CACHE_TIME"          => "36000"
+	                "IBLOCK_ID"           => 3,
+	                "CACHE_TYPE"          => "A",
+	                "CACHE_TIME"          => "36000",
+	                "SECTION_ID"          => 0,
+	                "FILTER_NAME"         => "arCatalogFilter"
 				)
 			);
 		?>
