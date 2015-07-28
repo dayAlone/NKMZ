@@ -5914,11 +5914,12 @@ svg g {
 }
 @media (min-width: 768px) {
   .index .slider__content {
-    margin-top: -77px;
+    margin-top: 0px;
   }
 }
 @media (min-width: 992px) {
   .index .slider__content {
+    margin-top: -77px;
     max-width: 550px;
   }
 }
@@ -6970,13 +6971,14 @@ svg g {
 }
 .modal {
   z-index: 30000000;
+  background-color: #fefefe;
 }
-@media (max-width: 768px) {
+.modal .modal-dialog {
+  padding: 3px 10px;
+}
+@media (min-width: 992px) {
   .modal {
-    background-color: #fefefe;
-  }
-  .modal .modal-dialog {
-    padding: 3px 10px;
+    background-color: rgba(0,0,0,0.7);
   }
 }
 @media (min-width: 992px) {

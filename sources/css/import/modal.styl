@@ -30,10 +30,11 @@
 		display none !important
 .modal
 	z-index 30000000
-	@media (max-width: scr_sm)
-		background-color #fefefe
-		.modal-dialog
-			padding 3px 10px
+	background-color #fefefe
+	.modal-dialog
+		padding 3px 10px
+	@media (min-width: scr_md)
+		background-color rgba(0,0,0,.7)
 	&-lg
 		@media (min-width: scr_md)
 			width 750px
