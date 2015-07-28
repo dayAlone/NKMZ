@@ -2092,10 +2092,6 @@ svg g {
   -o-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 @media (min-width: 1555px) {
   .index .sections .section__name,
