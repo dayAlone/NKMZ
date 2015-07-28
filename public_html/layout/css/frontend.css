@@ -6966,6 +6966,11 @@ svg g {
 .feedback__success {
   display: none;
 }
+@media (min-width: 992px) {
+  #Nav {
+    display: none !important;
+  }
+}
 .modal {
   z-index: 30000000;
 }
