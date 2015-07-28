@@ -68,7 +68,7 @@
 			  "LEVEL"	=>	"3",
 			  "COL_NUM"	=>	"1",
 			  "SHOW_DESCRIPTION"	=>	"Y",
-			  "SET_TITLE"	=>	"Y",
+			  "SET_TITLE"	=>	"N",
 			  "CACHE_TIME"	=>	"36000000"
 			  )
 		  );
