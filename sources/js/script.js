@@ -434,10 +434,10 @@
   });
 
   $('.feedback').elem('form').submit(function(e) {
-    var data;
+    var request;
     e.preventDefault();
-    data = $(this).serialize();
-    return $.post('/include/send.php', data, function(data) {
+    request = $(this).serialize();
+    return $.post('/include/send.php', request, function(data) {
       data = $.parseJSON(data);
       if (data.status === "ok") {
         $('.feedback').elem('form').hide().addClass('hidden');

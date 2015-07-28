@@ -327,17 +327,17 @@ $('input[type=file]').on 'change', ()->
 	$('.file__name').text($(this).val().replace(/.+[\\\/]/, ""))
 
 $('.feedback').elem('form').submit (e)->
-		e.preventDefault()
-		data = $(this).serialize()
-		$.post '/include/send.php', data,
-	        (data) ->
-	        	data = $.parseJSON(data)
-	        	if data.status == "ok"
-	        		$('.feedback').elem('form').hide().addClass 'hidden'
-	        		$('.feedback').elem('success').show().removeClass 'hidden'
-	        	else if data.status == "error"
-	        		$('input[name=captcha_word]').addClass('parsley-error')
-	        		getCaptcha()
+	e.preventDefault()
+	request = $(this).serialize()
+	$.post '/include/send.php', request,
+        (data) ->
+        	data = $.parseJSON(data)
+        	if data.status == "ok"
+        		$('.feedback').elem('form').hide().addClass 'hidden'
+        		$('.feedback').elem('success').show().removeClass 'hidden'
+        	else if data.status == "error"
+        		$('input[name=captcha_word]').addClass('parsley-error')
+        		getCaptcha()
 
 $('#Career .form').submit (e)->
 	data = new FormData(this)
