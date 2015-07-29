@@ -3719,6 +3719,18 @@ svg g {
     margin-top: 25px;
   }
 }
+@media (min-width: 768px) and (max-width: 1555px) {
+  .catalog .filter .filter__content > .row {
+    margin-top: 0px;
+  }
+  .catalog .filter .filter__content > .row .col-lg-3:not(.col-sm-4) {
+    width: 100%;
+  }
+  .catalog .filter .filter__content > .row .col-sm-6:nth-child(3),
+  .catalog .filter .filter__content > .row .col-sm-6:nth-child(4) {
+    margin-top: 0px;
+  }
+}
 @media (min-width: 992px) and (max-width: 1200px) {
   .catalog .filter {
     min-height: 100px;
