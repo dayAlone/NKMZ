@@ -5545,8 +5545,8 @@ svg g {
 .index .filter .dropdown__frame,
 .index .news-list--mobile .dropdown__frame,
 .catalog .filter .dropdown__frame {
-  max-height: 166px;
-  min-width: 160%;
+  max-height: 143px;
+  min-width: calc(100% + 34px);
 }
 .index .filter .dropdown__item,
 .index .news-list--mobile .dropdown__item,
@@ -5570,7 +5570,7 @@ svg g {
   .index .filter .dropdown__item,
   .index .news-list--mobile .dropdown__item,
   .catalog .filter .dropdown__item {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 .index .filter .dropdown__item:hover,
@@ -6639,7 +6639,6 @@ svg g {
 }
 .page .container {
   padding: 0;
-  overflow-x: hidden;
 }
 @media (min-width: 992px) {
   .page .container {
