@@ -5725,15 +5725,15 @@ svg g {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  min-height: 340px;
+  min-height: 352px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1555px) {
   .index .sections .section,
   .catalog .sections .section {
     min-height: 395px;
   }
 }
-@media (min-width: 1200px) and (min-height: 700px) {
+@media (min-width: 1555px) and (min-height: 700px) {
   .index .sections .section,
   .catalog .sections .section {
     min-height: calc(100vh - 418px);
