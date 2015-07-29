@@ -6003,7 +6003,6 @@ svg g {
 }
 .index .news-list--mobile {
   margin-top: 15px;
-  padding: 1px 30px 30px;
 }
 .index .news-list--slider {
   position: absolute;
@@ -6025,6 +6024,9 @@ svg g {
   content: "";
   width: 100%;
   border-top: 1px solid #5c606a;
+}
+.index .news-list__title {
+  margin-bottom: 25px;
 }
 .index .news-list__more {
   font-size: 12px;

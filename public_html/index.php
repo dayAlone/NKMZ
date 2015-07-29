@@ -63,21 +63,22 @@ $APPLICATION->SetPageProperty('body_class', "index");
 			);
 		?>
 	</div>
-	<?
-		$APPLICATION->IncludeComponent("bitrix:news.list", "news-index",
-			array(
-				"IBLOCK_ID"            => "2",
-				"NEWS_COUNT"           => "2",
-				"SORT_BY1"             => "ACTIVE_FROM",
-				"SORT_ORDER1"          => "DESC",
-				"CACHE_TYPE"           => "A",
-				'PROPERTY_CODE'        => array(''),
-				"SET_TITLE"            => "N"
-			),
-			false
-		);
-	?>
 </div>
+
+<?
+	$APPLICATION->IncludeComponent("bitrix:news.list", "news-index",
+		array(
+			"IBLOCK_ID"            => "2",
+			"NEWS_COUNT"           => "2",
+			"SORT_BY1"             => "ACTIVE_FROM",
+			"SORT_ORDER1"          => "DESC",
+			"CACHE_TYPE"           => "A",
+			'PROPERTY_CODE'        => array(''),
+			"SET_TITLE"            => "N"
+		),
+		false
+	);
+?>
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
