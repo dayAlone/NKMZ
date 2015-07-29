@@ -314,7 +314,7 @@ $('.dropdown').hoverIntent({
 		$(this).mod 'active', true
 	out: ->
 		el = $(this)
-		delay 200, ->
+		delay 300, ->
 			el.mod 'active', false
 }).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
 

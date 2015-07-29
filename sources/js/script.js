@@ -414,7 +414,7 @@
     out: function() {
       var el;
       el = $(this);
-      return delay(200, function() {
+      return delay(300, function() {
         return el.mod('active', false);
       });
     }
