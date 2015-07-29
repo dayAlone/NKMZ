@@ -1876,7 +1876,8 @@ svg g {
 .index .filter .dropdown__frame,
 .index .news-list--mobile .dropdown__frame,
 .catalog .filter .dropdown__frame {
-  max-height: 96px;
+  max-height: 166px;
+  min-width: 160%;
 }
 .index .filter .dropdown__item,
 .index .news-list--mobile .dropdown__item,
@@ -1891,7 +1892,7 @@ svg g {
   .index .filter .dropdown__item,
   .index .news-list--mobile .dropdown__item,
   .catalog .filter .dropdown__item {
-    font-size: 10px;
+    font-size: 12px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -1900,7 +1901,7 @@ svg g {
   .index .filter .dropdown__item,
   .index .news-list--mobile .dropdown__item,
   .catalog .filter .dropdown__item {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 .index .filter .dropdown__item:hover,
