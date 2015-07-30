@@ -7285,7 +7285,8 @@ svg g {
     background-color: rgba(48,157,255,0.1);
     color: #1b212b;
   }
-  .catalog .page__nav .nav__item--active {
+  .catalog .page__nav .nav__item--active,
+  .catalog .page__nav .nav__item--active:hover {
     background-color: #309dff;
     color: #fefefe;
   }
