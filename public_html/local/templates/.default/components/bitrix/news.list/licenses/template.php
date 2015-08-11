@@ -3,7 +3,7 @@
 	<?foreach ($arResult['ITEMS'] as $item):
 		?>
 	<a href="#" <?=(!$arResult['SHOW_ALL']?"data-pictures='".json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])."'":"")?> class="licence">
-		<div class="licence__image"><img src="/layout/images/licence-2.jpg"></div>
+		<div class="licence__image"><img src="<?=$item["PROPERTIES"]['GALLERY']['VALUE'][0]['src']?>"></div>
 		<span class="licence__name"><?=$item['NAME']?></span>
 	</a>
 	<?endforeach;?>
