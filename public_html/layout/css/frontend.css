@@ -6646,6 +6646,7 @@ svg g {
 .partners .partner {
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
 }
 .partners .partner img {
   max-width: 90%;
@@ -6864,7 +6865,8 @@ svg g {
 .licencies .licence__name {
   display: inline-block;
   font-size: 13px;
-  max-width: 95%;
+  width: 100%;
+  padding: 0 5%;
 }
 .licencies .licence__image {
   display: inline-block;
