@@ -6426,6 +6426,9 @@ svg g {
     font-size: 40px;
   }
 }
+.page__content {
+  float: left;
+}
 .page__content,
 .page__side,
 .page__modal {
