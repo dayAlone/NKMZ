@@ -2759,6 +2759,7 @@ svg g {
 }
 .page__content {
   float: left;
+  width: 100%;
 }
 .page__content,
 .page__side,
@@ -2962,11 +2963,9 @@ svg g {
     margin-left: -7px;
   }
 }
-.page .container {
-  padding: 0;
-}
 @media (min-width: 992px) {
   .page .container {
+    padding: 0;
     position: relative;
   }
 }
