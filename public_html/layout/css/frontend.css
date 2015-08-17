@@ -7570,7 +7570,7 @@ svg g {
 }
 .params__frame {
   float: left;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   position: relative;
   -webkit-overflow-scrolling: touch;
