@@ -277,7 +277,7 @@
 	padding-bottom 40px
 	.product
 		padding 30px 0 15px
-
+		full-width()
 		&__title
 			margin-bottom 30px
 			@media (min-width: scr_md)
@@ -335,3 +335,5 @@
 				width (100/2)%
 			@media (min-width: scr_lg)
 				width (100/3)%
+				&:nth-child(3n+1)
+					border-left 0
