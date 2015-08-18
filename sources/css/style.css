@@ -4060,6 +4060,7 @@ svg g {
   padding: 0 50px 0 20px;
   margin-bottom: 30px;
   width: 100%;
+  min-height: 350px;
 }
 .products .product--vertical + .product--vertical {
   border-top: 0;
