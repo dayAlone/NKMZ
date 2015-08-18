@@ -316,17 +316,18 @@
 			border-top 1px solid #cbd2d7
 		&__divider
 			full-width()
-			& + .product--vertical
-				border-left 1px solid #cbd2d7
+
 		&--vertical
 			float left
 			padding 0 50px 0 50px
 			margin-bottom 50px
 			width 100%
 			min-height 350px
+			border-left 1px solid #cbd2d7
 			& + .product--vertical
 				border-top 0
-
+			&:first-of-type
+				border-left 0
 			.product
 				&__title
 					margin-top 10px
@@ -340,4 +341,4 @@
 			@media (min-width: scr_sm)
 				width (100/2)%
 			@media (min-width: scr_lg)
-				width (100/3)%
+				width (100/2)%
