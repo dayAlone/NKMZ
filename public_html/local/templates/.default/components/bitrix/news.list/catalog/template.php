@@ -2,8 +2,7 @@
 <div class="products">
 	<?foreach ($arResult['ITEMS'] as $key => $item):
 		if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):
-			if($key % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
-			if($key % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
+			if($key % 2 == 0):?> <div class="product__divider hidden-xs"></div> <?endif;
 			?>
 		<div class="product product--vertical">
 			<div class="row">

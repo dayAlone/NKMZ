@@ -4006,11 +4006,6 @@ svg g {
 .products {
   padding-bottom: 40px;
 }
-@media (min-width: 1200px) {
-  .products .visible-lg + .product--vertical {
-    border-left: 0;
-  }
-}
 .products .product {
   padding: 30px 0 15px;
   float: left;
@@ -4067,6 +4062,9 @@ svg g {
 .products .product__divider {
   float: left;
   width: 100%;
+}
+.products .product__divider + .product--vertical {
+  border-left: 0;
 }
 .products .product--vertical {
   float: left;
