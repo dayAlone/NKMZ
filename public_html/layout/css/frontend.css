@@ -7675,6 +7675,11 @@ svg g {
 .products {
   padding-bottom: 40px;
 }
+@media (min-width: 1200px) {
+  .products .visible-lg + .product--vertical {
+    border-left: 0;
+  }
+}
 .products .product {
   padding: 30px 0 15px;
   float: left;
@@ -7764,9 +7769,6 @@ svg g {
 @media (min-width: 1200px) {
   .products .product--vertical {
     width: 33.333333333333336%;
-  }
-  .products .product--vertical:nth-child(3n+1) {
-    border-left: 0;
   }
 }
 @media (min-width: 768px) {
