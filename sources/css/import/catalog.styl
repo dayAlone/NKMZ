@@ -316,6 +316,8 @@
 			border-top 1px solid #cbd2d7
 		&__divider
 			full-width()
+			& + .product--vertical
+				border-left 1px solid #cbd2d7
 		&--vertical
 			float left
 			padding 0 50px 0 50px
@@ -324,7 +326,7 @@
 			min-height 350px
 			& + .product--vertical
 				border-top 0
-				border-left 1px solid #cbd2d7
+
 			.product
 				&__title
 					margin-top 10px
