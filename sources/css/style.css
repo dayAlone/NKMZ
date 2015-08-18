@@ -4055,10 +4055,14 @@ svg g {
   margin-top: 50px;
   border-top: 1px solid #cbd2d7;
 }
+.products .product__divider {
+  float: left;
+  width: 100%;
+}
 .products .product--vertical {
   float: left;
   padding: 0 50px 0 50px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   width: 100%;
   min-height: 350px;
 }

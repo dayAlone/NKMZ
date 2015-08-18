@@ -17,7 +17,11 @@
 				</div>
 			</div>
 		</div>
-		<?else:?>
+
+		<?
+			if($key % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
+			if($key % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
+		else:?>
 		<div class="product">
 			<div class="row product__title">
 				<div class="col-md-7 col-lg-6">
