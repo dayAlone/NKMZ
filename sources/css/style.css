@@ -1655,7 +1655,7 @@ svg g {
 .pages {
   width: 100%;
   border-top: 1px solid #cbd2d7;
-  padding-top: 25px;
+  padding: 25px 0;
   margin-top: -20px;
 }
 .pages__item {

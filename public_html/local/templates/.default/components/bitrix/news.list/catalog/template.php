@@ -1,8 +1,11 @@
 <?if(count($arResult['ITEMS'])>0):?>
 <div class="products">
-	<?foreach ($arResult['ITEMS'] as $key => $item):
+	<?
+	$x = 0;
+	foreach ($arResult['ITEMS'] as $key => $item):
 		if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):
-			if($key % 2 == 0 && $key != 0):?> <div class="product__divider hidden-xs"></div> <?endif;
+			if($x % 2 == 0 && $x != 0):?> <div class="product__divider hidden-xs"></div> <?endif;
+			$x++;
 			?>
 		<div class="product product--vertical">
 			<div class="row">
