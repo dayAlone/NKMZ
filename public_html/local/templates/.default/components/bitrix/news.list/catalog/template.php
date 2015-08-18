@@ -6,10 +6,10 @@
 			?>
 		<div class="product product--vertical">
 			<div class="row">
-				<div class="col-xs-3">
+				<div class="col-xs-4 col-lg-3">
 					<a href="<?=$item['DETAIL_PAGE_URL']?>" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
 				</div>
-				<div class="col-xs-9">
+				<div class="col-xs-8 col-lg-9">
 					<div class="product__content">
 						<div class="product__title">
 							<h3><a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a></h3>
