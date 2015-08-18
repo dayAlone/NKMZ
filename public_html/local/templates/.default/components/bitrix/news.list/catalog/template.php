@@ -1,7 +1,10 @@
 <?if(count($arResult['ITEMS'])>0):?>
 <div class="products">
 	<?foreach ($arResult['ITEMS'] as $key => $item):
-		if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):?>
+		if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):
+			if($key % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
+			if($key % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
+			?>
 		<div class="product product--vertical">
 			<div class="row">
 				<div class="col-lg-3">
@@ -19,8 +22,6 @@
 		</div>
 
 		<?
-			if($key+1 % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
-			if($key+1 % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
 		else:?>
 		<div class="product">
 			<div class="row product__title">
