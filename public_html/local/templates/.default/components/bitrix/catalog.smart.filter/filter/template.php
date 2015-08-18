@@ -29,6 +29,7 @@
                         endforeach;?>
                   </select>
                   <div class="dropdown__frame">
+                      <a href="#" class="dropdown__item" data-id="0"> <span><?=GetMessage($item['CODE'])?></span></a>
                       <?
                       foreach($item['VALUES'] as $val):
                           if(strlen($val['VALUE'])>0):?>
