@@ -2961,7 +2961,7 @@ svg g {
 .modal .close:hover:before {
   background-color: #309dff;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .page__content {
     margin-right: -7px;
     float: none;
@@ -3567,10 +3567,8 @@ svg g {
     filter: alpha(opacity=80);
   }
 }
-@media (min-width: 992px) {
-  .catalog--list .filter {
-    display: block;
-  }
+.catalog--list .filter {
+  display: block !important;
 }
 .catalog--list .page {
   padding-top: 82px;
@@ -3724,8 +3722,12 @@ svg g {
   -o-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  display: none;
 }
 @media (min-width: 768px) and (max-width: 992px) {
+  .catalog .filter {
+    display: block;
+  }
   .catalog .filter .col-sm-6 {
     margin-top: 17px;
   }

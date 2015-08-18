@@ -1,8 +1,7 @@
 .catalog
 	&--list
 		.filter
-			@media (min-width: scr_md)
-				display block
+			display block !important
 		.page
 			padding-top 82px
 	.page
@@ -105,7 +104,9 @@
 		float left
 		width 100%
 		t min-height
+		display none
 		@media (min-width: scr_sm) and (max-width: scr_md)
+			display block
 			.col-sm-6
 				margin-top 17px
 			.col-sm-8, .col-sm-4
