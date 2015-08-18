@@ -7745,6 +7745,10 @@ svg g {
 .products .product__divider {
   float: left;
   width: 100%;
+  margin-bottom: 50px;
+}
+.products .product__divider--first {
+  margin-bottom: 0px;
 }
 .products .product__divider + .product--vertical {
   border-left: 0;
@@ -7761,7 +7765,6 @@ svg g {
     border-left: 1px solid #cbd2d7;
     border-top: 0;
     padding: 0 50px 0 50px;
-    margin-bottom: 50px;
   }
 }
 .products .product--vertical:first-of-type {
