@@ -20,7 +20,7 @@
                       <span><?=($current ? $current : GetMessage($item['CODE']))?></span><?=svg('down')?>
                   </a>
                   <select class="dropdown__select">
-                      <option><?=GetMessage($item['CODE'])?></option>
+                      <option><?=GetMessage('ALL')?></option>
                       <?
                       foreach($item['VALUES'] as $val):
                           if(strlen($val['VALUE'])>0):?>
@@ -29,7 +29,7 @@
                         endforeach;?>
                   </select>
                   <div class="dropdown__frame">
-                      <a href="#" class="dropdown__item" data-id="0"> <span><?=GetMessage($item['CODE'])?></span></a>
+                      <a href="#" class="dropdown__item" data-id="0"> <span><?=GetMessage('ALL')?></span></a>
                       <?
                       foreach($item['VALUES'] as $val):
                           if(strlen($val['VALUE'])>0):?>

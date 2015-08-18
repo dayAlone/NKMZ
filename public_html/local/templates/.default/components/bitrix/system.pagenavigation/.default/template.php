@@ -3,7 +3,7 @@ $this->setFrameMode(true);
 if($arResult["NavPageCount"]>1):
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? str_replace('&amp;short=Y', '', $arResult["NavQueryString"])."&amp;" : "");
 ?>
-<div class="pages">
+<div class="pages full-width">
 	<?
 	$i = $arResult["nStartPage"];
 	while($i <= $arResult["nEndPage"]):?>
@@ -18,6 +18,6 @@ $strNavQueryString = ($arResult["NavQueryString"] != "" ? str_replace('&amp;shor
 			<a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>SHOWALL_<?=$arResult["NavNum"]?>=1" rel="nofollow" class="pages__item pages__item--all <?=($i==$arResult["NavPageNomer"]?'pages__item--active':"")?>">Показать все</a>
 		<?endif?>
 	<?endif?>
-	
+
 </div>
 <?endif;?>

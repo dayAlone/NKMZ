@@ -19,8 +19,10 @@ elseif(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['set_filter'])):
 	  array(
 	      "IBLOCK_ID"     => "3",
 	      "NEWS_COUNT"    => "20",
-	      "SORT_BY1"      => "SORT",
+	      "SORT_BY1"      => "IBLOCK_SECTION_ID",
 	      "SORT_ORDER1"   => "ASC",
+		  "SORT_BY2"      => "SORT",
+	      "SORT_ORDER2"   => "ASC",
 	      "CACHE_TYPE"    => "A",
 	      "SET_TITLE"     => "N",
 		  "FILTER_NAME"   => "arCatalogFilter",
