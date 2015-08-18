@@ -3567,6 +3567,9 @@ svg g {
     filter: alpha(opacity=80);
   }
 }
+.catalog--search .page__nav {
+  display: none;
+}
 .catalog--list .filter {
   display: block !important;
 }

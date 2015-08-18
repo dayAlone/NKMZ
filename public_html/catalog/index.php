@@ -1,6 +1,11 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Продукция');
+if(!isset($_REQUEST['set_filter']))
+	$APPLICATION->SetTitle('Продукция');
+else {
+	$APPLICATION->SetTitle('Результаты подбора оборудования');
+	$APPLICATION->SetPageProperty('body_class', "catalog catalog--search");
+}
 global $arCatalogFilter;
 if(isset($_REQUEST['ELEMENT_CODE'])):
 	$APPLICATION->IncludeComponent("bitrix:news.detail","catalog",Array(
@@ -20,7 +25,7 @@ elseif(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['set_filter'])):
 	      "IBLOCK_ID"     => "3",
 	      "NEWS_COUNT"    => "20",
 	      "SORT_BY1"      => "IBLOCK_SECTION_ID",
-	      "SORT_ORDER1"   => "ASC",
+	      "SORT_ORDER1"   => "DESC",
 		  "SORT_BY2"      => "SORT",
 	      "SORT_ORDER2"   => "ASC",
 	      "CACHE_TYPE"    => "A",
