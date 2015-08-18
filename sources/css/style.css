@@ -3567,6 +3567,10 @@ svg g {
     filter: alpha(opacity=80);
   }
 }
+.catalog .pages {
+  float: left;
+  width: 100%;
+}
 .catalog--list .filter {
   display: block !important;
 }
