@@ -7792,6 +7792,10 @@ svg g {
     width: 50%;
   }
 }
+.products .product:not(.product--vertical) + .product__divider {
+  border-top: 1px solid #cbd2d7;
+  margin-top: 40px;
+}
 @media (min-width: 768px) {
   .albums {
     margin-right: -7px;
