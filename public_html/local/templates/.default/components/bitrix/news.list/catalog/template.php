@@ -1,6 +1,6 @@
 <?if(count($arResult['ITEMS'])>0):?>
 <div class="products">
-	<?foreach ($arResult['ITEMS'] as $item):
+	<?foreach ($arResult['ITEMS'] as $key => $item):
 		if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):?>
 		<div class="product product--vertical">
 			<div class="row">
