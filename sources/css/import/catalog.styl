@@ -308,7 +308,7 @@
 			p:last-of-type
 				margin-bottom 0px
 
-		& + .product
+		& + .product:not(.product--vertical)
 			margin-top 20px
 			border-top 1px solid #cbd2d7
 
@@ -320,7 +320,6 @@
 			min-height 350px
 			& + .product--vertical
 				border-top 0
-				margin-top 0px !important
 				border-left 1px solid #cbd2d7
 			.product
 				&__title

@@ -4051,7 +4051,7 @@ svg g {
 .products .product__description p:last-of-type {
   margin-bottom: 0px;
 }
-.products .product + .product {
+.products .product + .product:not(.product--vertical) {
   margin-top: 20px;
   border-top: 1px solid #cbd2d7;
 }
@@ -4064,7 +4064,6 @@ svg g {
 }
 .products .product--vertical + .product--vertical {
   border-top: 0;
-  margin-top: 0px !important;
   border-left: 1px solid #cbd2d7;
 }
 .products .product--vertical .product__title {
