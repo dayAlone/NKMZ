@@ -2785,7 +2785,7 @@ svg g {
   .page__content,
   .page__side,
   .page__modal {
-    max-height: 641px;
+    max-height: 560px;
     overflow: hidden;
   }
 }
