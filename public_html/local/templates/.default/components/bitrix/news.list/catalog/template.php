@@ -19,8 +19,8 @@
 		</div>
 
 		<?
-			if($key % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
-			if($key % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
+			if($key+1 % 3 == 0):?> <div class="product__divider visible-lg"></div> <?endif;
+			if($key+1 % 2 == 0):?> <div class="product__divider visible-sm visible-md"></div> <?endif;
 		else:?>
 		<div class="product">
 			<div class="row product__title">
