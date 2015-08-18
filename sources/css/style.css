@@ -4026,13 +4026,17 @@ svg g {
     vertical-align: middle;
   }
 }
-.products .product__title h3 {
+.products .product__title h3,
+.products .product__title h2,
+.products .product__title h4 {
   font-weight: 300;
   margin-top: 0px;
   margin-bottom: 30px;
 }
 @media (min-width: 992px) {
-  .products .product__title h3 {
+  .products .product__title h3,
+  .products .product__title h2,
+  .products .product__title h4 {
     margin-bottom: 0px;
   }
 }

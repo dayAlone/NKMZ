@@ -12,7 +12,7 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="product__title">
-						<h3><a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a></h3>
+						<h4><a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a></h4>
 					</div>
 					<div class="product__description">
 						<p><?=$item['~PREVIEW_TEXT']?></p>
