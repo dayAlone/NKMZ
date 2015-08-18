@@ -4102,6 +4102,7 @@ svg g {
   display: inline-block;
 }
 .products .product--vertical .product__image img {
+  max-width: none;
   max-height: 350px;
 }
 @media (min-width: 768px) {
