@@ -7678,6 +7678,9 @@ svg g {
 .products .product {
   padding: 30px 0 15px;
 }
+.products .product__title {
+  margin-bottom: 30px;
+}
 @media (min-width: 992px) {
   .products .product__title {
     display: table;
@@ -7706,9 +7709,6 @@ svg g {
 .products .product__title a:hover {
   color: #309dff;
 }
-.products .product__title {
-  margin-bottom: 30px;
-}
 .products .product__image + .product__description {
   margin-top: 30px;
 }
@@ -7721,6 +7721,40 @@ svg g {
 .products .product + .product {
   margin-top: 20px;
   border-top: 1px solid #cbd2d7;
+}
+.products .product--vertical {
+  float: left;
+  padding: 0 50px 0 20px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.products .product--vertical + .product--vertical {
+  border-top: 0;
+  margin-top: 0px;
+  border-left: 1px solid #cbd2d7;
+}
+.products .product--vertical .product__title {
+  margin-top: 10px;
+}
+.products .product--vertical .product__image {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+@media (min-width: 992px) {
+  .products .product--vertical .product__image img {
+    max-height: 350px;
+  }
+}
+@media (min-width: 768px) {
+  .products .product--vertical {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .products .product--vertical {
+    width: 33.333333333333336%;
+  }
 }
 @media (min-width: 768px) {
   .albums {

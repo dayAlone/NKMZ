@@ -277,8 +277,9 @@
 	padding-bottom 40px
 	.product
 		padding 30px 0 15px
-		&__title
 
+		&__title
+			margin-bottom 30px
 			@media (min-width: scr_md)
 				display table
 				table-layout: fixed
@@ -297,8 +298,7 @@
 				color blue_bg
 				&:hover
 					color blue
-		&__title
-			margin-bottom 30px
+
 		&__image
 			& + .product__description
 				margin-top 30px
@@ -311,3 +311,27 @@
 		& + .product
 			margin-top 20px
 			border-top 1px solid #cbd2d7
+
+		&--vertical
+			float left
+			padding 0 50px 0 20px
+			margin-bottom 30px
+			width 100%
+			& + .product--vertical
+				border-top 0
+				margin-top 0px
+				border-left 1px solid #cbd2d7
+			.product
+				&__title
+					margin-top 10px
+				&__image
+					text-align center
+					width 100%
+					display inline-block
+					@media (min-width: scr_md)
+						img
+							max-height 350px
+			@media (min-width: scr_sm)
+				width (100/2)%
+			@media (min-width: scr_lg)
+				width (100/3)%
