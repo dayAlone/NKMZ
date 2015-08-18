@@ -102,6 +102,8 @@
 	.filter
 		@extend .index .filter
 		position relative
+		float left
+		width 100%
 		t min-height
 		@media (min-width: scr_sm) and (max-width: scr_md)
 			.col-sm-6
@@ -311,21 +313,27 @@
 		& + .product:not(.product--vertical)
 			margin-top 50px
 			border-top 1px solid #cbd2d7
+		&__content
+			display inline-block
+			vertical-align middle
+			line-height 1.4
 		&__divider
 			full-width()
 			& + .product--vertical
 				border-left 0
 		&--vertical
 			float left
-			padding 0 50px 0 50px
-			margin-bottom 50px
+			margin-bottom 30px
 			width 100%
-			min-height 350px
-			border-left 1px solid #cbd2d7
-			& + .product--vertical
+			border-top 1px solid #cbd2d7
+			line-height 350px
+			@media (min-width: scr_md)
+				border-left 1px solid #cbd2d7
 				border-top 0
+				padding 0 50px 0 50px
+				margin-bottom 50px
 			&:first-of-type
-				border-left 0
+				border 0 !important
 			.product
 				&__title
 					margin-top 10px
@@ -333,10 +341,9 @@
 					text-align center
 					width 100%
 					display inline-block
-					@media (min-width: scr_md)
-						img
-							max-height 350px
+					img
+						max-height 350px
 			@media (min-width: scr_sm)
-				width (100/2)%
-			@media (min-width: scr_lg)
+				width 100%
+			@media (min-width: scr_md)
 				width (100/2)%
