@@ -1,12 +1,13 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Лицензии",
+		"Лицензии и сертификаты",
 		"/about/licenses/",
 		Array(),
 		Array(),
 		""
 	),
+	/*
 	Array(
 		"Достижения и награды",
 		"/about/achievements/",
@@ -14,6 +15,7 @@ $aMenuLinks = Array(
 		Array(),
 		""
 	),
+	*/
 	Array(
 		"Сервисные центры",
 		"/about/services/",

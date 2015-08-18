@@ -5727,6 +5727,12 @@ svg g {
   overflow: hidden;
   min-height: 352px;
 }
+@media (min-width: 992px) {
+  .index .sections .section,
+  .catalog .sections .section {
+    min-height: 293px;
+  }
+}
 @media (min-width: 1555px) {
   .index .sections .section,
   .catalog .sections .section {
