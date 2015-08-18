@@ -4052,7 +4052,7 @@ svg g {
   margin-bottom: 0px;
 }
 .products .product + .product:not(.product--vertical) {
-  margin-top: 20px;
+  margin-top: 50px;
   border-top: 1px solid #cbd2d7;
 }
 .products .product--vertical {
