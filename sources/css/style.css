@@ -3573,6 +3573,9 @@ svg g {
 .catalog--list .page {
   padding-top: 82px;
 }
+.catalog .pages {
+  margin-top: 40px;
+}
 @media (min-width: 768px) {
   .catalog .page {
     padding-top: 0px;
