@@ -7733,7 +7733,7 @@ svg g {
 }
 .products .product--vertical + .product--vertical {
   border-top: 0;
-  margin-top: 0px;
+  margin-top: 0px !important;
   border-left: 1px solid #cbd2d7;
 }
 .products .product--vertical .product__title {
