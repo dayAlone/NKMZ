@@ -41,6 +41,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
     </div>
 
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):?>
+        </div>
     </div>
     <?endif;?>
   </div>
