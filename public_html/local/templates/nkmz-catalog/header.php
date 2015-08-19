@@ -4,12 +4,14 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
 <div class="row">
   <div class="col-lg-8">
       <?
+        $IBLOCK = (LANGUAGE_ID=='ru' ? 3 : 12);
+        $IBLOCK_CODE = "content_".LANGUAGE_ID;
         ob_start();
 
         $APPLICATION->IncludeComponent("bitrix:catalog.smart.filter", "filter",
           array(
-              "IBLOCK_TYPE"         => "content_".LANGUAGE_ID,
-              "IBLOCK_ID"           => (LANGUAGE_ID=='ru' ? 3 : 12),
+              "IBLOCK_TYPE"         => $IBLOCK_CODE,
+              "IBLOCK_ID"           => $IBLOCK,
               "CACHE_TYPE"          => "A",
               "CACHE_TIME"          => "36000",
               "SECTION_ID"          => 0,
@@ -22,8 +24,8 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
 
         if(!isset($_REQUEST['ELEMENT_CODE']) && !isset($_REQUEST['SECTION_CODE']) && !isset($_REQUEST['set_filter']) && !@defined("ERROR_404")):
         	$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sections", array(
-			    "IBLOCK_TYPE"  => "content_".LANGUAGE_ID,
-			    "IBLOCK_ID"    => (LANGUAGE_ID=='ru' ? 3 : 12),
+			    "IBLOCK_TYPE"  => $IBLOCK_CODE,
+			    "IBLOCK_ID"    => $IBLOCK,
 			    "TOP_DEPTH"    => "1",
 			    "CACHE_TYPE"   => "A",
 			    "CACHE_TIME"   => "36000",
