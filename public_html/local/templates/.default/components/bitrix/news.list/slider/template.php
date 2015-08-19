@@ -9,7 +9,7 @@
 				<p><?=$item['~PREVIEW_TEXT']?></p>
 			  </div>
 			  <?if(strlen($item['PROPERTIES']['LINK']['VALUE'])):?>
-			  	<a href="<?=$item['PROPERTIES']['LINK']['VALUE']?>" class="slider__button">Подробнее</a>
+			  	<a href="<?=$item['PROPERTIES']['LINK']['VALUE']?>" class="slider__button"><?=(LANGUAGE_ID=='ru'?'Подробнее':'Read more')?></a>
 			  <?endif;?>
 			</div>
 		</div>

@@ -7,7 +7,7 @@
 		</div>
 	<?endforeach;?>
 	<?if($arParams["SHOW_MORE"]=="Y"):?>
-	<a href="/press/" class="news-list__more">К другим новостям</a>
+	<a href="/press/" class="news-list__more"><?=(LANGUAGE_ID=='ru'?"К другим новостям":"More news")?></a>
 	<?endif;?>
 </div>
 <?endif;?>

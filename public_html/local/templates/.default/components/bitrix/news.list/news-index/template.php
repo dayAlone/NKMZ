@@ -2,8 +2,8 @@
 <div class="news-list hidden-md hidden-lg news-list--mobile">
   <div class="news-list__title">
 	<div class="row">
-	  <div class="col-xs-6">Новости</div>
-	  <div class="col-xs-6 right"><a href="/press/" class="news-list__more">К другим новостям</a></div>
+	  <div class="col-xs-6"><?=(LANGUAGE_ID=='ru'?"Новости":"News")?></div>
+	  <div class="col-xs-6 right"><a href="/press/" class="news-list__more"><?=(LANGUAGE_ID=='ru'?"К другим новостям":"More news")?></a></div>
 	</div>
   </div>
   <div class="row">
