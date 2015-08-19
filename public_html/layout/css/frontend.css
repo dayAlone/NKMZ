@@ -7828,7 +7828,7 @@ svg g {
     width: calc(33.3333333% - 14px);
   }
 }
-@media (min-width: 1330px) {
+@media (min-width: 1555px) {
   .albums .album {
     width: calc(25% - 14px);
   }
