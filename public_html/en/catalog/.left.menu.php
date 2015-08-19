@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 $aMenuLinks = $APPLICATION->IncludeComponent("bitrix:menu.sections","",Array(
         "IS_SEF" => "Y",
-        "SEF_BASE_URL" => "/catalog/",
+        "SEF_BASE_URL" => "/en/catalog/",
         "SECTION_PAGE_URL" => "#SECTION_CODE#/",
         "DETAIL_PAGE_URL" => "#SECTION_CODE#/#ELEMENT_CODE#",
         "IBLOCK_TYPE" => "content_".LANGUAGE_ID,
