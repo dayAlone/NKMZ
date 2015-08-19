@@ -257,147 +257,149 @@
 	if @map
 		@map.container.fitToViewport()
 
-delay 500, ->
-	initScroll()
+$(document).ready ->
 
-delay 300, ()->
-	size()
-	$('.index').elem('slider').on("fotorama:show", ->
+	delay 500, ->
+		initScroll()
+
+	delay 300, ()->
 		size()
-	).fotorama();
+		$('.index').elem('slider').on("fotorama:show", ->
+			size()
+		).fotorama();
 
-if $.browser.mobile == true
-	$('body').addClass 'mobile'
+	if $.browser.mobile == true
+		$('body').addClass 'mobile'
 
-$('.dropdown').elem('trigger').click (e)->
-	e.preventDefault()
+	$('.dropdown').elem('trigger').click (e)->
+		e.preventDefault()
 
-$('.modal').on 'shown.bs.modal', (e)->
-	$('input[name="vacancy"]').val $(e.relatedTarget).parent().find('h2').text()
-	getCaptcha()
+	$('.modal').on 'shown.bs.modal', (e)->
+		$('input[name="vacancy"]').val $(e.relatedTarget).parent().find('h2').text()
+		getCaptcha()
 
-scrollTimer = false
-$('.params').elem('frame').on 'scroll', ->
-	clearTimeout scrollTimer
-	el = $(this)
-	scrollTimer = delay 50, ()->
-		if el.scrollLeft() > 70
-			el.block().mod 'left', true
-		else
-			el.block().mod 'left', false
+	scrollTimer = false
+	$('.params').elem('frame').on 'scroll', ->
+		clearTimeout scrollTimer
+		el = $(this)
+		scrollTimer = delay 50, ()->
+			if el.scrollLeft() > 70
+				el.block().mod 'left', true
+			else
+				el.block().mod 'left', false
 
-		if el.scrollLeft() + el.width() == el.find('.param').width()
-			el.block().mod 'right', true
-		else
-			el.block().mod 'right', false
+			if el.scrollLeft() + el.width() == el.find('.param').width()
+				el.block().mod 'right', true
+			else
+				el.block().mod 'right', false
 
-$('.captcha__refresh').click (e)->
-	getCaptcha()
-	e.preventDefault()
+	$('.captcha__refresh').click (e)->
+		getCaptcha()
+		e.preventDefault()
 
-$('#Feedback form').submit (e)->
+	$('#Feedback form').submit (e)->
+			e.preventDefault()
+			request = $(this).serialize()
+			$.post '/include/send.php', request, (data) ->
+				console.log data
+				data = $.parseJSON(data)
+				if data.status == "ok"
+	        		$('.feedback').elem('form').hide().addClass 'hidden'
+	        		$('.feedback').elem('success').show().removeClass 'hidden'
+	        	else if data.status == "error"
+	        		$('input[name=captcha_word]').addClass('parsley-error')
+	        		getCaptcha()
+
+
+	$('.dropdown').hoverIntent({
+		over: ->
+			$(this).mod 'active', true
+		out: ->
+			el = $(this)
+			delay 300, ->
+				el.mod 'active', false
+	}).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
+
+	$('.file__trigger').click (e)->
+		$(this).parent().find('input[type=file]').trigger 'click'
+		e.preventDefault()
+
+	$('input[type=file]').on 'change', ()->
+		$('.form .file__trigger').removeClass 'error'
+		$('.file__name').text($(this).val().replace(/.+[\\\/]/, ""))
+
+	$('.feedback').elem('form').submit (e)->
 		e.preventDefault()
 		request = $(this).serialize()
-		$.post '/include/send.php', request, (data) ->
-			console.log data
-			data = $.parseJSON(data)
-			if data.status == "ok"
-        		$('.feedback').elem('form').hide().addClass 'hidden'
-        		$('.feedback').elem('success').show().removeClass 'hidden'
-        	else if data.status == "error"
-        		$('input[name=captcha_word]').addClass('parsley-error')
-        		getCaptcha()
+		$.post '/include/send.php', request,
+	        (data) ->
+	        	data = $.parseJSON(data)
+	        	if data.status == "ok"
+	        		$('.feedback').elem('form').hide().addClass 'hidden'
+	        		$('.feedback').elem('success').show().removeClass 'hidden'
+	        	else if data.status == "error"
+	        		$('input[name=captcha_word]').addClass('parsley-error')
+	        		getCaptcha()
 
+	$('#Career .form').submit (e)->
+		data = new FormData(this)
+		$.ajax
+			type        : 'POST'
+			url         : '/include/send.php'
+			data        : data
+			cache       : false
+			contentType : false
+			processData : false
+			mimeType    : 'multipart/form-data'
+			success     : (data) ->
+				data = $.parseJSON(data)
+				if data.status == "ok"
+					$('#Career .form').hide()
+					$('#Career .success').show()
+				else if data.status == "error"
+					$('#Career input[name=captcha_word]').addClass('parsley-error')
+					getCaptcha()
 
-$('.dropdown').hoverIntent({
-	over: ->
-		$(this).mod 'active', true
-	out: ->
-		el = $(this)
-		delay 300, ->
-			el.mod 'active', false
-}).elem('frame').perfectScrollbar({suppressScrollX: true, includePadding: true})
+	initMap()
 
-$('.file__trigger').click (e)->
-	$(this).parent().find('input[type=file]').trigger 'click'
-	e.preventDefault()
+	if $('.services').length > 0
+		initServices()
 
-$('input[type=file]').on 'change', ()->
-	$('.form .file__trigger').removeClass 'error'
-	$('.file__name').text($(this).val().replace(/.+[\\\/]/, ""))
+	if $('.licencies').length > 0
+		initLicencies()
 
-$('.feedback').elem('form').submit (e)->
-	e.preventDefault()
-	request = $(this).serialize()
-	$.post '/include/send.php', request,
-        (data) ->
-        	data = $.parseJSON(data)
-        	if data.status == "ok"
-        		$('.feedback').elem('form').hide().addClass 'hidden'
-        		$('.feedback').elem('success').show().removeClass 'hidden'
-        	else if data.status == "error"
-        		$('input[name=captcha_word]').addClass('parsley-error')
-        		getCaptcha()
+	if $('.content .news').length > 0
+		initNews()
 
-$('#Career .form').submit (e)->
-	data = new FormData(this)
-	$.ajax
-		type        : 'POST'
-		url         : '/include/send.php'
-		data        : data
-		cache       : false
-		contentType : false
-		processData : false
-		mimeType    : 'multipart/form-data'
-		success     : (data) ->
-			data = $.parseJSON(data)
-			if data.status == "ok"
-				$('#Career .form').hide()
-				$('#Career .success').show()
-			else if data.status == "error"
-				$('#Career input[name=captcha_word]').addClass('parsley-error')
-				getCaptcha()
+	if $('.vacancies').length > 0
+		initVacancies()
 
-initMap()
+	if $('.albums').length > 0
+		initAlbums()
 
-if $('.services').length > 0
-	initServices()
+	if $('.filter').length > 0
+		initFilter()
 
-if $('.licencies').length > 0
-	initLicencies()
+	transTimer = []
+	$('.page__content, .page__side, .page__modal, .catalog .filter').on @end, ->
+		c = $(this).attr('class').length
+		clearTimeout transTimer[c]
+		transTimer[c] = delay 200, ()->
+			size()
 
-if $('.content .news').length > 0
-	initNews()
+	resizeTimer = undefined
+	$(window).resize ->
+		clearTimeout resizeTimer
+		resizeTimer = delay 300, ()->
+			size()
 
-if $('.vacancies').length > 0
-	initVacancies()
-
-if $('.albums').length > 0
-	initAlbums()
-
-if $('.filter').length > 0
-	initFilter()
-
-transTimer = []
-$('.page__content, .page__side, .page__modal, .catalog .filter').on @end, ->
-	c = $(this).attr('class').length
-	clearTimeout transTimer[c]
-	transTimer[c] = delay 200, ()->
-		size()
-
-resizeTimer = undefined
-$(window).resize ->
-	clearTimeout resizeTimer
-	resizeTimer = delay 300, ()->
-		size()
-
-if pointerEventsSupported
-	scrollTimer = false
-	$(window).scroll ->
-		clearTimeout scrollTimer
-		if !$('.scroll-fix').hasMod 'on'
-			$('.scroll-fix').mod 'on', true
-		scrollTimer = delay 400, ()->
-			$('.scroll-fix').mod 'on', false
-else
-	$('.scroll-fix').remove()
+	if pointerEventsSupported
+		scrollTimer = false
+		$(window).scroll ->
+			clearTimeout scrollTimer
+			if !$('.scroll-fix').hasMod 'on'
+				$('.scroll-fix').mod 'on', true
+			scrollTimer = delay 400, ()->
+				$('.scroll-fix').mod 'on', false
+	else
+		$('.scroll-fix').remove()

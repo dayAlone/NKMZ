@@ -1,6 +1,4 @@
 (function() {
-  var resizeTimer, scrollTimer, transTimer;
-
   this.spinOptions = {
     lines: 13,
     length: 21,
@@ -341,197 +339,175 @@
     }
   };
 
-  delay(500, function() {
-    return initScroll();
-  });
-
-  delay(300, function() {
-    size();
-    return $('.index').elem('slider').on("fotorama:show", function() {
-      return size();
-    }).fotorama();
-  });
-
-  if ($.browser.mobile === true) {
-    $('body').addClass('mobile');
-  }
-
-  $('.dropdown').elem('trigger').click(function(e) {
-    return e.preventDefault();
-  });
-
-  $('.modal').on('shown.bs.modal', function(e) {
-    $('input[name="vacancy"]').val($(e.relatedTarget).parent().find('h2').text());
-    return getCaptcha();
-  });
-
-  scrollTimer = false;
-
-  $('.params').elem('frame').on('scroll', function() {
-    var el;
-    clearTimeout(scrollTimer);
-    el = $(this);
-    return scrollTimer = delay(50, function() {
-      if (el.scrollLeft() > 70) {
-        el.block().mod('left', true);
-      } else {
-        el.block().mod('left', false);
-      }
-      if (el.scrollLeft() + el.width() === el.find('.param').width()) {
-        return el.block().mod('right', true);
-      } else {
-        return el.block().mod('right', false);
-      }
+  $(document).ready(function() {
+    var resizeTimer, scrollTimer, transTimer;
+    delay(500, function() {
+      return initScroll();
     });
-  });
-
-  $('.captcha__refresh').click(function(e) {
-    getCaptcha();
-    return e.preventDefault();
-  });
-
-  $('#Feedback form').submit(function(e) {
-    var request;
-    e.preventDefault();
-    request = $(this).serialize();
-    return $.post('/include/send.php', request, function(data) {
-      console.log(data);
-      data = $.parseJSON(data);
-      if (data.status === "ok") {
-        $('.feedback').elem('form').hide().addClass('hidden');
-        return $('.feedback').elem('success').show().removeClass('hidden');
-      } else if (data.status === "error") {
-        $('input[name=captcha_word]').addClass('parsley-error');
-        return getCaptcha();
-      }
+    delay(300, function() {
+      size();
+      return $('.index').elem('slider').on("fotorama:show", function() {
+        return size();
+      }).fotorama();
     });
-  });
-
-  $('.dropdown').hoverIntent({
-    over: function() {
-      return $(this).mod('active', true);
-    },
-    out: function() {
-      var el;
-      el = $(this);
-      return delay(300, function() {
-        return el.mod('active', false);
-      });
+    if ($.browser.mobile === true) {
+      $('body').addClass('mobile');
     }
-  }).elem('frame').perfectScrollbar({
-    suppressScrollX: true,
-    includePadding: true
-  });
-
-  $('.file__trigger').click(function(e) {
-    $(this).parent().find('input[type=file]').trigger('click');
-    return e.preventDefault();
-  });
-
-  $('input[type=file]').on('change', function() {
-    $('.form .file__trigger').removeClass('error');
-    return $('.file__name').text($(this).val().replace(/.+[\\\/]/, ""));
-  });
-
-  $('.feedback').elem('form').submit(function(e) {
-    var request;
-    e.preventDefault();
-    request = $(this).serialize();
-    return $.post('/include/send.php', request, function(data) {
-      data = $.parseJSON(data);
-      if (data.status === "ok") {
-        $('.feedback').elem('form').hide().addClass('hidden');
-        return $('.feedback').elem('success').show().removeClass('hidden');
-      } else if (data.status === "error") {
-        $('input[name=captcha_word]').addClass('parsley-error');
-        return getCaptcha();
-      }
+    $('.dropdown').elem('trigger').click(function(e) {
+      return e.preventDefault();
     });
-  });
-
-  $('#Career .form').submit(function(e) {
-    var data;
-    data = new FormData(this);
-    return $.ajax({
-      type: 'POST',
-      url: '/include/send.php',
-      data: data,
-      cache: false,
-      contentType: false,
-      processData: false,
-      mimeType: 'multipart/form-data',
-      success: function(data) {
+    $('.modal').on('shown.bs.modal', function(e) {
+      $('input[name="vacancy"]').val($(e.relatedTarget).parent().find('h2').text());
+      return getCaptcha();
+    });
+    scrollTimer = false;
+    $('.params').elem('frame').on('scroll', function() {
+      var el;
+      clearTimeout(scrollTimer);
+      el = $(this);
+      return scrollTimer = delay(50, function() {
+        if (el.scrollLeft() > 70) {
+          el.block().mod('left', true);
+        } else {
+          el.block().mod('left', false);
+        }
+        if (el.scrollLeft() + el.width() === el.find('.param').width()) {
+          return el.block().mod('right', true);
+        } else {
+          return el.block().mod('right', false);
+        }
+      });
+    });
+    $('.captcha__refresh').click(function(e) {
+      getCaptcha();
+      return e.preventDefault();
+    });
+    $('#Feedback form').submit(function(e) {
+      var request;
+      e.preventDefault();
+      request = $(this).serialize();
+      return $.post('/include/send.php', request, function(data) {
+        console.log(data);
         data = $.parseJSON(data);
         if (data.status === "ok") {
-          $('#Career .form').hide();
-          return $('#Career .success').show();
+          $('.feedback').elem('form').hide().addClass('hidden');
+          return $('.feedback').elem('success').show().removeClass('hidden');
         } else if (data.status === "error") {
-          $('#Career input[name=captcha_word]').addClass('parsley-error');
+          $('input[name=captcha_word]').addClass('parsley-error');
           return getCaptcha();
         }
-      }
-    });
-  });
-
-  initMap();
-
-  if ($('.services').length > 0) {
-    initServices();
-  }
-
-  if ($('.licencies').length > 0) {
-    initLicencies();
-  }
-
-  if ($('.content .news').length > 0) {
-    initNews();
-  }
-
-  if ($('.vacancies').length > 0) {
-    initVacancies();
-  }
-
-  if ($('.albums').length > 0) {
-    initAlbums();
-  }
-
-  if ($('.filter').length > 0) {
-    initFilter();
-  }
-
-  transTimer = [];
-
-  $('.page__content, .page__side, .page__modal, .catalog .filter').on(this.end, function() {
-    var c;
-    c = $(this).attr('class').length;
-    clearTimeout(transTimer[c]);
-    return transTimer[c] = delay(200, function() {
-      return size();
-    });
-  });
-
-  resizeTimer = void 0;
-
-  $(window).resize(function() {
-    clearTimeout(resizeTimer);
-    return resizeTimer = delay(300, function() {
-      return size();
-    });
-  });
-
-  if (pointerEventsSupported) {
-    scrollTimer = false;
-    $(window).scroll(function() {
-      clearTimeout(scrollTimer);
-      if (!$('.scroll-fix').hasMod('on')) {
-        $('.scroll-fix').mod('on', true);
-      }
-      return scrollTimer = delay(400, function() {
-        return $('.scroll-fix').mod('on', false);
       });
     });
-  } else {
-    $('.scroll-fix').remove();
-  }
+    $('.dropdown').hoverIntent({
+      over: function() {
+        return $(this).mod('active', true);
+      },
+      out: function() {
+        var el;
+        el = $(this);
+        return delay(300, function() {
+          return el.mod('active', false);
+        });
+      }
+    }).elem('frame').perfectScrollbar({
+      suppressScrollX: true,
+      includePadding: true
+    });
+    $('.file__trigger').click(function(e) {
+      $(this).parent().find('input[type=file]').trigger('click');
+      return e.preventDefault();
+    });
+    $('input[type=file]').on('change', function() {
+      $('.form .file__trigger').removeClass('error');
+      return $('.file__name').text($(this).val().replace(/.+[\\\/]/, ""));
+    });
+    $('.feedback').elem('form').submit(function(e) {
+      var request;
+      e.preventDefault();
+      request = $(this).serialize();
+      return $.post('/include/send.php', request, function(data) {
+        data = $.parseJSON(data);
+        if (data.status === "ok") {
+          $('.feedback').elem('form').hide().addClass('hidden');
+          return $('.feedback').elem('success').show().removeClass('hidden');
+        } else if (data.status === "error") {
+          $('input[name=captcha_word]').addClass('parsley-error');
+          return getCaptcha();
+        }
+      });
+    });
+    $('#Career .form').submit(function(e) {
+      var data;
+      data = new FormData(this);
+      return $.ajax({
+        type: 'POST',
+        url: '/include/send.php',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        mimeType: 'multipart/form-data',
+        success: function(data) {
+          data = $.parseJSON(data);
+          if (data.status === "ok") {
+            $('#Career .form').hide();
+            return $('#Career .success').show();
+          } else if (data.status === "error") {
+            $('#Career input[name=captcha_word]').addClass('parsley-error');
+            return getCaptcha();
+          }
+        }
+      });
+    });
+    initMap();
+    if ($('.services').length > 0) {
+      initServices();
+    }
+    if ($('.licencies').length > 0) {
+      initLicencies();
+    }
+    if ($('.content .news').length > 0) {
+      initNews();
+    }
+    if ($('.vacancies').length > 0) {
+      initVacancies();
+    }
+    if ($('.albums').length > 0) {
+      initAlbums();
+    }
+    if ($('.filter').length > 0) {
+      initFilter();
+    }
+    transTimer = [];
+    $('.page__content, .page__side, .page__modal, .catalog .filter').on(this.end, function() {
+      var c;
+      c = $(this).attr('class').length;
+      clearTimeout(transTimer[c]);
+      return transTimer[c] = delay(200, function() {
+        return size();
+      });
+    });
+    resizeTimer = void 0;
+    $(window).resize(function() {
+      clearTimeout(resizeTimer);
+      return resizeTimer = delay(300, function() {
+        return size();
+      });
+    });
+    if (pointerEventsSupported) {
+      scrollTimer = false;
+      return $(window).scroll(function() {
+        clearTimeout(scrollTimer);
+        if (!$('.scroll-fix').hasMod('on')) {
+          $('.scroll-fix').mod('on', true);
+        }
+        return scrollTimer = delay(400, function() {
+          return $('.scroll-fix').mod('on', false);
+        });
+      });
+    } else {
+      return $('.scroll-fix').remove();
+    }
+  });
 
 }).call(this);
