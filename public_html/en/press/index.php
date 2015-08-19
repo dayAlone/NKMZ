@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Пресс-центр');
+$APPLICATION->SetTitle('Press center');
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->SetPageProperty('section', array('IBLOCK'=>18, 'CODE'=>'news-list'));
 require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');

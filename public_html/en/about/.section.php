@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'About';
+$sSectionName = 'About us';
 ?>

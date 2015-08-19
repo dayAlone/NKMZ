@@ -1,14 +1,14 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Catalog",
+		"Products",
 		"/catalog/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
-		"About company",
+		"About us",
 		"/about/",
 		Array(),
 		Array(),

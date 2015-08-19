@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Лицензии и сертификаты",
+		"Certificates",
 		"/about/licenses/",
 		Array(),
 		Array(),
@@ -17,21 +17,21 @@ $aMenuLinks = Array(
 	),
 	*/
 	Array(
-		"Сервисные центры",
+		"Service centers",
 		"/about/services/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
-		"Вакансии",
+		"Career",
 		"/about/vacancies/",
 		Array(),
 		Array("URL" => "#"),
 		""
 	),
 	Array(
-		"Фотогалерея",
+		"Photogallery",
 		"/about/gallery/",
 		Array(),
 		Array(),

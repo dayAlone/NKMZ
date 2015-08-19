@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Вакансии');
+$APPLICATION->SetTitle('Career');
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "vacancies",
   array(

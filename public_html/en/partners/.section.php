@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Партнеры';
+$sSectionName = 'Partners';
 ?>

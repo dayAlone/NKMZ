@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Сервисные центры');
+$APPLICATION->SetTitle('Service centers');
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "services",
   array(
