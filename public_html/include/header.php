@@ -30,7 +30,7 @@
   <div id="panel"><?$APPLICATION->ShowPanel();?></div>
   <div class="toolbar">
     <div class="container">
-      <div class="toolbar__logo"><a href="/" class="logo"><?=svg('logo')?></a></div>
+      <div class="toolbar__logo"><a href="/" class="logo"><?=svg('logo_'.LANGUAGE_ID)?></a></div>
       <div class="toolbar__api right">
 		  <span class="api"><?=svg('logo-api')?>
 	          <span class="api__text">

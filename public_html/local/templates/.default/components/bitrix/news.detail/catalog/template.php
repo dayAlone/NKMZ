@@ -1,17 +1,18 @@
 <?
 $item = &$arResult;
 $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
+$json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_PICTURE']['WIDTH'],"h"=>$item['PREVIEW_PICTURE']['HEIGHT']));
 ?>
 <div class="products">
   <div class="product">
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] < $item['PREVIEW_PICTURE']['WIDTH']):?>
     <div class="center xl-margin-bottom">
-    	<a href="#" class="product__image product__image--detail" data-pictures='[{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}]'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
+    	<a href="#" class="product__image product__image--detail" data-pictures='<?=json_encode($json)?>'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
     </div>
     <?else:?>
     <div class="row">
         <div class="col-xs-2 center">
-            <a href="#" class="product__image product__image--detail" data-pictures='{0:{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}}'>
+            <a href="#" class="product__image product__image--detail" data-pictures='<?=json_encode($json)?>'>
                 <img src="<?=$item['PREVIEW_PICTURE']['SRC']?>">
             </a>
         </div>

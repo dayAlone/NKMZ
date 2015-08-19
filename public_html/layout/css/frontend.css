@@ -7725,6 +7725,43 @@ svg g {
 .products .product__image + .product__description {
   margin-top: 30px;
 }
+.products .product__image--detail {
+  position: relative;
+  display: block;
+}
+.products .product__image--detail:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: rgba(0,0,0,0.5) url("/layout/images/svg/zoom.svg") center center no-repeat;
+  -webkit-background-size: 20px auto;
+  -moz-background-size: 20px auto;
+  background-size: 20px auto;
+  top: 50%;
+  left: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: -23px 0 0 -23px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -ms-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.products .product__image--detail:hover:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
 .products .product__image img {
   max-width: 100%;
   max-height: 630px;
