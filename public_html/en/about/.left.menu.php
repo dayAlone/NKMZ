@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Certificates",
-		"/about/licenses/",
+		"/en/about/licenses/",
 		Array(),
 		Array(),
 		""
@@ -18,21 +18,21 @@ $aMenuLinks = Array(
 	*/
 	Array(
 		"Service centers",
-		"/about/services/",
+		"/en/about/services/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
 		"Career",
-		"/about/vacancies/",
+		"/en/about/vacancies/",
 		Array(),
 		Array("URL" => "#"),
 		""
 	),
 	Array(
 		"Photogallery",
-		"/about/gallery/",
+		"/en/about/gallery/",
 		Array(),
 		Array(),
 		""
