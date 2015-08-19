@@ -1,6 +1,8 @@
 <?
 $arResult['GALLERY'] = array();
 $arResult['SHOW_ALL'] = true;
+if(count($arResult['ITEMS']) > 1)
+	$arResult['SHOW_ALL'] = false;
 
 foreach ($arResult['ITEMS'] as $key => &$item) {
 	$gallery = array();
@@ -17,7 +19,6 @@ foreach ($arResult['ITEMS'] as $key => &$item) {
 	        usort($gallery, "images_sort");
 	        $prop['VALUE'] = $gallery;
 			if(count($gallery) > 0) $arResult['GALLERY'] = array_merge($arResult['GALLERY'], $gallery);
-			if(count($gallery) > 1) $arResult['SHOW_ALL'] = false;
 	    endif;
 	endif;
 }
