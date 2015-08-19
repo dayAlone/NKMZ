@@ -51,8 +51,8 @@
 		  <a href="#Nav" data-toggle="modal" class="nav-trigger"><span>Меню</span><?=svg('nav')?></a>
 		  <div class="visible-md visible-lg">
 			  <span class="lang">
-				  <a href="#" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
-				  <a href="#" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
+				  <a href="/" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
+				  <a href="/en/" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
 			  </span>
 			  <a href="#" class="toolbar__link"><?=svg('search')?></a></div>
       </div>
