@@ -1,11 +1,11 @@
 <?
 $MESS['ALL'] = "All parameters";
-$MESS['TITLE'] = "Подбор оборудования";
+$MESS['TITLE'] = "Equipment search";
 $MESS['DOWNLOAD'] = "Download catalog";
-$MESS['AREA'] = "Область применения";
-$MESS['ARRANGEMENT'] = "Компоновка";
-$MESS['DIFFERENTIAL'] = "Перепад давления";
-$MESS['PASSAGEWAY'] = "Проходной канал";
+$MESS['AREA'] = "Application";
+$MESS['ARRANGEMENT'] = "Arrangement";
+$MESS['DIFFERENTIAL'] = "Maximum pressure";
+$MESS['PASSAGEWAY'] = "Size ID";
 $MESS['FIND'] = "Search";
-$MESS['HELP'] = "Для подбора оборудования необходимо выбрать хотя бы один пункт формы. Для более точного поиска необходимо указать максимальное количество параметров.";
+$MESS['HELP'] = "For equipment search you are to select at least one item of the form. For a more precise search, you must specify the maximum number of parameters.";
 ?>

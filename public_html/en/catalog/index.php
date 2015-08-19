@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 if(!isset($_REQUEST['set_filter']))
 	$APPLICATION->SetTitle('Products');
 else {
-	$APPLICATION->SetTitle('Результаты подбора оборудования');
+	$APPLICATION->SetTitle('Search results');
 	$APPLICATION->SetPageProperty('body_class', "catalog catalog--search");
 }
 global $arCatalogFilter;
