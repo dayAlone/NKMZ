@@ -9,7 +9,7 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
         $APPLICATION->IncludeComponent("bitrix:catalog.smart.filter", "filter",
           array(
               "IBLOCK_TYPE"         => "content_".LANGUAGE_ID,
-              "IBLOCK_ID"           => 3,
+              "IBLOCK_ID"           => (LANGUAGE_ID=='ru' ? 3 : 12),
               "CACHE_TYPE"          => "A",
               "CACHE_TIME"          => "36000",
               "SECTION_ID"          => 0,
@@ -23,7 +23,7 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
         if(!isset($_REQUEST['ELEMENT_CODE']) && !isset($_REQUEST['SECTION_CODE']) && !isset($_REQUEST['set_filter']) && !@defined("ERROR_404")):
         	$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sections", array(
 			    "IBLOCK_TYPE"  => "content_".LANGUAGE_ID,
-			    "IBLOCK_ID"    => "3",
+			    "IBLOCK_ID"    => (LANGUAGE_ID=='ru' ? 3 : 12),
 			    "TOP_DEPTH"    => "1",
 			    "CACHE_TYPE"   => "A",
 			    "CACHE_TIME"   => "36000",
