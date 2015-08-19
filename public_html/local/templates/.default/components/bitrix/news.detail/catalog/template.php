@@ -10,7 +10,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
     </div>
     <?else:?>
     <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-2 center">
             <div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
         </div>
         <div class="col-xs-10">
