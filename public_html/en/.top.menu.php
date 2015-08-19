@@ -2,35 +2,35 @@
 $aMenuLinks = Array(
 	Array(
 		"Products",
-		"/catalog/",
+		"/en/catalog/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
 		"About us",
-		"/about/",
+		"/en/about/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
 		"Partners",
-		"/partners/",
+		"/en/partners/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
 		"Press center",
-		"/press/",
+		"/en/press/",
 		Array(),
 		Array("URL" => "#"),
 		""
 	),
 	Array(
 		"Contact us",
-		"/contacts/",
+		"/en/contacts/",
 		Array(),
 		Array(),
 		""
