@@ -1,7 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 if(!isset($_REQUEST['set_filter']))
-	$APPLICATION->SetTitle('Продукция');
+	$APPLICATION->SetTitle('Catalog');
 else {
 	$APPLICATION->SetTitle('Результаты подбора оборудования');
 	$APPLICATION->SetPageProperty('body_class', "catalog catalog--search");

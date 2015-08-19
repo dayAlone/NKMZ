@@ -40,7 +40,7 @@ $APPLICATION->SetPageProperty('body_class', "index");
 	<div class="col-lg-6 col-md-8">
 		<?
         	$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "sections", array(
-			    "IBLOCK_TYPE"  => "content_".LANGUAGE_ID,
+			    "IBLOCK_TYPE"  => "content_en",
 			    "IBLOCK_ID"    => "12",
 			    "TOP_DEPTH"    => "1",
 			    "CACHE_TYPE"   => "A",

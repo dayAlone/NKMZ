@@ -1,6 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle('Фотогалерея');
+$APPLICATION->SetTitle('Gallery');
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "gallery",
   array(

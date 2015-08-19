@@ -1,35 +1,35 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Продукция",
+		"Catalog",
 		"/catalog/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
-		"О компании",
+		"About company",
 		"/about/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
-		"Партнеры",
+		"Partners",
 		"/partners/",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
-		"Пресс-центр",
+		"Press center",
 		"/press/",
 		Array(),
 		Array("URL" => "#"),
 		""
 	),
 	Array(
-		"Контакты",
+		"Contact us",
 		"/contacts/",
 		Array(),
 		Array(),

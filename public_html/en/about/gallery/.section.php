@@ -1,3 +1,3 @@
 <?
-$sSectionName = 'Фотогалерея';
+$sSectionName = 'Gallery';
 ?>
