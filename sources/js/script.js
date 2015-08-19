@@ -86,25 +86,13 @@
     });
   };
 
-  this.initAlbums = function() {
-    return $('.album').click(function(e) {
+  this.initGalleries = function() {
+    return $('.licence, .album').click(function(e) {
       var elem, gallery, items, options;
       elem = $('.pswp')[0];
       options = galleryOptions;
-      items = $(this).data('pictures');
-      gallery = new PhotoSwipe(elem, PhotoSwipeUI_Default, items, options);
-      gallery.init();
-      return e.preventDefault();
-    });
-  };
-
-  this.initLicencies = function() {
-    return $('.licence').click(function(e) {
-      var elem, gallery, items, options;
-      elem = $('.pswp')[0];
-      options = galleryOptions;
-      if ($(this).parents('.licencies').hasMod('show-all')) {
-        items = $(this).parents('.licencies').data('pictures');
+      if ($(this).parent().hasMod('show-all')) {
+        items = $(this).parent().data('pictures');
         options.index = $(this).index();
       } else {
         items = $(this).data('pictures');
@@ -463,17 +451,14 @@
     if ($('.services').length > 0) {
       initServices();
     }
-    if ($('.licencies').length > 0) {
-      initLicencies();
-    }
     if ($('.content .news').length > 0) {
       initNews();
     }
     if ($('.vacancies').length > 0) {
       initVacancies();
     }
-    if ($('.albums').length > 0) {
-      initAlbums();
+    if ($('.albums').length > 0 || $('.licencies').length > 0) {
+      initGalleries();
     }
     if ($('.filter').length > 0) {
       initFilter();

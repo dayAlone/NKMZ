@@ -6,7 +6,7 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
   <div class="product">
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] < $item['PREVIEW_PICTURE']['WIDTH']):?>
     <div class="center xl-margin-bottom">
-    	<a href="#" class="product__image product__image--detail" data-pictures='{0:{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}}'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
+    	<a href="#" class="product__image product__image--detail" data-pictures='[{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}]'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
     </div>
     <?else:?>
     <div class="row">
