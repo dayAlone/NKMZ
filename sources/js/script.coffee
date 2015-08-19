@@ -380,6 +380,18 @@ $(document).ready ->
 	if $('.filter').length > 0
 		initFilter()
 
+
+	$('.product').elem('image').byMod('detail').click (e)->
+		elem          = $('.pswp')[0];
+		items         = $(this).data 'pictures'
+		options       = galleryOptions
+		options.index = $(this).index()
+		gallery = new PhotoSwipe elem, PhotoSwipeUI_Default, items, options
+		gallery.init()
+
+		e.preventDefault()
+
+
 	transTimer = []
 	$('.page__content, .page__side, .page__modal, .catalog .filter').on @end, ->
 		c = $(this).attr('class').length

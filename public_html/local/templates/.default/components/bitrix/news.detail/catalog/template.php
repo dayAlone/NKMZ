@@ -6,12 +6,14 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
   <div class="product">
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] < $item['PREVIEW_PICTURE']['WIDTH']):?>
     <div class="center xl-margin-bottom">
-    	<div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
+    	<a href="#" class="product__image product__image--detail" data-pictures='{0:{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}}'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
     </div>
     <?else:?>
     <div class="row">
         <div class="col-xs-2 center">
-            <div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
+            <a href="#" class="product__image product__image--detail" data-pictures='{0:{"src":"<?=$item['PREVIEW_PICTURE']['SRC']?>", "w":"<?=$item['PREVIEW_PICTURE']['WIDTH']?>", "h":"<?=$item['PREVIEW_PICTURE']['HEIGHT']?>"}}'>
+                <img src="<?=$item['PREVIEW_PICTURE']['SRC']?>">
+            </a>
         </div>
         <div class="col-xs-10">
     <?endif;?>
