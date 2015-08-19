@@ -4,9 +4,17 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
 ?>
 <div class="products">
   <div class="product">
-	  <div class="center xl-margin-bottom">
-	  		<div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
-	  </div>
+    <?if($item['PREVIEW_PICTURE']['HEIGHT'] < $item['PREVIEW_PICTURE']['WIDTH']):?>
+    <div class="center xl-margin-bottom">
+    	<div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
+    </div>
+    <?else:?>
+    <div class="row">
+        <div class="col-lg-2">
+            <div href="#" class="product__image"><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></div>
+        </div>
+        <div class="col-lg-10">
+    <?endif;?>
 
 	<div class="product__description text">
 		<?=$item['~DETAIL_TEXT']?>
@@ -31,6 +39,10 @@ $gallery = $arResult["PROPERTIES"]['GALLERY']['VALUE'];
         </div>
 	    <?=html_entity_decode(nl2br($item['PROPERTIES']['TEXT']['VALUE']['TEXT']))?>
     </div>
+
+    <?if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):?>
+    </div>
+    <?endif;?>
   </div>
 </div>
 <?if($gallery):?>
