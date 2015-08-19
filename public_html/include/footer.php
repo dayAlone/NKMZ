@@ -12,7 +12,7 @@
 		  	<br class="hidden-xs">
 			<a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?>"><?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?></a>
 	  </div>
-      <div class="col-sm-3 col-lg-1 md-right lg-left hidden-sm"><a href="/sitemap/"><?=(LANGUAGE_ID=='ru'?"Карта сайта":"Sitemap")?></a></div>
+      <div class="col-sm-3 col-lg-1 md-right lg-left hidden-sm"><a href="<?=(LANGUAGE_ID=='ru'?"":"/en")?>/sitemap/"><?=(LANGUAGE_ID=='ru'?"Карта сайта":"Sitemap")?></a></div>
     </div>
   </div>
 </footer>
@@ -55,12 +55,12 @@
 	  <div class="m-margin-top xl-margin-bottom row">
 		  <div class="col-xs-6">
 			  <span class="lang">
-  				<a href="#" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
-  				<a href="#" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
+  				<a href="/" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
+  				<a href="/en/" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
   			  </span>
 		  </div>
 		  <div class="col-xs-6 right">
-		  	<a data-dismiss="modal" href="#" class="close">Закрыть</a>
+		  	<a data-dismiss="modal" href="#" class="close"><?=(LANGUAGE_ID=='ru'?"Закрыть":"Close")?></a>
 		  </div>
 	  </div>
 	  <?
