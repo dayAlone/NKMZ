@@ -62,6 +62,7 @@ nav_rows = 1330px
 			width 400px
 	&__tools
 		width 125px
+		position relative
 		@media (min-width: scr_xs)
 			width 205px
 		@media (min-width: scr_md)
@@ -170,6 +171,47 @@ nav_rows = 1330px
 					fill blue
 		@media (min-width: scr_md)
 			display none
+	.search
+		position absolute
+		background blue_bg
+		top 0
+		width 200%
+		right -200px
+
+		height 110px
+		padding 39px 0
+		opacity 0
+		z-index -1
+		pointer-events none
+		t all
+		&--active
+			right 0
+			pointer-events all
+			z-index 10
+			opacity 1
+		button
+			float right
+			width 23px
+			appearance none
+			border 0
+			background-color transparent
+			height 35px
+			line-height 1
+			svg
+				path
+					fill blue
+		input
+			float left
+			width 85%
+			border alpha(white, .5)
+			border-radius 30px
+			height 35px
+			padding 0 15px
+			line-height 1
+			color white
+			background-color blue_bg
+			&:focus
+				border-color blue
 .lang
 	@extend .toolbar svg
 	margin-right 3px

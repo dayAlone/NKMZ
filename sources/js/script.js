@@ -348,6 +348,18 @@
       $('input[name="vacancy"]').val($(e.relatedTarget).parent().find('h2').text());
       return getCaptcha();
     });
+    $('.search-trigger').click(function(e) {
+      $('.search').mod('active', true);
+      $('.search input').focus();
+      delay(300, function() {
+        return $(document).one('click', function(e) {
+          if ($(e.target).parents('.search').length === 0) {
+            return $('.search').mod('active', false);
+          }
+        });
+      });
+      return e.preventDefault();
+    });
     scrollTimer = false;
     $('.params').elem('frame').on('scroll', function() {
       var el;

@@ -268,6 +268,15 @@ $(document).ready ->
 		$('input[name="vacancy"]').val $(e.relatedTarget).parent().find('h2').text()
 		getCaptcha()
 
+	$('.search-trigger').click (e)->
+		$('.search').mod 'active', true
+		$('.search input').focus()
+		delay 300, ->
+			$(document).one 'click', (e)->
+				if $(e.target).parents('.search').length == 0
+					$('.search').mod 'active', false
+		e.preventDefault()
+
 	scrollTimer = false
 	$('.params').elem('frame').on 'scroll', ->
 		clearTimeout scrollTimer
