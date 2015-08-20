@@ -4955,6 +4955,11 @@ a:hover {
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+@media (min-width: 1555px) {
+  .toolbar .search {
+    width: 400%;
+  }
+}
 .toolbar .search--active {
   right: 0;
   pointer-events: all;
@@ -4988,6 +4993,11 @@ a:hover {
   line-height: 1;
   color: #fefefe;
   background-color: #1b212b;
+}
+@media (min-width: 1555px) {
+  .toolbar .search input {
+    width: 90%;
+  }
 }
 .toolbar .search input:focus {
   border-color: #309dff;

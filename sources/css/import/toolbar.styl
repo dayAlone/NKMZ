@@ -184,6 +184,8 @@ nav_rows = 1330px
 		z-index -1
 		pointer-events none
 		t all
+		@media (min-width: hide_feedback)
+			width 400%
 		&--active
 			right 0
 			pointer-events all
@@ -210,6 +212,8 @@ nav_rows = 1330px
 			line-height 1
 			color white
 			background-color blue_bg
+			@media (min-width: hide_feedback)
+				width 90%
 			&:focus
 				border-color blue
 .lang
