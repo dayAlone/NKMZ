@@ -9,8 +9,8 @@ $APPLICATION->IncludeComponent("bitrix:news.detail","news",Array(
 	"PROPERTY_CODE" => Array("GALLERY"),
 	"CACHE_TYPE"    => "A",
 	"CACHE_TIME"    => "36000",
-	"TEXT"          => "Вакансия",
-	"CLOSE"         => "Закрыть описание",
+	"TEXT"          =>  (LANGUAGE_ID=='ru'?"Вакансия":"Vacancy"),
+	"CLOSE"         =>  (LANGUAGE_ID=='ru'?"Закрыть описание":"Close"),
 	"AFTER"         => '<a href="#Career" data-toggle="modal" class="button button--blue">Откликнуться на вакансию</a>'
 ));
 ?>

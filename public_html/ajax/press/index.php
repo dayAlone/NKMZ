@@ -9,6 +9,6 @@ $APPLICATION->IncludeComponent("bitrix:news.detail","news",Array(
 	"PROPERTY_CODE" => Array("GALLERY"),
 	"CACHE_TYPE"    => "A",
 	"CACHE_TIME"    => "36000",
-	"CLOSE"         => "Закрыть новость"
+	"CLOSE"         =>  (LANGUAGE_ID=='ru'?"Закрыть новость":"Close")
 ));
 ?>
