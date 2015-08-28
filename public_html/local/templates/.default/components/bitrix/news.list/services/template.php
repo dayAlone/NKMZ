@@ -17,7 +17,7 @@
               <span class="service__name"><?=$item['NAME']?></span>
               <?
               if(count($item["PROPERTIES"]['GALLERY']['VALUE'])>0):?>
-                <br><a href="#" class="service__gallery" data-pictures='<?=json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])?>'>Фотогалерея</a>
+                <br><a href="#" class="service__gallery" data-pictures='<?=json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])?>'><?=GetMessage("GALLERY");?></a>
               <?endif;?>
 		  </div>
 		  <div class="service__divider hidden-lg"></div>
