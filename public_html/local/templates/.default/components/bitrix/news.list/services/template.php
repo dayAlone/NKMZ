@@ -28,7 +28,7 @@
 		  <div class="col-sm-3 hidden-lg service__title"><?=GetMessage("CONTACTS");?></div>
 		  <div class="col-sm-9 col-lg-3">
 			  <span><?=$item['PROPERTIES']['ADDRESS']['VALUE']['TEXT']?><br>
-			  <a href="#" data-coords="<?=$item['PROPERTIES']['COORDS']['VALUE']?>" class="service__map">Открыть карту</a><br>
+			  <a href="#" data-coords="<?=$item['PROPERTIES']['COORDS']['VALUE']?>" class="service__map"><?=GetMessage('MAP')?></a><br>
 			  <?=GetMessage('PHONE')?>: <?=$item['PROPERTIES']['PHONE']['~VALUE']?></span>
 		  </div>
 		  <div class="service__divider hidden-lg"></div>
