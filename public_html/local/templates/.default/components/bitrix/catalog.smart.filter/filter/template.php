@@ -1,5 +1,5 @@
 <?if(count($arResult['ITEMS'])>0):?>
-<form action="/catalog/" method="GET" class="filter">
+<form action="<?=SITE_DIR?>/catalog/" method="GET" class="filter">
     <input type="hidden" name="set_filter" value="Y">
     <div class="filter__content">
         <div class="filter__title">
