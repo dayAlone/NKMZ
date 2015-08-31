@@ -65,4 +65,66 @@ if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 		endif;
 	}
 endif;
+
+use Bitrix\Highloadblock as HL;
+use Bitrix\Main\Entity;
+function getHighloadBlocks()
+{
+	$obCache   = new CPHPCache();
+	$cacheLife = 86400;
+	$cacheID   = 'getHighloadBlocks';
+	$cachePath = '/'.$cacheID;
+
+	if( $obCache->InitCache($cacheLife, $cacheID, $cachePath) ):
+
+		$vars = $obCache->GetVars();
+		$data = $vars['data'];
+
+	elseif( $obCache->StartDataCache() ):
+		CModule::IncludeModule("highloadblock");
+		$data    = array();
+		$dbHblock = HL\HighloadBlockTable::getList();
+	    while ($ib = $dbHblock->Fetch())
+	    	$data[$ib['TABLE_NAME']] = (int)$ib['ID'];
+
+		$obCache->EndDataCache(array('data' => $data));
+	endif;
+	return $data;
+}
+
+function getHighloadElements($name, $key, $value)
+{
+	$iblocks   = getHighloadBlocks();
+	$id        = $iblocks[$name];
+	$obCache   = new CPHPCache();
+	$cacheLife = 86400;
+	$cacheID   = 'getHighloadElements_site_'.$key.$value.$id;
+	$cachePath = '/'.$cacheID;
+	if( $obCache->InitCache($cacheLife, $cacheID, $cachePath) ):
+
+		$vars = $obCache->GetVars();
+		$data = $vars['data'];
+
+	elseif( $obCache->StartDataCache() ):
+		CModule::IncludeModule("highloadblock");
+		$hlblock = HL\HighloadBlockTable::getById($id)->fetch();
+		$entity  = HL\HighloadBlockTable::compileEntity($hlblock);
+		$class   = $entity->getDataClass();
+
+		$rsData = $class::getList(array(
+			"select" => array("*"),
+			"order"  => array("ID" => "ASC")
+		));
+
+		$data = array();
+
+		while($arData = $rsData->Fetch())
+			$data[$arData[$key]] = $arData[$value];
+
+		$obCache->EndDataCache(array('data' => $data));
+
+	endif;
+	return $data;
+}
+
 ?>
