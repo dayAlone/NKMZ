@@ -2136,6 +2136,12 @@ svg g {
     min-height: 293px;
   }
 }
+@media (min-width: 1200px) {
+  .index .sections .section,
+  .catalog .sections .section {
+    min-height: 308px;
+  }
+}
 @media (min-width: 1555px) {
   .index .sections .section,
   .catalog .sections .section {
@@ -2319,6 +2325,10 @@ svg g {
 @media (min-width: 992px) {
   .index .slider__content {
     margin-top: -77px;
+  }
+}
+@media (min-width: 1200px) {
+  .index .slider__content {
     max-width: 550px;
   }
 }
@@ -2400,6 +2410,11 @@ svg g {
 @media (min-width: 768px) {
   .index .slider__title {
     font-size: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .index .slider__title {
+    font-size: 47px;
   }
 }
 @media (min-width: 1200px) {
