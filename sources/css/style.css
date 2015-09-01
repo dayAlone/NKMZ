@@ -3113,6 +3113,7 @@ svg g {
   min-height: 400px;
   max-height: 400px;
   position: relative;
+  float: left;
 }
 @media (min-width: 992px) {
   .page__side #map {
