@@ -32,6 +32,120 @@ svg
 	path, g
 		t fill
 
+.text
+	h2, h3, h4
+		font-weight 300
+	h4
+		font-size 24px
+		margin-bottom 20px
+	ul
+		margin-bottom 30px
+		padding-left 20px
+		max-width 95%
+		li
+			margin-bottom 10px
+	img
+		max-width 100%
+		width 100%
+		@media (min-width: scr_md)
+			width auto
+		&.right
+			float right
+			margin-bottom 30px
+			margin-left 35px
+		&.left
+			float left
+			margin-bottom 30px
+			margin-right 35px
+		&.right, &.left
+			@media (min-width: scr_md)
+				max-width 45%
+	.row
+		margin-right -15px
+		margin-left -15px
+		> [class*='col-']
+			padding-right 15px
+			padding-left 15px
+	a:not(.button)
+		color blue
+		border-line alpha(@color, .5)
+		&:hover
+			color blue2
+			border-line alpha(@color, .5)
+	p
+		margin-bottom 25px
+		color alpha(blue_bg, .8)
+		&.highlight
+			font-size 120%
+			color blue2
+			padding-left 80px
+			position relative
+			&:before
+				position absolute
+				width 55px
+				content ""
+				background blue2
+				height 4px
+				top 10px
+				left 0
+				@media (min-width: scr_md) and (max-width: scr_lg)
+					top 8px
+
+.search-page
+	full-width()
+	.page__divider
+		margin 30px 0
+	font-size 14px
+	a
+		color blue
+		border-line alpha(@color, .5)
+		&:hover
+			color blue2
+			border-line alpha(@color, .5)
+	&__text
+		display inline-block
+		margin-top 10px
+		@extend .text
+	&__text, &__sort
+		font-size 14px
+	a&__title
+		font-size 22px
+		margin-bottom 8px
+		color blue
+		border-line alpha(@color, .5)
+		&:hover
+			color blue2
+			border-line alpha(@color, .5)
+		b
+			font-weight normal
+	small
+		width 100%
+		display inline-block
+	form
+		margin-top -15px
+		margin-bottom 30px
+		input[type=text]
+			background transparent
+			border 1px solid blue2
+			height 35px
+			min-width 40%
+			line-height 35px
+			border-radius 30px
+			padding 2px 50px 0 20px
+
+		button[type=submit]
+			background transparent
+			border 0
+			margin-left -44px
+			display inline-block
+			svg
+				position relative
+				top 5px
+				min-height 19px
+				min-width 19px
+				path
+					fill blue2
+
 .map-columns
 	width 100%
 	ul

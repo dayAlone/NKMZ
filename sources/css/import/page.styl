@@ -38,64 +38,6 @@
 		margin 0 5px 10px
 		@media (max-width: scr_xs)
 			width calc(33.3333% - 13px)
-.text
-	h2, h3, h4
-		font-weight 300
-	h4
-		font-size 24px
-		margin-bottom 20px
-	ul
-		margin-bottom 30px
-		padding-left 20px
-		max-width 95%
-		li
-			margin-bottom 10px
-	img
-		max-width 100%
-		width 100%
-		@media (min-width: scr_md)
-			width auto
-		&.right
-			float right
-			margin-bottom 30px
-			margin-left 35px
-		&.left
-			float left
-			margin-bottom 30px
-			margin-right 35px
-		&.right, &.left
-			@media (min-width: scr_md)
-				max-width 45%
-	.row
-		margin-right -15px
-		margin-left -15px
-		> [class*='col-']
-			padding-right 15px
-			padding-left 15px
-	a:not(.button)
-		color blue
-		border-line alpha(@color, .5)
-		&:hover
-			color blue2
-			border-line alpha(@color, .5)
-	p
-		margin-bottom 25px
-		color alpha(blue_bg, .8)
-		&.highlight
-			font-size 120%
-			color blue2
-			padding-left 80px
-			position relative
-			&:before
-				position absolute
-				width 55px
-				content ""
-				background blue2
-				height 4px
-				top 10px
-				left 0
-				@media (min-width: scr_md) and (max-width: scr_lg)
-					top 8px
 
 .modal-close
 	@extend .button, .button:hover

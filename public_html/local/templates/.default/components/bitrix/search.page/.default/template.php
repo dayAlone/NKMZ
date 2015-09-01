@@ -44,7 +44,7 @@
 	<?endforeach?>
 	</select>
 <?endif;?>
-	&nbsp;<button type="submit"><?=svg('seach')?></button>
+	&nbsp;<button type="submit"><?=svg('search')?></button>
 	<input type="hidden" name="how" value="<?echo $arResult["REQUEST"]["HOW"]=="d"? "d": "r"?>" />
 <?if($arParams["SHOW_WHEN"]):?>
 	<script>
