@@ -7400,25 +7400,25 @@ svg g {
     font-size: 15px;
     line-height: 1.2;
   }
-  .s1 .catalog .page__nav .nav__item {
+  .s1.catalog .page__nav .nav__item {
     max-width: 165px;
   }
-  .s1 .catalog .page__nav .nav__item:nth-child(2) {
+  .s1.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 245px;
   }
-  .s1 .catalog .page__nav .nav__item:nth-child(4) {
+  .s1.catalog .page__nav .nav__item:nth-child(4) {
     max-width: 200px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(1) {
+  .s2.catalog .page__nav .nav__item:nth-child(1) {
     max-width: 136px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+  .s2.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 187px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+  .s2.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 121px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(4) {
+  .s2.catalog .page__nav .nav__item:nth-child(4) {
     max-width: 139px;
   }
   .catalog .page__nav .nav__item:hover {
@@ -7436,25 +7436,25 @@ svg g {
     padding: 12px 25px 6px;
     font-size: 17px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(1) {
+  .s2.catalog .page__nav .nav__item:nth-child(1) {
     max-width: 159px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+  .s2.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 220px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+  .s2.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 141px;
   }
-  .s2 .catalog .page__nav .nav__item:nth-child(4) {
+  .s2.catalog .page__nav .nav__item:nth-child(4) {
     max-width: 162px;
   }
-  .s1 .catalog .page__nav .nav__item {
+  .s1.catalog .page__nav .nav__item {
     max-width: 195px;
   }
-  .s1 .catalog .page__nav .nav__item:nth-child(2) {
+  .s1.catalog .page__nav .nav__item:nth-child(2) {
     max-width: 290px;
   }
-  .s1 .catalog .page__nav .nav__item:nth-child(4) {
+  .s1.catalog .page__nav .nav__item:nth-child(4) {
     max-width: 240px;
   }
 }
