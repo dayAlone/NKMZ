@@ -14,7 +14,7 @@
 		<div class="row">
 		  <div class="col-sm-3 hidden-lg service__title"><?=GetMessage("COMPANY");?></div>
 		  <div class="col-sm-9 col-lg-3">
-              <span class="service__name"><?=$item['NAME']?></span>
+              <span class="service__name"><?=$item['~NAME']?></span>
               <?
               if($item["PROPERTIES"]['GALLERY']['VALUE']):?>
                 <br><a href="#" class="service__gallery" data-pictures='<?=json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])?>'><?=GetMessage("GALLERY");?></a>
@@ -27,7 +27,7 @@
 		  <div class="service__divider hidden-lg"></div>
 		  <div class="col-sm-3 hidden-lg service__title"><?=GetMessage("CONTACTS");?></div>
 		  <div class="col-sm-9 col-lg-3">
-			  <span><?=$item['PROPERTIES']['ADDRESS']['VALUE']['TEXT']?><br>
+			  <span><?=html_entity_decode($item['PROPERTIES']['ADDRESS']['VALUE']['TEXT'])?><br>
 			  <a href="#" data-coords="<?=$item['PROPERTIES']['COORDS']['VALUE']?>" class="service__map"><?=GetMessage('MAP')?></a><br>
 			  <?=GetMessage('PHONE')?>: <?=$item['PROPERTIES']['PHONE']['~VALUE']?></span>
 		  </div>
