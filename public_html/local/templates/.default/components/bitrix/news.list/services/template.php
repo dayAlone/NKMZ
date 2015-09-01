@@ -22,7 +22,7 @@
 		  </div>
 		  <div class="service__divider hidden-lg"></div>
 		  <div class="col-sm-3 hidden-lg service__title"><?=GetMessage("SERVICES");?></div>
-		  <div class="col-sm-9 col-lg-3"><span><?=$item['PROPERTIES']['SERVICES']['VALUE']['TEXT']?></span>
+		  <div class="col-sm-9 col-lg-3"><span><?=html_entity_decode($item['PROPERTIES']['SERVICES']['VALUE']['TEXT'])?></span>
 		  </div>
 		  <div class="service__divider hidden-lg"></div>
 		  <div class="col-sm-3 hidden-lg service__title"><?=GetMessage("CONTACTS");?></div>
