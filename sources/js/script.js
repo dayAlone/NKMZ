@@ -281,7 +281,7 @@
         path: '/'
       });
     }
-    if ($(window).height() > 800 && $(window).width() >= 1024) {
+    if ($(window).height() > 800 && $(window).width() >= 995) {
       $('.index .fotorama__stage, .index .fotorama__shaft, .page__content, .page__side').css('min-height', height);
       $('.page__content').css('max-height', height);
       $('.index .section').css('min-height', indexSectionHeight);
@@ -290,7 +290,7 @@
       $('.index .fotorama__stage, .index .fotorama__shaft, .index .section, .page__content, .page__side').removeAttr('style');
       $('.page__side').css('background-image', bg);
     }
-    if ($(window).width() >= 1024) {
+    if ($(window).width() >= 995) {
       if ($('.page__content').data('perfect-scrollbar')) {
         $('.page__content').perfectScrollbar('update');
       } else {

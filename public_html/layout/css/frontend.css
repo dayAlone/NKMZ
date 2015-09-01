@@ -6569,7 +6569,7 @@ svg g {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  background-position: right center;
+  background-position: 98% center;
 }
 @media (min-width: 992px) {
   .page__side {
