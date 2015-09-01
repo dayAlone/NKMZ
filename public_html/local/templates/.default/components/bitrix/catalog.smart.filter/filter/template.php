@@ -24,7 +24,7 @@
                       <?
                       foreach($item['VALUES'] as $val):
                           if(strlen($val['VALUE'])>0):?>
-                            <option value="<?=$val['CONTROL_NAME']?>"><?=$val['VALUE']?></option><?
+                            <option value="<?=$val['CONTROL_NAME']?>" <?($val['CHECKED']?"selected":"")?>><?=$val['VALUE']?></option><?
                             endif;
                         endforeach;?>
                   </select>
