@@ -40,7 +40,7 @@
                           <?
                           foreach($item['VALUES'] as $val):
                               if(strlen($val['VALUE'])>0):?>
-                                <input type="checkbox" <?=($val['CHECKED']?"checked":"")?> name="<?=$val['CONTROL_NAME']?>" value="Y"><?
+                                <input type="radio" <?=($val['CHECKED']?"checked":"")?> name="<?=$val['CONTROL_NAME']?>" value="Y"><?
                                 endif;
                             endforeach;?>
                       </div>
