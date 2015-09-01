@@ -1,11 +1,18 @@
 <?
 $arUrlRewrite = array(
 	array(
+		"CONDITION" => "#^/catalog/([\\w-_]+)/([\\w-_]+)/([\\w-_]+)/#",
+		"RULE"      => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&\$3",
+		"ID"        => "",
+		"PATH"      => "/404.php",
+	),
+	array(
 		"CONDITION" => "#^/catalog/([\\w-_]+)/([\\w-_]+)/.*#",
 		"RULE"      => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&\$3",
 		"ID"        => "",
 		"PATH"      => "/catalog/index.php",
 	),
+
 	array(
 		"CONDITION" => "#^/catalog/([\\w-_]+)/.*#",
 		"RULE"      => "&SECTION_CODE=\$1&\$2",
@@ -17,6 +24,13 @@ $arUrlRewrite = array(
 		"RULE"      => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&\$3",
 		"ID"        => "",
 		"PATH"      => "/press/index.php",
+	),
+
+	array(
+		"CONDITION" => "#^/en/catalog/([\\w-_]+)/([\\w-_]+)/([\\w-_]+)/#",
+		"RULE"      => "&SECTION_CODE=\$1&ELEMENT_CODE=\$2&\$3",
+		"ID"        => "",
+		"PATH"      => "/404.php",
 	),
 	array(
 		"CONDITION" => "#^/en/catalog/([\\w-_]+)/([\\w-_]+)/.*#",
