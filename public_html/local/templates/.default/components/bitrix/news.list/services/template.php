@@ -47,5 +47,5 @@
 
 <?$this->SetViewTarget('modal');?>
 	<a href="#" class="modal-close">Скрыть карту</a>
-	<div id="map" data-coords="56.11400541, 54.28644567" data-zoom="15" data-map data-lang="ru_RU" data-text="ООО «НКМЗ-Групп»"></div>
+	<div id="map" data-coords="56.11400541, 54.28644567" data-zoom="15" data-map data-lang="<?=(LANGUAGE_ID=='ru'?'ru_RU':"en_US")?>" data-text="ООО «НКМЗ-Групп»"></div>
 <?$this->EndViewTarget();?>

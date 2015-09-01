@@ -23,6 +23,7 @@ $aMenuLinks = Array(
 		Array(),
 		""
 	),
+	/*
 	Array(
 		"Career",
 		"/en/about/vacancies/",
@@ -30,6 +31,7 @@ $aMenuLinks = Array(
 		Array("URL" => "#"),
 		""
 	),
+	*/
 	Array(
 		"Photogallery",
 		"/en/about/gallery/",

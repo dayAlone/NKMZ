@@ -1,5 +1,5 @@
 <?
-$MESS['COMPANY'] = "Organisation";
+$MESS['COMPANY'] = "Organization";
 $MESS['SERVICES'] = "Services";
 $MESS['CONTACTS'] = "Contacts";
 $MESS['DIRECTOR'] = "Director";

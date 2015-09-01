@@ -2,7 +2,7 @@
   <div class="modal-dialog feedback__dialog">
     <div class="modal-content">
 		<div class="right s-margin-top l-margin-bottom">
-			<a data-dismiss="modal" href="#" class="close">Закрыть окно</a>
+			<a data-dismiss="modal" href="#" class="close">Close</a>
 		</div>
         <div class="feedback__success">
           <h1 class="center">Your message has been sent successfully.</h1>
