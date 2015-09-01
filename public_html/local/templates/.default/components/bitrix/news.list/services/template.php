@@ -16,7 +16,7 @@
 		  <div class="col-sm-9 col-lg-3">
               <span class="service__name"><?=$item['NAME']?></span>
               <?
-              if(json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])):?>
+              if($item["PROPERTIES"]['GALLERY']['VALUE']):?>
                 <br><a href="#" class="service__gallery" data-pictures='<?=json_encode($item["PROPERTIES"]['GALLERY']['VALUE'])?>'><?=GetMessage("GALLERY");?></a>
               <?endif;?>
 		  </div>

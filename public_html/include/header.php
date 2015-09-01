@@ -54,7 +54,7 @@
 				  <a href="/" class="lang__trigger <?=(LANGUAGE_ID=='ru'?"lang__trigger--active":"")?>"><span>RU</span></a>
 				  <a href="/en/" class="lang__trigger <?=(LANGUAGE_ID=='en'?"lang__trigger--active":"")?>"><span>EN</span></a>
 			  </span>
-              <form action="<?=SITE_DIR?>/search/" class="search">
+              <form action="<?=SITE_DIR?>search/" class="search">
                   <input type="text" name="q">
                   <button type="submit"><?=svg('search')?></button>
               </form>
