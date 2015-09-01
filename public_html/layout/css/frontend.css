@@ -6049,7 +6049,7 @@ svg g {
   color: #fefefe;
 }
 .index .slider__text {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 14px;
 }
 @media (min-width: 325px) {
@@ -6065,7 +6065,6 @@ svg g {
 @media (min-width: 992px) {
   .index .slider__text {
     font-size: 13px;
-    margin-bottom: 20px;
   }
 }
 @media (min-width: 1200px) {
