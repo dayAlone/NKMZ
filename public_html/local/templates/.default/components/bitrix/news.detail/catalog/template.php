@@ -31,7 +31,7 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
                 foreach ($row as $k => $el) if(strlen($el) == 0) unset($row[$k]);
                 foreach ($row as $k => $el):
                 ?>
-                    <div class="param__col" style="width: <?=100/count($row)?>%"><span><?=$el?></span></div>
+                    <div class="param__col" style="width: <?=100/count($row)?>%"><span><?=html_entity_decode($el)?></span></div>
                 <?
                 endforeach;?>
                 </div>
