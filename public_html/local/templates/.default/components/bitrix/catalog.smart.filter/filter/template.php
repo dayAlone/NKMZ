@@ -24,7 +24,7 @@
                       <?
                       foreach($item['VALUES'] as $val):
                           if(strlen($val['VALUE'])>0):?>
-                            <option value="<?=$val['CONTROL_NAME']?>" <?($val['CHECKED']?"selected":"")?>><?=$val['VALUE']?></option><?
+                            <option value="<?=$val['CONTROL_NAME']?>"><?=$val['VALUE']?></option><?
                             endif;
                         endforeach;?>
                   </select>
@@ -40,7 +40,7 @@
                           <?
                           foreach($item['VALUES'] as $val):
                               if(strlen($val['VALUE'])>0):?>
-                                <input type="checkbox" name="<?=$val['CONTROL_NAME']?>" value="Y"><?
+                                <input type="checkbox" <?=($val['CHECKED']?"checked":"")?> name="<?=$val['CONTROL_NAME']?>" value="Y"><?
                                 endif;
                             endforeach;?>
                       </div>
