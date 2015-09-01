@@ -3848,7 +3848,7 @@ svg g {
     bottom: 45px;
   }
   .catalog .sections .section__name span {
-    line-height: 1;
+    line-height: 1.2;
     vertical-align: top;
   }
 }
