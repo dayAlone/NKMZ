@@ -4,7 +4,7 @@
 		<div class="contact">
 		  <div class="contact__content">
 			<div class="row">
-			  <div class="col-sm-4 col-lg-3"><span class="contact__title"><?=$item['NAME']?></span></div>
+			  <div class="col-sm-4 col-lg-3"><span class="contact__title"><?=$item['~NAME']?></span></div>
 			  <div class="col-sm-4 col-lg-3"><span class="contact__name"><?=$item['PROPERTIES']['NAME']['~VALUE']?></span></div>
 			  <div class="col-sm-4 col-lg-6 sm-right lg-left">
 				<div class="row contact__connect">
