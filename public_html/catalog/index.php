@@ -23,7 +23,7 @@ elseif(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['set_filter'])):
 	$APPLICATION->IncludeComponent("bitrix:news.list", "catalog",
 	  array(
 	      "IBLOCK_ID"     => "3",
-	      "NEWS_COUNT"    => "20",
+	      "NEWS_COUNT"    => "50",
 	      "SORT_BY1"      => "IBLOCK_SECTION_ID",
 	      "SORT_ORDER1"   => "DESC",
 		  "SORT_BY2"      => "SORT",
