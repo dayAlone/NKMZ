@@ -4,7 +4,7 @@
 		<div class="slider__item">
 			<div style="background-image: url(<?=$item['PREVIEW_PICTURE']['SRC']?>), url(<?=$item['PREVIEW_PICTURE']['SMALL']?>)" class="slider__image"></div>
 			<div class="slider__content">
-			  <h2 class="slider__title"><?=$item['NAME']?></h2>
+			  <h2 class="slider__title"><?=$item['~NAME']?></h2>
 			  <div class="slider__text">
 				<p><?=$item['~PREVIEW_TEXT']?></p>
 			  </div>
