@@ -2363,7 +2363,7 @@ svg g {
   min-width: 130px;
   text-align: center;
   height: 30px;
-  line-height: 34px;
+  line-height: 33px;
   font-size: 14px;
   background-color: #309dff;
 }
@@ -2396,18 +2396,19 @@ svg g {
 @media (min-width: 992px) {
   .index .slider__text {
     font-size: 13px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 1200px) {
   .index .slider__text {
     font-size: 20px;
+    margin-bottom: 35px;
   }
 }
 .index .slider__title {
   line-height: 1;
   font-weight: 300;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-size: 28px;
   margin-top: 0px;
 }
@@ -2429,6 +2430,7 @@ svg g {
 @media (min-width: 1200px) {
   .index .slider__title {
     font-size: 55px;
+    margin-bottom: 35px;
   }
 }
 .index .news-list {
@@ -2512,6 +2514,16 @@ svg g {
 .index .news-list .news__title {
   font-size: 13px;
   color: #fefefe;
+}
+@media (min-width: 992px) {
+  .index .news-list .news__title {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1200px) {
+  .index .news-list .news__title {
+    font-size: 13px;
+  }
 }
 .index .news-list .news__title:hover {
   color: #309dff;

@@ -284,7 +284,7 @@
 			min-width 130px
 			text-align center
 			height 30px
-			line-height 34px
+			line-height 33px
 			font-size 14px
 			background-color blue
 			@media (min-width: scr_lg)
@@ -304,13 +304,14 @@
 				font-size 18px
 			@media (min-width: scr_md)
 				font-size 13px
-				margin-bottom 35px
+				margin-bottom 20px
 			@media (min-width: scr_lg)
 				font-size 20px
+				margin-bottom 35px
 		&__title
 			line-height 1
 			font-weight 300
-			margin-bottom 25px
+			margin-bottom 20px
 			font-size 28px
 			margin-top 0px
 			@media (min-width: 325px)
@@ -321,6 +322,7 @@
 				font-size 30px
 			@media (min-width: scr_lg)
 				font-size 55px
+				margin-bottom 35px
 
 	.news-list
 		&--mobile
@@ -367,6 +369,10 @@
 			&__title
 				font-size 13px
 				color white
+				@media (min-width: scr_md)
+					font-size 12px
+				@media (min-width: scr_lg)
+					font-size 13px
 				&:hover
 					color blue
 					border-line alpha(@color, .5)
