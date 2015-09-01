@@ -2316,6 +2316,7 @@ svg g {
   -o-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  max-width: 100%;
 }
 @media (min-width: 768px) {
   .index .slider__content {
@@ -2359,12 +2360,20 @@ svg g {
   display: inline-block;
   color: #fefefe;
   padding: 0 25px;
-  font-size: 16px;
-  min-width: 160px;
+  min-width: 130px;
   text-align: center;
-  height: 40px;
-  line-height: 44px;
+  height: 30px;
+  line-height: 34px;
+  font-size: 14px;
   background-color: #309dff;
+}
+@media (min-width: 1200px) {
+  .index .slider__button {
+    height: 40px;
+    line-height: 44px;
+    font-size: 16px;
+    min-width: 160px;
+  }
 }
 .index .slider__button:hover {
   background-color: #2064b8;
@@ -2386,8 +2395,8 @@ svg g {
 }
 @media (min-width: 992px) {
   .index .slider__text {
-    font-size: 17px;
-    margin-bottom: 45px;
+    font-size: 13px;
+    margin-bottom: 35px;
   }
 }
 @media (min-width: 1200px) {
@@ -2409,12 +2418,12 @@ svg g {
 }
 @media (min-width: 768px) {
   .index .slider__title {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 @media (min-width: 992px) {
   .index .slider__title {
-    font-size: 47px;
+    font-size: 30px;
   }
 }
 @media (min-width: 1200px) {
