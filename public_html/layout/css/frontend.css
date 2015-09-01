@@ -6054,12 +6054,12 @@ svg g {
 }
 @media (min-width: 325px) {
   .index .slider__text {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (min-width: 380px) {
   .index .slider__text {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media (min-width: 992px) {
@@ -6082,7 +6082,7 @@ svg g {
 }
 @media (min-width: 325px) {
   .index .slider__title {
-    font-size: 33px;
+    font-size: 23px;
   }
 }
 @media (min-width: 768px) {
@@ -7398,14 +7398,28 @@ svg g {
     padding: 12px 20px 6px;
     margin-right: 3px;
     font-size: 15px;
-    max-width: 165px;
     line-height: 1.2;
   }
-  .catalog .page__nav .nav__item:nth-child(2) {
+  .s1 .catalog .page__nav .nav__item {
+    max-width: 165px;
+  }
+  .s1 .catalog .page__nav .nav__item:nth-child(2) {
     max-width: 245px;
   }
-  .catalog .page__nav .nav__item:nth-child(4) {
+  .s1 .catalog .page__nav .nav__item:nth-child(4) {
     max-width: 200px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(1) {
+    max-width: 136px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+    max-width: 187px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+    max-width: 121px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(4) {
+    max-width: 139px;
   }
   .catalog .page__nav .nav__item:hover {
     background-color: rgba(48,157,255,0.1);
@@ -7421,12 +7435,26 @@ svg g {
   .catalog .page__nav .nav__item {
     padding: 12px 25px 6px;
     font-size: 17px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(1) {
+    max-width: 159px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+    max-width: 220px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(2) {
+    max-width: 141px;
+  }
+  .s2 .catalog .page__nav .nav__item:nth-child(4) {
+    max-width: 162px;
+  }
+  .s1 .catalog .page__nav .nav__item {
     max-width: 195px;
   }
-  .catalog .page__nav .nav__item:nth-child(2) {
+  .s1 .catalog .page__nav .nav__item:nth-child(2) {
     max-width: 290px;
   }
-  .catalog .page__nav .nav__item:nth-child(4) {
+  .s1 .catalog .page__nav .nav__item:nth-child(4) {
     max-width: 240px;
   }
 }

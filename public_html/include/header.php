@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang='ru'>
+<!DOCTYPE html><html lang='<?=LANGUAGE_ID?>'>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
@@ -25,7 +25,7 @@
     $APPLICATION->ShowViewContent('header');
   ?>
 </head>
-<body class="<?=$APPLICATION->AddBufferContent("body_class");?> <?=SITE_ID?>">
+<body class="<?=$APPLICATION->AddBufferContent("body_class");?> <?=SITE_ID?> ">
 <div class="wrap">
   <div id="panel"><?$APPLICATION->ShowPanel();?></div>
   <div class="toolbar">
