@@ -6737,7 +6737,7 @@ svg g {
 .modal .close:hover:before {
   background-color: #309dff;
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .page__content {
     margin-right: -7px;
     float: none;
@@ -7363,6 +7363,11 @@ svg g {
 @media (min-width: 992px) {
   .catalog .page__content {
     margin-bottom: 0px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .catalog .page__content {
+    margin-right: 0px;
   }
 }
 @media (min-width: 992px) {
