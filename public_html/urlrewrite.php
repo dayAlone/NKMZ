@@ -69,6 +69,12 @@ $arUrlRewrite = array(
 		"PATH"      => "/press/index.php",
 	),
 	array(
+		"CONDITION" => "#^/en/press/([\\w-_]+)/.*#",
+		"RULE"      => "&SECTION_CODE=\$1&\$2",
+		"ID"        => "",
+		"PATH"      => "/en/press/index.php",
+	),
+	array(
 		"CONDITION" => "#^/about/vacancies/([\\w-_]+)/.*#",
 		"RULE"      => "&ELEMENT_CODE=\$1&\$2",
 		"ID"        => "",
