@@ -5869,7 +5869,7 @@ a.search-page__title b {
 .index .filter .dropdown__frame,
 .index .news-list--mobile .dropdown__frame,
 .catalog .filter .dropdown__frame {
-  max-height: 143px;
+  max-height: 145px;
   min-width: calc(100% + 34px);
 }
 .index .filter .dropdown__item,
