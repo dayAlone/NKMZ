@@ -10,6 +10,7 @@
 	else:
 		foreach ($arResult['ITEMS'][0]["PROPERTIES"]['GALLERY']['VALUE'] as $item):?>
 		<a href="#" class="album" style="background-image: url(<?=$item["small"]?>)">
+			<span><?=svg('zoom')?></span>
 		</a>
 		<?endforeach;
 	endif;?>

@@ -4540,3 +4540,10 @@ a.search-page__title b {
   color: #fefefe;
   width: 100%;
 }
+.albums .album span svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+.albums .album span svg path {
+  fill: #fefefe;
+}
