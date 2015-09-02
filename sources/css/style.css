@@ -3851,9 +3851,10 @@ a.search-page__title b {
     border-bottom: 0px;
   }
   .catalog--detail.catalog .page__title {
-    margin-top: 25px;
+    margin-top: 23px;
     line-height: 1;
-    margin-bottom: 10px;
+    height: auto;
+    margin-bottom: 54px;
   }
 }
 @media (min-width: 992px) {
