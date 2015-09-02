@@ -7520,10 +7520,10 @@ a.search-page__title b {
     border-bottom: 0px;
   }
   .catalog--detail.catalog .page__title {
-    margin-top: 23px;
+    margin-top: 24px;
     line-height: 1;
     height: auto;
-    margin-bottom: 54px;
+    margin-bottom: 52px;
   }
 }
 @media (min-width: 992px) {
