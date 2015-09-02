@@ -19,6 +19,7 @@ if(isset($_REQUEST['ELEMENT_CODE'])):
 		"CACHE_TYPE"    => "A",
 		"CACHE_TIME"    => "36000"
 	));
+	$APPLICATION->SetPageProperty('body_class', "catalog catalog--detail");
 elseif(isset($_REQUEST['SECTION_CODE']) || isset($_REQUEST['set_filter'])):
 	$APPLICATION->IncludeComponent("bitrix:news.list", "catalog",
 	  array(

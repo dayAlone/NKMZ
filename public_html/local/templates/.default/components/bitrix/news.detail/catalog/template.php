@@ -27,7 +27,7 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
             foreach ($item['PROPERTIES']['TABLE']['VALUE'] as $key => $row):?>
                 <div class="param <?=($row['prop_title'] == "Y"?"param--title":"")?>">
                 <?
-                unset($row['prop_title']);
+                if(isset($row['prop_title'])) unset($row['prop_title']);
                 foreach ($row as $k => $el) if(strlen($el) == 0) unset($row[$k]);
                 foreach ($row as $k => $el):
                 ?>
