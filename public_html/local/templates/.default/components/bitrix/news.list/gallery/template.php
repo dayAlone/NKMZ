@@ -9,7 +9,7 @@
 		<?endforeach;
 	else:
 		foreach ($arResult['ITEMS'][0]["PROPERTIES"]['GALLERY']['VALUE'] as $item):?>
-		<a href="#" class="album" style="background-image: url(<?=$item["src"]?>)">
+		<a href="#" class="album" style="background-image: url(<?=$item["small"]?>)">
 		</a>
 		<?endforeach;
 	endif;?>

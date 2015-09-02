@@ -12,7 +12,7 @@ foreach ($arResult['ITEMS'] as $key => &$item) {
 	    if(is_array($prop['VALUE'])):
 	        foreach ($prop['VALUE'] as $key => $value):
 				  $sort  = ($description[$key]?$description[$key]:0);
-	              $small = CFile::ResizeImageGet($value, Array("width" => 312, "height" => 312), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 100);
+	              $small = CFile::ResizeImageGet($value, Array("width" => 400, "height" => 400), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 100);
 	              $big   = CFile::ResizeImageGet($value, Array("width" => 1000, "height" => 1000), BX_RESIZE_IMAGE_PROPORTIONAL, true, false, false, 100);
 	              $gallery[] = array('sort'=>$sort, 'src'=> $big['src'], 'small'=> $small['src'], 'w'=>$big['width'], "h"=>$big['height']);
 	        endforeach;
