@@ -8,7 +8,7 @@
 			  <div class="slider__text">
 				<p><?=$item['~PREVIEW_TEXT']?></p>
 			  </div>
-			  <?if(strlen($item['PROPERTIES']['LINK']['VALUE'])):?>
+			  <?if(strlen($item['PROPERTIES']['LINK']['VALUE'])>0):?>
 			  	<a href="<?=$item['PROPERTIES']['LINK']['VALUE']?>" class="slider__button"><?=(LANGUAGE_ID=='ru'?'Подробнее':'Read more')?></a>
 			  <?endif;?>
 			</div>
