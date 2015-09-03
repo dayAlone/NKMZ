@@ -156,12 +156,16 @@
 			overflow hidden
 			min-height 352px
 			@media (min-width: scr_md)
+				min-height 337px
+			@media (min-width: scr_md) and (min-height: 700px)
 				min-height: 293px
 			@media (min-width: scr_lg)
-				min-height: 308px
+				min-height: 307px
+			@media (min-width: scr_lg) and (min-height: 760px)
+				min-height calc(100vh - 458px)
 			@media (min-width: hide_feedback)
 				min-height 395px
-			@media (min-width: hide_feedback) and (min-height: 700px)
+			@media (min-width: hide_feedback) and (min-height: 760px)
 				min-height calc(100vh - 418px)
 			&__name
 				position absolute
@@ -201,7 +205,6 @@
 			&--4
 				.section__logo
 					padding 0 29px
-
 			&__image
 				position absolute
 				width 100%
@@ -238,6 +241,8 @@
 				@media (min-width: scr_md)
 					min-height 641px
 				@media (min-width: scr_md) and (min-height: 700px)
+					min-height 595px
+				@media (min-width: scr_md) and (min-height: 760px)
 					min-height calc(100vh - 172px)
 		&__image
 			position absolute

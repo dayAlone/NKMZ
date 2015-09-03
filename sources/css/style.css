@@ -2386,13 +2386,25 @@ a.search-page__title b {
 @media (min-width: 992px) {
   .index .sections .section,
   .catalog .sections .section {
+    min-height: 337px;
+  }
+}
+@media (min-width: 992px) and (min-height: 700px) {
+  .index .sections .section,
+  .catalog .sections .section {
     min-height: 293px;
   }
 }
 @media (min-width: 1200px) {
   .index .sections .section,
   .catalog .sections .section {
-    min-height: 308px;
+    min-height: 307px;
+  }
+}
+@media (min-width: 1200px) and (min-height: 760px) {
+  .index .sections .section,
+  .catalog .sections .section {
+    min-height: calc(100vh - 458px);
   }
 }
 @media (min-width: 1555px) {
@@ -2401,7 +2413,7 @@ a.search-page__title b {
     min-height: 395px;
   }
 }
-@media (min-width: 1555px) and (min-height: 700px) {
+@media (min-width: 1555px) and (min-height: 760px) {
   .index .sections .section,
   .catalog .sections .section {
     min-height: calc(100vh - 418px);
@@ -2531,6 +2543,12 @@ a.search-page__title b {
   }
 }
 @media (min-width: 992px) and (min-height: 700px) {
+  .index .slider .fotorama__stage,
+  .index .slider .fotorama__shaft {
+    min-height: 595px;
+  }
+}
+@media (min-width: 992px) and (min-height: 760px) {
   .index .slider .fotorama__stage,
   .index .slider .fotorama__shaft {
     min-height: calc(100vh - 172px);
