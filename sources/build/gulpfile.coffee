@@ -1,11 +1,13 @@
 gulp         = require 'gulp'
 
-autoprefixer = require 'gulp-autoprefixer'
+autoprefixer = require 'autoprefixer-core'
 cache        = require 'gulp-cached'
 cmq          = require 'gulp-combine-media-queries'
 csscomb      = require 'gulp-csscomb'
+postcss      = require 'gulp-postcss';
 coffee       = require 'gulp-coffee'
 concat       = require 'gulp-concat'
+sourcemaps   = require 'gulp-sourcemaps'
 cssmin       = require 'gulp-minify-css'
 data         = require 'gulp-data'
 gutil        = require 'gulp-util'
@@ -124,15 +126,12 @@ gulp.task 'css_front', ['css_stylus'], ->
 
 gulp.task 'css_mini', ->
 	gulp.src [ "#{path.css.frontend}/frontend.css"]
-	.pipe gulp.dest path.css.frontend
-
 	.pipe csscomb()
-	.pipe autoprefixer
-        browsers: ['last 2 versions'],
-        cascade: false
-    .pipe cmq
-      log: true
+	.pipe(sourcemaps.init())
+	.pipe postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ])
+	.pipe(sourcemaps.write('.'))
 	.pipe cssmin()
+	.pipe gulp.dest path.css.frontend
 
 
 
