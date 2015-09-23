@@ -135,7 +135,7 @@
           'url': href
         }, title, href);
       }
-      document.title = title + " | " + $('body').data('sitename');
+      document.title = title + " | " + $('body').data('siteName');
       initCloseButtons(block);
       if ($('.gallery').length > 0) {
         return initGallery();
@@ -438,6 +438,7 @@
     });
     $('#Career .form').submit(function(e) {
       var data;
+      e.preventDefault();
       data = new FormData(this);
       return $.ajax({
         type: 'POST',

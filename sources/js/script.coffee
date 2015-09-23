@@ -111,7 +111,7 @@
 		title = $(data).find('h2').text()
 		if History.enabled
 			History.pushState { 'url' : href }, title, href
-		document.title = title + " | " + $('body').data('sitename')
+		document.title = title + " | " + $('body').data('siteName')
 		initCloseButtons block
 		initGallery() if $('.gallery').length > 0
 
@@ -340,6 +340,7 @@ $(document).ready ->
 	        		getCaptcha()
 
 	$('#Career .form').submit (e)->
+		e.preventDefault()
 		data = new FormData(this)
 		$.ajax
 			type        : 'POST'

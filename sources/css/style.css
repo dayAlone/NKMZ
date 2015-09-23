@@ -3542,9 +3542,11 @@ a.search-page__title b {
 .parsley-errors-list {
   display: none;
 }
-.parsley-errors-list.filled + a.file__trigger {
+.parsley-errors-list.filled + a.file__trigger,
+.parsley-errors-list.filled + a.file__trigger:hover {
   border-color: #f00 !important;
   color: #f00 !important;
+  background-color: #fefefe !important;
 }
 .file .row {
   margin-top: 4px;

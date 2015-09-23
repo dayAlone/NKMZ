@@ -1,8 +1,11 @@
 .parsley-errors-list
 	display none
 	&.filled + a.file__trigger
-		border-color red !important
-		color red !important
+		&, &:hover
+			border-color red !important
+			color red !important
+			background-color white !important
+
 .file
 
 	.row
@@ -16,7 +19,6 @@
 		font-size 11px
 	&__trigger
 		@extend .button, .button--blue
-
 		max-width 100%
 		min-width 0
 		font-size 14px
