@@ -436,7 +436,7 @@
         }
       });
     });
-    $('#Career .form').submit(function(e) {
+    $('#Career form').submit(function(e) {
       var data;
       e.preventDefault();
       data = new FormData(this);

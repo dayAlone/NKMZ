@@ -3,11 +3,11 @@
     <div class="modal-content">
       <div class="right xs-margin-top xl-margin-bottom"><a data-dismiss="modal" href="#" class="close">Закрыть форму</a></div>
       <div class="vacancy-popup">
-        <div class="modal__success">
+        <div class="modal__success success">
           <h3 class="center">Ваша заявка успешно отправлена.</h3>
           <p class="center">В ближайшее время представители нашей компании свяжутся с вами. Благодарим за обращение.</p>
         </div>
-        <form data-parsley-validate="" enctype="multipart/form-data" class="modal__form visible">
+        <form data-parsley-validate="" enctype="multipart/form-data" class="modal__form visible form">
           <h3 class="center">Отправка резюме в базу соискателей</h3>
           <input type="hidden" name="group_id" value="6">
           <input type="hidden" name="vacancy" value="">

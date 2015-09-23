@@ -339,7 +339,7 @@ $(document).ready ->
 	        		$('input[name=captcha_word]').addClass('parsley-error')
 	        		getCaptcha()
 
-	$('#Career .form').submit (e)->
+	$('#Career form').submit (e)->
 		e.preventDefault()
 		data = new FormData(this)
 		$.ajax
