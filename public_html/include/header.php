@@ -25,7 +25,7 @@
     $APPLICATION->ShowViewContent('header');
   ?>
 </head>
-<body class="<?=$APPLICATION->AddBufferContent("body_class");?> <?=SITE_ID?> ">
+<body class="<?=$APPLICATION->AddBufferContent("body_class");?> <?=SITE_ID?> " data-site-name="<?=$arSite['NAME']?>">
 <div class="wrap">
   <div id="panel"><?$APPLICATION->ShowPanel();?></div>
   <div class="toolbar">
@@ -34,7 +34,7 @@
       <div class="toolbar__api right">
 		  <span class="api"><?=svg('logo-api')?>
 	          <span class="api__text">
-	            American Petroleum Institute Certification
+				  American Petroleum Institute Certification №11D1-0068
 			</span>
 		  </span>
 	 </div>

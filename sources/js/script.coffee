@@ -33,7 +33,6 @@
 
 @getCaptcha = ()->
 	$.get '/include/captcha.php', (data)->
-		console.log data
 		setCaptcha data
 
 @setCaptcha = (code)->
@@ -112,7 +111,7 @@
 		title = $(data).find('h2').text()
 		if History.enabled
 			History.pushState { 'url' : href }, title, href
-		document.title = title + " | " + document.title.split(' | ')[1]
+		document.title = title + " | " + $('body').data('sitename')
 		initCloseButtons block
 		initGallery() if $('.gallery').length > 0
 
@@ -351,6 +350,7 @@ $(document).ready ->
 			processData : false
 			mimeType    : 'multipart/form-data'
 			success     : (data) ->
+				console.log(data)
 				data = $.parseJSON(data)
 				if data.status == "ok"
 					$('#Career .form').hide()

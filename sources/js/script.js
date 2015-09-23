@@ -37,7 +37,6 @@
 
   this.getCaptcha = function() {
     return $.get('/include/captcha.php', function(data) {
-      console.log(data);
       return setCaptcha(data);
     });
   };
@@ -136,7 +135,7 @@
           'url': href
         }, title, href);
       }
-      document.title = title + " | " + document.title.split(' | ')[1];
+      document.title = title + " | " + $('body').data('sitename');
       initCloseButtons(block);
       if ($('.gallery').length > 0) {
         return initGallery();
@@ -449,6 +448,7 @@
         processData: false,
         mimeType: 'multipart/form-data',
         success: function(data) {
+          console.log(data);
           data = $.parseJSON(data);
           if (data.status === "ok") {
             $('#Career .form').hide();
