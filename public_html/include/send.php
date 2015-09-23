@@ -46,6 +46,7 @@ if($result['status'] == 'ok') {
 			$emails = preg_split("/(,\s|,)/", COption::GetOptionString("grain.customsettings","group_".$_REQUEST["group_id"]));
 			$rsSites = CSite::GetByID(SITE_ID);
 	    	$arSite  = $rsSites->Fetch();
+			$result['emails'] = array();
 			foreach ($emails as $email):
 				if(filter_var($email, FILTER_VALIDATE_EMAIL)):
 					$mail = new PHPMailer;
@@ -56,6 +57,9 @@ if($result['status'] == 'ok') {
 					$mail->addAddress($email, $email);
 					$mail->msgHTML($body);
 					$mail->send();
+					$result['emails'][] = array($email, true);
+				else:
+					$result['emails'][] = array($email, true);
 				endif;
 			endforeach;
 
