@@ -9,7 +9,7 @@
         </div>
         <form data-parsley-validate="" enctype="multipart/form-data" class="modal__form visible form">
           <h3 class="center">Отправка резюме в базу соискателей</h3>
-          <input type="hidden" name="group_id" value="6">
+          <input type="hidden" name="group_id" value="2">
           <input type="hidden" name="vacancy" value="">
           <div class="row">
             <div class="col-sm-12">
