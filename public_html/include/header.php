@@ -38,6 +38,9 @@
 			</span>
 		  </span>
 	 </div>
+     <div class="toolbar__veritas">
+         <?=svg('veritas')?>
+     </div>
 	  <?php
             $APPLICATION->IncludeComponent("bitrix:menu", "toolbar",
             array(
@@ -61,13 +64,17 @@
 			  <a href="#" class="toolbar__link search-trigger"><?=svg('search')?></a>
           </div>
       </div>
+
       <div class="toolbar__contacts right">
 		  <span class="toolbar__block">
 			  <a href="<?=preg_replace("/[^0-9+]/", "", COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID))?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID)?></a>
 			  <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?></a>
-			  <a href="#Feedback" data-toggle="modal" class="toolbar__link"><?=(LANGUAGE_ID=='ru'?'Обратная связь':'Feedback')?></a>
 		  </span>
 	  </div>
+      <div class="toolbar__feedback">
+        <a href="#Feedback" data-toggle="modal" class="toolbar__link"><?=(LANGUAGE_ID=='ru'?'Обратная связь':'Feedback')?></a>      
+      </div>
+
     </div>
   </div>
   <div class="page">
