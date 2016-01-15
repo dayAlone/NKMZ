@@ -21,6 +21,7 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
 
 	<div class="product__description text">
 		<?=$item['~DETAIL_TEXT']?>
+        <a href='#Feedback' data-toggle='modal' class='button'>Запрос информации</a>
         <div class="params">
             <div class="params__frame">
             <?
@@ -41,6 +42,11 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
             </div>
         </div>
 	    <?=html_entity_decode(nl2br($item['PROPERTIES']['TEXT']['VALUE']['TEXT']))?>
+        <? if (strlen($item['PROPERTIES']['SEO']['VALUE']['TEXT']) > 0): ?>
+        <div class='product__seo'>
+            <?=html_entity_decode(nl2br($item['PROPERTIES']['SEO']['VALUE']['TEXT']))?>
+        </div>
+        <?endif;?>
     </div>
 
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] > $item['PREVIEW_PICTURE']['WIDTH']):?>

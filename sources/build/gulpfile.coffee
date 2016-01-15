@@ -8,7 +8,7 @@ postcss      = require 'gulp-postcss';
 coffee       = require 'gulp-coffee'
 concat       = require 'gulp-concat'
 sourcemaps   = require 'gulp-sourcemaps'
-cssmin       = require 'gulp-minify-css'
+#cssmin       = require 'gulp-minify-css'
 data         = require 'gulp-data'
 gutil        = require 'gulp-util'
 livereload   = require 'gulp-livereload'
@@ -130,7 +130,7 @@ gulp.task 'css_mini', ->
 	.pipe(sourcemaps.init())
 	.pipe postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ])
 	.pipe(sourcemaps.write('.'))
-	.pipe cssmin()
+	#.pipe cssmin()
 	.pipe gulp.dest path.css.frontend
 
 

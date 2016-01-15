@@ -4438,6 +4438,21 @@ a.search-page__title b {
   max-width: 100%;
   max-height: 630px;
 }
+.products .product__seo {
+  margin-top: 35px;
+  padding-top: 20px;
+  font-size: 80%;
+  border-top: 1px solid #ccd2d7;
+}
+.products .product__description .button {
+  background-color: #309dff;
+  color: #fefefe;
+  padding: 0 30px;
+}
+.products .product__description .button:hover {
+  background-color: #2064b8;
+  border-color: #2064b8;
+}
 .products .product__description p:last-of-type {
   margin-bottom: 0px;
 }
