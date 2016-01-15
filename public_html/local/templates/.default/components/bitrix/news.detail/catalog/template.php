@@ -21,7 +21,7 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
 
 	<div class="product__description text">
 		<?=$item['~DETAIL_TEXT']?>
-        <a href='#Feedback' data-toggle='modal' class='button'>Запрос информации</a>
+        <p><a href='#Feedback' data-toggle='modal' class='button'>Запрос информации</a></p>
         <div class="params">
             <div class="params__frame">
             <?
