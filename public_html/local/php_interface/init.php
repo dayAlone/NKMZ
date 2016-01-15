@@ -19,7 +19,7 @@ function page_title()
 {
 	global $APPLICATION;
 	if($APPLICATION->GetPageProperty('page_title')) {
-		return $APPLICATION->GetPageProperty('page_title');
+		return strip_tags($APPLICATION->GetPageProperty('page_title'));
 	}
 }
 if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
