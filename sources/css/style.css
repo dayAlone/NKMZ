@@ -970,12 +970,12 @@ a:hover {
   font-family: 'HelveticaNeue';
   font-weight: 300;
   font-style: normal;
-  src: url("/layout/fonts/2.eot");
-  src: url("/layout/fonts/2.eot#iefix") format('embedded-opentype'), url("/layout/fonts/2.woff2") format('woff2'), url("/layout/fonts/2.woff") format('woff'), url("/layout/fonts/2.ttf") format('truetype');
+  src: url("/layout/fonts/34.eot");
+  src: url("/layout/fonts/34.eot#iefix") format('embedded-opentype'), url("/layout/fonts/34.woff2") format('woff2'), url("/layout/fonts/34.woff") format('woff'), url("/layout/fonts/34.ttf") format('truetype');
 }
 @font-face {
   font-family: 'HelveticaNeue';
-  font-weight: 400;
+  font-weight: 350;
   font-style: normal;
   src: url("/layout/fonts/3.eot");
   src: url("/layout/fonts/3.eot#iefix") format('embedded-opentype'), url("/layout/fonts/3.woff2") format('woff2'), url("/layout/fonts/3.woff") format('woff'), url("/layout/fonts/3.ttf") format('truetype');
@@ -983,7 +983,7 @@ a:hover {
 @font-face {
   font-family: 'HelveticaNeue';
   font-weight: 400;
-  font-style: bold;
+  font-style: normal;
   src: url("/layout/fonts/4.eot");
   src: url("/layout/fonts/4.eot#iefix") format('embedded-opentype'), url("/layout/fonts/4.woff2") format('woff2'), url("/layout/fonts/4.woff") format('woff'), url("/layout/fonts/4.ttf") format('truetype');
 }
@@ -1136,9 +1136,9 @@ a:hover {
     width: 400px;
   }
 }
-@media (min-width: 1704px) {
+@media (min-width: 1675px) {
   .toolbar__nav {
-    width: 675px;
+    width: 665px;
   }
 }
 .toolbar__feedback {
@@ -1156,7 +1156,8 @@ a:hover {
   padding: 0 25px;
   height: 37px;
   display: inline-block;
-  line-height: 38px;
+  line-height: 34px;
+  margin-left: 0px;
   border: 1px solid #909296;
 }
 .toolbar__block {
@@ -1177,7 +1178,7 @@ a:hover {
 }
 .toolbar .api__text {
   text-align: left;
-  white-space: initial;
+  white-space: normal !important;
   max-width: 65px;
   line-height: 1.1;
   font-weight: 300;
@@ -1233,7 +1234,7 @@ a:hover {
 @media (min-width: 1200px) {
   .toolbar .nav__item {
     font-size: 20px;
-    margin-left: 30px;
+    margin-left: 25px;
   }
 }
 .toolbar .nav__item:hover,
@@ -1453,6 +1454,9 @@ a:hover {
 html,
 body {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
 }
 body {
   font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', sans-serif;
@@ -1460,7 +1464,6 @@ body {
   min-height: 100%;
   min-width: 320px;
   color: #000;
-  -webkit-font-smoothing: subpixel-antialiased;
   background: #1b212b;
   font-size: 13px;
 }
@@ -1873,7 +1876,7 @@ a.search-page__title b {
   background-color: #909296;
   display: block;
   line-height: 1;
-  padding: 10px 10px 7px;
+  padding: 8px 10px 7px;
   font-size: 12px;
   width: 100%;
 }
@@ -2659,14 +2662,14 @@ a.search-page__title b {
   min-width: 130px;
   text-align: center;
   height: 30px;
-  line-height: 33px;
+  line-height: 29px;
   font-size: 14px;
   background-color: #309dff;
 }
 @media (min-width: 1200px) {
   .index .slider__button {
     height: 40px;
-    line-height: 44px;
+    line-height: 40px;
     font-size: 16px;
     min-width: 160px;
   }
@@ -2907,7 +2910,7 @@ a.search-page__title b {
   min-width: 160px;
   display: inline-block;
   height: 40px;
-  line-height: 43px;
+  line-height: 39px;
   padding: 0 15px;
   font-size: 16px;
   border: 1px solid #309dff;
@@ -3961,7 +3964,7 @@ a.search-page__title b {
 }
 @media (min-width: 1330px) {
   .catalog .page__nav .nav__item {
-    padding: 12px 25px 6px;
+    padding: 10px 25px 6px;
     font-size: 17px;
   }
   .s2.catalog .page__nav .nav__item:nth-child(1) {
@@ -4155,7 +4158,7 @@ a.search-page__title b {
     margin-bottom: 20px;
   }
   .catalog .filter .dropdown__trigger {
-    line-height: 55px;
+    line-height: 49px;
     font-size: 14px;
     height: 50px;
     padding: 0 30px 0 15px;

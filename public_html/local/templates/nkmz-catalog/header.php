@@ -34,10 +34,11 @@ $APPLICATION->SetPageProperty('body_class', "catalog");
 			false
 			);
         else:
+
       ?>
           <div class="page__content">
               <div class="page__title">
-                <h1><?=$APPLICATION->ShowTitle();?></h1>
+                <h1><?=$APPLICATION->AddBufferContent("page_title");?></h1>
               </div>
               <?php
                     $APPLICATION->IncludeComponent("bitrix:menu", "sub",

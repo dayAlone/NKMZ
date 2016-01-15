@@ -1,4 +1,9 @@
-<?if(count($arResult['ITEMS'])>0):?>
+<?
+echo $arResult['SECTION']['PATH'][0]['~DESCRIPTION']."<br/>";
+if(count($arResult['ITEMS'])>0):
+
+	?>
+
 <div class="products">
 	<?
 	$x = 0;

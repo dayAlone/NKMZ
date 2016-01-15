@@ -15,6 +15,13 @@ function body_class()
 		return $APPLICATION->GetPageProperty('body_class');
 	}
 }
+function page_title()
+{
+	global $APPLICATION;
+	if($APPLICATION->GetPageProperty('page_title')) {
+		return $APPLICATION->GetPageProperty('page_title');
+	}
+}
 if(!strstr($_SERVER['SCRIPT_NAME'], 'bitrix/admin')):
 	# Background image
 	$obCache       = new CPHPCache();

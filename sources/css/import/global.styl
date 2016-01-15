@@ -5,13 +5,20 @@
 
 html, body
 	height 100%
+	-webkit-font-smoothing: antialiased;
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx)
+	-webkit-font-smoothing: subpixel-antialiased;
+
 body
 	font-family 'HelveticaNeue', 'Helvetica Neue', 'Arial', sans-serif
 	font-weight 300
 	min-height 100%
 	min-width 320px
 	color black
-	-webkit-font-smoothing: subpixel-antialiased
 	background blue_bg
 	font-size 13px
 	@media (min-width: 375px)
@@ -224,7 +231,7 @@ svg
 		background-color gray
 		display block
 		line-height 1
-		padding 10px 10px 7px
+		padding 8px 10px 7px
 		font-size 12px
 		width 100%
 	 &--active

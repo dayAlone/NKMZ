@@ -72,7 +72,7 @@
 		  </span>
 	  </div>
       <div class="toolbar__feedback">
-        <a href="#Feedback" data-toggle="modal" class="toolbar__link"><?=(LANGUAGE_ID=='ru'?'Обратная связь':'Feedback')?></a>      
+        <a href="#Feedback" data-toggle="modal" class="toolbar__link"><?=(LANGUAGE_ID=='ru'?'Обратная связь':'Feedback')?></a>
       </div>
 
     </div>
