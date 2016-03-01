@@ -21,7 +21,7 @@ $APPLICATION->IncludeComponent("bitrix:news.list", "news",
 if(isset($_REQUEST['SECTION_CODE']) && isset($_REQUEST['ELEMENT_CODE'])):?>
 <script type="text/javascript">
 $(function(){
-    loadElement("/press/<?=$_REQUEST['SECTION_CODE']?>/<?=$_REQUEST['ELEMENT_CODE']?>/");
+    loadElement("/press/<?=htmlspecialcharsbx($_REQUEST['SECTION_CODE'])?>/<?=htmlspecialcharsbx($_REQUEST['ELEMENT_CODE'])?>/");
 });
 </script>
 <?endif;

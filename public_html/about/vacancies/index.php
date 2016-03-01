@@ -17,7 +17,7 @@ $APPLICATION->IncludeComponent("bitrix:news.list", "vacancies",
 if(isset($_REQUEST['ELEMENT_CODE'])):?>
 <script type="text/javascript">
 $(function(){
-    loadElement("/about/vacancies/<?=$_REQUEST['ELEMENT_CODE']?>/");
+    loadElement("/about/vacancies/<?=htmlspecialcharsbx($_REQUEST['ELEMENT_CODE'])?>/");
 });
 </script>
 <?endif;
