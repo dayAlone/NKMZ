@@ -10,6 +10,7 @@
         </div>
     <form class="feedback__form" data-parsley-validate>
       <input type="hidden" name="group_id" value="1">
+      <input type="hidden" name="title" value="<?=$APPLICATION->GetTitle()?>">
       <label>Introduce yourself, please</label>
       <input name="name" type="text" required>
       <label>Your E-mail</label>
