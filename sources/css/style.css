@@ -2070,13 +2070,13 @@ a.search-page__title b {
   position: relative;
   background-color: #eceef1;
   z-index: 10;
-  line-height: 37px;
+  line-height: 35px;
 }
 @media (min-width: 768px) {
   .years .dropdown__trigger {
     line-height: 46px;
     width: 130px;
-    height: 44px;
+    height: 42px;
   }
 }
 .years .dropdown__trigger svg {
