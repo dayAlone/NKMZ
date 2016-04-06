@@ -264,8 +264,13 @@ $(document).ready ->
 		e.preventDefault()
 
 	$('.modal').on 'shown.bs.modal', (e)->
+
 		$('input[name="vacancy"]').val $(e.relatedTarget).parent().find('h2').text()
 		getCaptcha()
+
+	$('#Feedback').on 'shown.bs.modal', (e)->
+		if window.yaCounter33656309
+			window.yaCounter33656309.reachGoal('form')
 
 	$('.search-trigger').click (e)->
 		$('.search').mod 'active', true
@@ -299,7 +304,8 @@ $(document).ready ->
 			e.preventDefault()
 			request = $(this).serialize()
 			$.post '/include/send.php', request, (data) ->
-				console.log data
+				if window.yaCounter33656309
+					window.yaCounter33656309.reachGoal('send')
 				data = $.parseJSON(data)
 				if data.status == "ok"
 	        		$('.feedback').elem('form').hide().addClass 'hidden'

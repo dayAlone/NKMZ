@@ -348,6 +348,11 @@
       $('input[name="vacancy"]').val($(e.relatedTarget).parent().find('h2').text());
       return getCaptcha();
     });
+    $('#Feedback').on('shown.bs.modal', function(e) {
+      if (window.yaCounter33656309) {
+        return window.yaCounter33656309.reachGoal('form');
+      }
+    });
     $('.search-trigger').click(function(e) {
       $('.search').mod('active', true);
       $('.search input').focus();
@@ -387,7 +392,9 @@
       e.preventDefault();
       request = $(this).serialize();
       return $.post('/include/send.php', request, function(data) {
-        console.log(data);
+        if (window.yaCounter33656309) {
+          window.yaCounter33656309.reachGoal('send');
+        }
         data = $.parseJSON(data);
         if (data.status === "ok") {
           $('.feedback').elem('form').hide().addClass('hidden');
