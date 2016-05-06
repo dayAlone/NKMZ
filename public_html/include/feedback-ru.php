@@ -11,12 +11,14 @@
     <form class="feedback__form" data-parsley-validate>
       <input type="hidden" name="group_id" value="1">
       <input type="hidden" name="title" value="<?=$APPLICATION->GetTitle()?>">
-	  <label>представьтесь, пожалуйста</label>
+	    <label>представьтесь, пожалуйста</label>
       <input name="name" type="text" required value="">
       <label>Ваш e-mail</label>
       <input name="email" type="email" required value="">
       <label>телефон для связи с вами</label>
       <input name="phone" type="text" data-parsley-pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}/" data-parsley-trigger="change" value="">
+      <label>Компания</label>
+      <input name="company" type="text" required value="">
       <label>ваше сообщение</label>
       <textarea required name="message"></textarea>
       <div class="row">
