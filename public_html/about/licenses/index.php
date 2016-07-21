@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Лицензии');
+$APPLICATION->SetPageProperty("description", "Наша продукция проходит строгий контроль качества и соответствует международному стандарту ISO 9001:2008");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "licenses",
   array(

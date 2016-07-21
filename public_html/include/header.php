@@ -19,8 +19,22 @@
 
       echo ' | ' . $arSite['NAME'];
     }
+    elseif ($APPLICATION->GetCurDir() == '/') {
+      echo 'Производство пакерного оборудования, оборудования для добычи нефти и газа | ' . $arSite['NAME'];
+    }
+    elseif ($APPLICATION->GetCurDir() == '/en/') {
+      echo 'Production of packer anchor equipment, equipment for the oil and gas | ' . $arSite['NAME'];
+    }
     else echo $arSite['NAME'];
     ?></title>
+<?
+if ($APPLICATION->GetCurDir() == '/') {?>
+<meta name="description" content="Производство оборудования для работ на газовых скважинах, продажа пакерно-якорного оборудования, клапанов и скважинной оснастки" />
+<?}?>
+<?
+if ($APPLICATION->GetCurDir() == '/en/') {?>
+<meta name="description" content="Production of equipment for work at gas wells, sale packer and anchor equipment, valves, downhole tooling" />
+<?}?>
   <?
     $APPLICATION->ShowHead();
     $APPLICATION->ShowViewContent('header');
@@ -68,7 +82,7 @@
 
       <div class="toolbar__contacts right">
 		  <span class="toolbar__block">
-			  <a href="<?=preg_replace("/[^0-9+]/", "", COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID))?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID)?></a>
+			  <a href="tel:<?=preg_replace("/[^0-9+]/", "", COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID))?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'phone_'.LANGUAGE_ID)?></a>
 			  <a href="mailto:<?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?>" class="toolbar__link"><?=COption::GetOptionString("grain.customsettings", 'email_'.LANGUAGE_ID)?></a>
 		  </span>
 	  </div>

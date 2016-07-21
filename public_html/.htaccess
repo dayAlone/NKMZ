@@ -6,6 +6,7 @@ ErrorDocument 404 /404.php
   #php_value display_errors 1
   php_value mbstring.internal_encoding UTF-8
     php_value mbstring.func_overload 2 
+    php_value max_input_vars 10000
 </IfModule>
 
 <IfModule mod_rewrite.c>
@@ -31,3 +32,10 @@ ErrorDocument 404 /404.php
   ExpiresByType text/css "access plus 3 day"
   ExpiresByType application/javascript "access plus 3 day"
 </IfModule>
+
+RewriteEngine on    # оглашаем, что хотим использовать mod_rewrite
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^/?(.*) http://%1/$1 [L,R=permanent]
+
+AddDefaultCharset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml

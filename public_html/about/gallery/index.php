@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Фотогалерея');
+$APPLICATION->SetPageProperty("description", "Мы используем прогрессивные технологии и современное оборудование, наши сотрудники обладают высочайшей квалификацией");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "gallery",
   array(

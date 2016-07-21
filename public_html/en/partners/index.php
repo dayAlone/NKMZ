@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Partners');
+$APPLICATION->SetPageProperty("description", "LLC \"NKMZ Group\" - a developer and manufacturer of equipment for gas wells. We work with many large companies.");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "partners",
   array(

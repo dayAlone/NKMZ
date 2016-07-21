@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Press center');
+$APPLICATION->SetPageProperty("description", "News and events company \"NKMZ Group\" - Developer packer and anchor equipment.");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->SetPageProperty('section', array('IBLOCK'=>18, 'CODE'=>'news-list'));
 require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');

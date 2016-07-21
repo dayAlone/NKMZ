@@ -3,7 +3,7 @@
 	<?foreach ($arResult['ITEMS'] as $item):?>
 		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
             <div class="partner">
-				<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="" />
+				<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item['NAME']?>" />
             </div>
 		</div>
 	<?endforeach;?>

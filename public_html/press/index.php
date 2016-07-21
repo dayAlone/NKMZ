@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Пресс-центр');
+$APPLICATION->SetPageProperty("description", "Новости и события компании ООО «НКМЗ-Групп» - разработчика пакерно-якорного оборудования.");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->SetPageProperty('section', array('IBLOCK'=>2, 'CODE'=>'news-list'));
 require($_SERVER['DOCUMENT_ROOT'].'/include/section.php');

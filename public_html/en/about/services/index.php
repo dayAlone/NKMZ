@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Service centers');
+$APPLICATION->SetPageProperty("description", "The company has opened service centers in 3 cities: Neftekamsk, Buzuluk, Nizhnevartovsk, where experienced staff carry out repair and support equipment.");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "services",
   array(

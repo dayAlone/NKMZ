@@ -11,7 +11,7 @@
 				  <div class="col-lg-6"><span class="contact__phone"><?=$item['PROPERTIES']['PHONE']['~VALUE']?></span></div>
 				  <div class="col-lg-6"><span class="contacts__email">
 					  <?if(strlen($item['PROPERTIES']['EMAIL']['~VALUE'])>0):?>
-					  <a href="<?=$item['PROPERTIES']['EMAIL']['~VALUE']?>"><?=$item['PROPERTIES']['EMAIL']['~VALUE']?></a>
+					  <a href="mailto:<?=$item['PROPERTIES']['EMAIL']['~VALUE']?>"><?=$item['PROPERTIES']['EMAIL']['~VALUE']?></a>
 					  <?endif;?>
 				  </span></div>
 				</div>

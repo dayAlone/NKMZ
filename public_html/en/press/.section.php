@@ -1,3 +1,6 @@
 <?
-$sSectionName = 'Пресс-центр';
+$sSectionName = "Press center";
+$arDirProperties = array(
+
+);
 ?>

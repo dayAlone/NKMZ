@@ -1,18 +1,17 @@
 gulp         = require 'gulp'
 
-autoprefixer = require 'autoprefixer-core'
+autoprefixer = require 'gulp-autoprefixer'
 cache        = require 'gulp-cached'
 cmq          = require 'gulp-combine-media-queries'
 csscomb      = require 'gulp-csscomb'
-postcss      = require 'gulp-postcss';
 coffee       = require 'gulp-coffee'
 concat       = require 'gulp-concat'
-sourcemaps   = require 'gulp-sourcemaps'
-#cssmin       = require 'gulp-minify-css'
 data         = require 'gulp-data'
+csso         = require 'gulp-csso'
 gutil        = require 'gulp-util'
 livereload   = require 'gulp-livereload'
 less         = require 'gulp-less'
+modernizr    = require 'gulp-modernizr'
 nib          = require 'nib'
 jade         = require 'gulp-jade'
 notify       = require 'gulp-notify'
@@ -24,8 +23,9 @@ sequence     = require 'run-sequence'
 replace      = require 'gulp-replace'
 watch        = require 'gulp-watch'
 imageop      = require 'gulp-image-optimization'
+browserSync  = require('browser-sync').create()
 
-plugins  = [ 'jquery', 'slick', 'bootstrap', 'browser', 'fotorama', 'bem', 'spin', 'velocity', 'cookie', 'parsley', 'photoswipe', 'hoverIntent', 'history', 'mask', 'scrollbar' ]
+plugins  = [ 'jquery', 'bootstrap', 'browser', 'fotorama', 'bem', 'scrollbar', 'parsley', 'pagePiling', 'lodash', 'spin' ]
 
 layout   = 'public_html/layout'
 sources  = 'sources/'
@@ -63,9 +63,17 @@ loadPlugins = (x, y)->
 
 # HTML
 
-gulp.task 'html', ->
+gulp.task 'html_cache', ->
 	gulp.src("#{path.html}*.jade")
 	.pipe cache('html')
+	.pipe plumber
+		errorHandler: notify.onError("Error: <%= error.message %>")
+	.pipe jade
+		pretty: "\t"
+	.pipe gulp.dest './public_html/'
+
+gulp.task 'html', ->
+	gulp.src("#{path.html}*.jade")
 	.pipe plumber
 		errorHandler: notify.onError("Error: <%= error.message %>")
 	.pipe jade
@@ -80,6 +88,15 @@ gulp.task 'js_plugins', ->
 	.pipe concat 'plugins.js'
 	.pipe gulp.dest path.js.sources
 
+gulp.task 'js_modernizr', ->
+	gulp.src loadPlugins plugins, 'js'
+	.pipe modernizr {
+    	tests: ['csstransforms', 'csscalc'],
+		options: ['testProp']
+	}
+	.pipe concat 'modernizr.js'
+	.pipe gulp.dest path.js.sources
+
 gulp.task 'js_coffee', ->
 	gulp.src [ "#{path.js.sources}/script.coffee" ]
 	.pipe plumber
@@ -89,6 +106,7 @@ gulp.task 'js_coffee', ->
 
 gulp.task 'js_front', ['js_coffee'], ->
 	gulp.src [ "#{path.js.sources}/plugins.js", "#{path.js.sources}/script.js" ]
+
 	.pipe concat 'frontend.js'
 	.pipe gulp.dest path.js.frontend
 
@@ -117,6 +135,9 @@ gulp.task 'css_stylus', ->
 		errorHandler: notify.onError("Error: <%= error.message %>")
 	.pipe stylus
 		use: nib()
+	.pipe autoprefixer
+        browsers: ['last 4 versions'],
+        cascade: false
 	.pipe gulp.dest path.css.sources
 
 gulp.task 'css_front', ['css_stylus'], ->
@@ -126,11 +147,7 @@ gulp.task 'css_front', ['css_stylus'], ->
 
 gulp.task 'css_mini', ->
 	gulp.src [ "#{path.css.frontend}/frontend.css"]
-	.pipe csscomb()
-	.pipe(sourcemaps.init())
-	.pipe postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ])
-	.pipe(sourcemaps.write('.'))
-	#.pipe cssmin()
+	.pipe(csso())
 	.pipe gulp.dest path.css.frontend
 
 
@@ -166,13 +183,20 @@ gulp.task 'img_mini', ->
 # System functions
 
 gulp.task 'reload', ->
-	livereload.changed("/")
+	browserSync.reload()
+
+gulp.task 'reload_css', ->
+
+	browserSync.reload '/layout/css/frontend.css'
+
+gulp.task 'reload_js', ->
+	browserSync.reload '/layout/js/frontend.js'
 
 gulp.task 'ready_css', ->
-	sequence 'css_bootstrap', 'css_plugins', 'css_front', 'css_mini'
+	sequence 'css_bootstrap', 'css_plugins', 'css_front'#, 'css_mini'
 
 gulp.task 'ready_js', ->
-	sequence 'js_plugins', 'js_front', 'js_mini'
+	sequence 'js_modernizr', 'js_plugins', 'js_front', 'js_mini'
 
 gulp.task 'ready', ->
 	sequence 'ready_css'
@@ -180,13 +204,15 @@ gulp.task 'ready', ->
 
 gulp.task 'default', ->
 
-	livereload.listen()
+	browserSync.init
+		proxy:
+			target: "http://rmt.local"
 
 	gulp.watch "#{path.js.sources}/**/*.coffee", ->
-		sequence 'js_front', 'reload'
+		sequence 'js_front', 'reload_js'
 
 	gulp.watch "#{path.css.sources}/**/*.styl", ->
-		sequence 'css_front', 'reload'
+		sequence 'css_front', 'reload_css'
 
 	gulp.watch "#{sources}/images/svg/**/*.svg", ->
 		sequence 'svg_mini'

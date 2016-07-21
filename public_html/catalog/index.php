@@ -1,7 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetPageProperty("description", "Каталог пакерно-якорного оборудования, обрудования для добычи нефти и газа, клапанов и скважинной оснастки");
 if(!isset($_REQUEST['set_filter']))
-	$APPLICATION->SetTitle('Продукция');
+	$APPLICATION->SetTitle("Продукция");
 else {
 	$APPLICATION->SetTitle('Результаты подбора оборудования');
 	$APPLICATION->SetPageProperty('body_class', "catalog catalog--search");

@@ -1,5 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetPageProperty("description", "Packer and anchor equipment, equipment for the oil and gas valves and downhole equipment");
 if(!isset($_REQUEST['set_filter']))
 	$APPLICATION->SetTitle('Products');
 else {

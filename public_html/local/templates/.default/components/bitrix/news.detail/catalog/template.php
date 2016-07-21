@@ -7,13 +7,13 @@ $json = array(array("src"=>$item['PREVIEW_PICTURE']['SRC'], "w"=>$item['PREVIEW_
   <div class="product">
     <?if($item['PREVIEW_PICTURE']['HEIGHT'] < $item['PREVIEW_PICTURE']['WIDTH']):?>
     <div class="center xl-margin-bottom">
-    	<a href="#" class="product__image product__image--detail" data-pictures='<?=json_encode($json)?>'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>"></a>
+    	<a href="#" class="product__image product__image--detail" data-pictures='<?=json_encode($json)?>'><img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item['IPROPERTY_VALUES']['ELEMENT_DETAIL_PICTURE_FILE_ALT']?>"></a>
     </div>
     <?else:?>
     <div class="row">
         <div class="col-xs-2 center">
             <a href="#" class="product__image product__image--detail" data-pictures='<?=json_encode($json)?>'>
-                <img src="<?=$item['PREVIEW_PICTURE']['SRC']?>">
+                <img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item['IPROPERTY_VALUES']['ELEMENT_DETAIL_PICTURE_FILE_ALT']?>">
             </a>
         </div>
         <div class="col-xs-10">

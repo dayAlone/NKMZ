@@ -5,7 +5,7 @@
 			<a data-dismiss="modal" href="#" class="close">Закрыть окно</a>
 		</div>
     <div class="feedback__success">
-      <h4 class="center">Ваше сообщение успешно отправлено. </h1>
+      <h1 class="center">Ваше сообщение успешно отправлено. </h1>
       <p class="center">В ближайшее время представители нашей компании свяжутся с вами. Благодарим за обращение.</p>
     </div>
     <form class="feedback__form" data-parsley-validate>

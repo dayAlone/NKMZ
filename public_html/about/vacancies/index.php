@@ -1,6 +1,7 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Вакансии');
+$APPLICATION->SetPageProperty("description", "ООО «НКМЗ-Групп» - производитель подземного оборудования для работ на скважинах. Нам постоянно требуются высококвалифицированные кадры.");
 $APPLICATION->SetPageProperty('body_class', "content");
 $APPLICATION->IncludeComponent("bitrix:news.list", "vacancies",
   array(

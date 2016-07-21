@@ -51,16 +51,29 @@ $APPLICATION->SetPageProperty('body_class', "index");
 			);
 		?>
 		<?
-			$APPLICATION->IncludeComponent("bitrix:catalog.smart.filter", "filter",
-				array(
-					"IBLOCK_TYPE"         => "content_".LANGUAGE_ID,
-	                "IBLOCK_ID"           => 12,
-	                "CACHE_TYPE"          => "A",
-	                "CACHE_TIME"          => "36000",
-	                "SECTION_ID"          => 0,
-	                "FILTER_NAME"         => "arCatalogFilter"
-				)
-			);
+			$APPLICATION->IncludeComponent(
+	"bitrix:catalog.smart.filter", 
+	"filter", 
+	array(
+		"IBLOCK_TYPE" => "content_ru",
+		"IBLOCK_ID" => "3",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000",
+		"SECTION_ID" => "0",
+		"FILTER_NAME" => "arCatalogFilter",
+		"COMPONENT_TEMPLATE" => "filter",
+		"SECTION_CODE" => "",
+		"SEF_MODE" => "N",
+		"CACHE_GROUPS" => "Y",
+		"SAVE_IN_SESSION" => "N",
+		"INSTANT_RELOAD" => "N",
+		"PAGER_PARAMS_NAME" => "arrPager",
+		"XML_EXPORT" => "N",
+		"SECTION_TITLE" => "-",
+		"SECTION_DESCRIPTION" => "-"
+	),
+	false
+);
 		?>
 	</div>
 </div>
