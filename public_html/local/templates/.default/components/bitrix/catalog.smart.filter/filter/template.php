@@ -8,6 +8,7 @@
           <div class="col-xs-6 right"><a href="<?=COption::GetOptionString("grain.customsettings","catalog_".LANGUAGE_ID)?>" class="filter__link"><?=svg('pdf')?><span><?=GetMessage("DOWNLOAD")?></span></a></div>
         </div>
         </div>
+        <div class="filter__inputs">
         <div class="row">
           <?foreach ($arResult['ITEMS'] as $item):
               $current = false;
@@ -55,6 +56,7 @@
         </div>
         <div class="col-lg-9 col-sm-8">
           <div class="filter__description"><?=GetMessage("HELP")?> </div>
+        </div>
         </div>
         </div>
     </div>

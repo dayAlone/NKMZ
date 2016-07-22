@@ -25,7 +25,7 @@ watch        = require 'gulp-watch'
 imageop      = require 'gulp-image-optimization'
 browserSync  = require('browser-sync').create()
 
-plugins  = [ 'jquery', 'bootstrap', 'browser', 'fotorama', 'bem', 'scrollbar', 'parsley', 'pagePiling', 'lodash', 'spin' ]
+plugins  = [ 'jquery', 'slick', 'bootstrap', 'browser', 'fotorama', 'bem', 'spin', 'velocity', 'cookie', 'parsley', 'photoswipe', 'hoverIntent', 'history', 'mask', 'scrollbar' ]
 
 layout   = 'public_html/layout'
 sources  = 'sources/'
@@ -206,7 +206,7 @@ gulp.task 'default', ->
 
 	browserSync.init
 		proxy:
-			target: "http://rmt.local"
+			target: "http://nkmz.local"
 
 	gulp.watch "#{path.js.sources}/**/*.coffee", ->
 		sequence 'js_front', 'reload_js'

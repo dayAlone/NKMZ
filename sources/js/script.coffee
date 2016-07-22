@@ -235,10 +235,7 @@
 		$('.page__content, .page__modal').perfectScrollbar 'destroy'
 		$('.slider__content').removeAttr 'style'
 
-	if $(window).width() > 1200
-		if $(window).height() > 800
-			$('.catalog .section, .catalog .filter').css 'min-height', height
-	else if $(window).width() > 700
+	if $(window).width() > 700
 		$('.catalog .filter').removeAttr('style')
 		$('.catalog .section').css 'min-height', catalogSectionHeight
 	else

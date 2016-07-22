@@ -1,9 +1,77 @@
 .catalog
-	&--list
+	&&--list
 		.filter
 			display block !important
-		.page
-			padding-top 82px
+			@media (min-width: scr_lg)
+				padding-bottom: 0
+
+				&__content, &__inputs
+					display: flex
+					justify-content: space-between
+					padding-bottom 0
+				&__content
+					align-items: center
+					min-height: 145px
+				&__title
+					border-bottom: 0
+					flex-basis: 320px
+					font-size 25px
+					height: auto
+					line-height 50px
+					flex-grow: 1
+					padding: 7px 0
+					.col-xs-6
+						text-align left !important
+					.row
+						flex-direction: column
+						display: flex
+				&__submit
+					height: 39px
+					font-size 17px
+				&__inputs
+					position relative
+					flex-basis: 1240px
+					flex-grow: 5
+					min-height: 85px
+					.dropdown
+						&__trigger
+							height: 39px
+							line-height 40px
+							font-size 16px
+							padding 0 15px
+							svg
+								right: 15px
+								top 16px
+						&__frame
+							max-height: 125px
+					> .row:nth-child(1)
+						flex-basis: 1000px
+						margin-top 0
+						flex-grow: 4
+						.col-lg-3
+							margin-top 0
+					> .row:nth-child(2)
+						flex-basis: 240px
+						margin-top 0
+						flex-grow: 1
+						padding-left 15px
+						position: static
+						.col-lg-3
+							width: 100%
+							margin-top 0
+						.col-lg-9
+							position absolute
+							left: -5px
+							bottom: 0
+							width: 100%
+							.filter__description
+								font-size 15px
+								width: 100%
+
+		@media (min-width: scr_lg)
+			.page > .container > .row
+				> .col-lg-8, > .col-lg-4
+					width 100%
 	.pages
 		margin-top 40px
 	.page
@@ -29,6 +97,7 @@
 				padding-bottom 0px
 				padding-top 10px
 			.nav
+				display: flex
 				&__item
 					width 100%
 					@media (min-width: scr_sm)
@@ -36,17 +105,21 @@
 					@media (min-width: scr_md)
 						background-color #dce0e3
 						display inline-block
-						padding 12px 20px 6px
+						padding 10px 15px 8px
 						margin-right 3px
-						font-size 15px
-
+						font-size 13px
 						line-height 1.2
+						flex 1
 						.s1&
-							max-width 165px
+							max-width 135px
 							&:nth-child(2)
-								max-width 245px
+								max-width 170px
+							&:nth-child(3)
+								max-width 125px
 							&:nth-child(4)
-								max-width 200px
+								max-width 220px
+							&:nth-child(5)
+								max-width 170px
 						.s2&
 							&:nth-child(1)
 								max-width 136px
@@ -54,7 +127,7 @@
 								max-width 187px
 							&:nth-child(3)
 								max-width 121px
-							&:nth-child(4)
+							&:nth-child(5)
 								max-width 139px
 						&:hover
 							background-color alpha(blue, .1)
@@ -63,8 +136,8 @@
 							background-color blue
 							color white
 					@media (min-width: nav_rows)
-						padding 10px 25px 6px
-						font-size 17px
+						padding 9px 20px 8px
+						font-size 15px
 						.s2&
 							&:nth-child(1)
 								max-width 159px
@@ -72,14 +145,18 @@
 								max-width 220px
 							&:nth-child(3)
 								max-width 141px
-							&:nth-child(4)
+							&:nth-child(5)
 								max-width 162px
 						.s1&
-							max-width 195px
+							max-width 165px
 							&:nth-child(2)
 								max-width 290px
+							&:nth-child(3)
+								max-width 151px
 							&:nth-child(4)
-								max-width 240px
+								max-width 280px
+							&:nth-child(5)
+								max-width 160px
 
 
 
@@ -95,38 +172,26 @@
 				width 20%
 	.sections
 		@extend .index .sections
-		@media (min-width: scr_lg)
-			margin-bottom 0px
 		.section
 			background-image url("/layout/images/catalog-section-bg.jpg")
 			float left
-			@media (min-width: scr_lg)
-				min-height 641px
-			@media (min-width: scr_lg) and (min-height: 700px)
-				min-height calc(100vh - 172px)
+
+			&__image
+				top 0 !important
 			&__logo
 				@media (min-width: scr_lg)
-					text-align left
-					position absolute
-					bottom 190px
-					left 0px
-					padding 0 30px
-			&__image
-				@media (max-width: scr_lg)
-					top 40px
+					margin-bottom 15px
+					margin-top 5px
 			&__name
+				align-items: flex-start
+				justify-content: flex-start
+				@media (min-width: scr_md)
+					bottom 40px
+
 				@media (min-width: scr_lg)
-					font-size 23px
-					font-weight 200
-					padding-right 30px
-					height 200px
-					line-height 145px
-					padding-left 30px
-					padding-top 90px
-					bottom 45px
-					span
-						line-height 1.2
-						vertical-align top
+					font-size 16px
+
+					min-height: 145px
 	.filter
 		@extend .index .filter
 		position relative
@@ -140,14 +205,9 @@
 				margin-top 17px
 			.col-sm-8, .col-sm-4
 				margin-top 25px
-		.filter__content > .row
-			@media (min-width: scr_lg) and (max-width: hide_feedback)
-				margin-top 0px
-				.col-lg-3:not(.col-sm-4)
-					width 100%
-				.col-sm-6:nth-child(3), .col-sm-6:nth-child(4)
-					margin-top 0px
-		@media (min-width: scr_md) and (max-width: scr_lg)
+
+
+		@media (min-width: scr_md)
 			min-height 100px
 			.col-sm-8
 				width 75%
@@ -157,15 +217,15 @@
 				margin-top 20px
 			.col-sm-8, .col-sm-4
 				margin-top 30px
-		@media (min-width: scr_lg)
-			min-height 641px
-			display block
+
+	&:not(&--list) .filter
 		@media (min-width: scr_lg) and (min-height: 700px)
 			min-height calc(100vh - 172px)
 
 		@media (min-width: scr_lg)
 			background url("/layout/images/catalog-section-bg.jpg")
 			background-size cover
+			display block
 			.col-lg-3, .col-xs-6
 				width 100%
 				position static
@@ -187,7 +247,7 @@
 				height 50px
 				margin-top 10px
 			.dropdown
-				margin-bottom 20px
+				//margin-bottom 20px
 				&__trigger
 					line-height 49px
 					font-size 14px
@@ -218,6 +278,7 @@
 				padding 0 20px
 				transform translateY(-50%)
 				padding-bottom 80px
+
 		@media (min-width: nav_rows)
 			&__title
 				font-size 34px
@@ -238,6 +299,7 @@
 						right 15px
 						width 12px
 						height 12px
+
 		.dropdown
 			@extend .index .filter .dropdown
 
