@@ -3843,12 +3843,6 @@ a.search-page__title b {
     padding-top: 10px;
   }
 }
-.catalog .page__nav .nav {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-}
 .catalog .page__nav .nav__item {
   width: 100%;
 }
@@ -3859,6 +3853,10 @@ a.search-page__title b {
 }
 @media (min-width: 992px) {
   .catalog .page__nav .nav__item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
     background-color: #dce0e3;
     display: inline-block;
     padding: 10px 15px 8px;
