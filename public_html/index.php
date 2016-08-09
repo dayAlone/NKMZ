@@ -45,6 +45,7 @@ $APPLICATION->SetPageProperty('body_class', "index");
 			    "TOP_DEPTH"    => "1",
 			    "CACHE_TYPE"   => "A",
 			    "CACHE_TIME"   => "36000",
+				"PICTURE"        => "DETAIL_PICTURE",
 				"SECTION_USER_FIELDS" => array('UF_SVG')
 			),
 			false

@@ -5691,6 +5691,13 @@ a.search-page__title b {
     text-align: center !important;
   }
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .index .filter .filter__inputs .row:last-of-type,
+  .index .news-list--mobile .filter__inputs .row:last-of-type,
+  .catalog .filter .filter__inputs .row:last-of-type {
+    margin-top: 20px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1555px) {
   .index .filter .filter__content > .row,
   .index .news-list--mobile .filter__content > .row,
@@ -5724,12 +5731,13 @@ a.search-page__title b {
 .catalog:not(.catalog--list) .filter .dropdown {
   margin-top: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .index .filter .dropdown,
   .index .news-list--mobile .dropdown,
   .catalog .filter .dropdown,
   .catalog:not(.catalog--list) .filter .dropdown {
-    margin-top: 0px;
+    margin-top: 23px;
+    margin-bottom: 27px;
   }
 }
 .index .filter .dropdown__trigger,
@@ -6020,7 +6028,7 @@ a.search-page__title b {
 @media (min-width: 992px) and (min-height: 700px) {
   .index .sections .section,
   .catalog .sections .section {
-    min-height: 293px;
+    min-height: 331px;
   }
 }
 @media (min-width: 1200px) {
@@ -6065,7 +6073,7 @@ a.search-page__title b {
   width: 100%;
   left: 0;
   bottom: 0;
-  background: rgba(27,33,43,0.9);
+  background: #252933;
   padding: 5px 15px;
   color: #848b97;
   font-weight: 300;
@@ -6073,11 +6081,11 @@ a.search-page__title b {
   font-size: 12px;
   transition: 0.3s background, 0.3s color;
 }
-@media (min-width: 1555px) {
+@media (min-width: 1200px) {
   .index .sections .section__name,
   .catalog .sections .section__name {
     font-size: 15px;
-    height: 170px;
+    height: 185px;
   }
 }
 .index .sections .section__name span,
@@ -6088,8 +6096,6 @@ a.search-page__title b {
 }
 .index .sections .section__logo,
 .catalog .sections .section__logo {
-  padding: 0 20px 0 0;
-  margin-bottom: 10px;
   text-align: center;
   height: 40px;
   line-height: 30px;
@@ -6107,11 +6113,18 @@ a.search-page__title b {
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+  margin-bottom: 5px;
 }
 @media (max-width: 767px) {
   .index .sections .section__logo,
   .catalog .sections .section__logo {
     max-width: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .index .sections .section__logo,
+  .catalog .sections .section__logo {
+    margin-bottom: 15px;
   }
 }
 .index .sections .section__logo svg,
@@ -6126,27 +6139,11 @@ a.search-page__title b {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
-  top: 0px;
-}
-@media (min-width: 1200px) {
-  .index .sections .section__image,
-  .catalog .sections .section__image {
-    top: -100px;
-  }
-}
-.index .sections .section--no-logo .section__image,
-.catalog .sections .section--no-logo .section__image {
-  top: -30px;
-}
-@media (min-width: 1200px) {
-  .index .sections .section--no-logo .section__image,
-  .catalog .sections .section--no-logo .section__image {
-    top: -100px;
-  }
+  top: 0;
 }
 .index .sections .section:hover .section__name,
 .catalog .sections .section:hover .section__name {
-  background: rgba(48,157,255,0.9);
+  background: #309dff;
   color: #fefefe;
 }
 .index .slider {
@@ -7512,6 +7509,14 @@ a.search-page__title b {
     padding-top: 10px;
   }
 }
+@media (min-width: 992px) {
+  .catalog .page__nav .nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+  }
+}
 .catalog .page__nav .nav__item {
   width: 100%;
 }
@@ -7522,10 +7527,6 @@ a.search-page__title b {
 }
 @media (min-width: 992px) {
   .catalog .page__nav .nav__item {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: box;
-    display: flex;
     background-color: #dce0e3;
     display: inline-block;
     padding: 10px 15px 8px;
@@ -7596,7 +7597,7 @@ a.search-page__title b {
     max-width: 165px;
   }
   .s1.catalog .page__nav .nav__item:nth-child(2) {
-    max-width: 290px;
+    max-width: 270px;
   }
   .s1.catalog .page__nav .nav__item:nth-child(3) {
     max-width: 151px;
@@ -7605,7 +7606,7 @@ a.search-page__title b {
     max-width: 280px;
   }
   .s1.catalog .page__nav .nav__item:nth-child(5) {
-    max-width: 160px;
+    max-width: 200px;
   }
 }
 @media (min-width: 1200px) {
@@ -7694,6 +7695,10 @@ a.search-page__title b {
   .catalog .filter .col-sm-4 {
     margin-top: 30px;
   }
+}
+.catalog .dropdown {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 @media (min-width: 1200px) and (min-height: 700px) {
   .catalog:not(.catalog--list) .filter {
