@@ -2472,6 +2472,26 @@ a.search-page__title b {
   background-position: center bottom;
   top: 0;
 }
+.index .sections .section__image--desktop,
+.catalog .sections .section__image--desktop {
+  display: none;
+}
+@media (min-width: 992px) {
+  .index .sections .section__image--desktop,
+  .catalog .sections .section__image--desktop {
+    display: block;
+  }
+}
+.index .sections .section__image--mobile,
+.catalog .sections .section__image--mobile {
+  display: block;
+}
+@media (min-width: 992px) {
+  .index .sections .section__image--mobile,
+  .catalog .sections .section__image--mobile {
+    display: none;
+  }
+}
 .index .sections .section:hover .section__name,
 .catalog .sections .section:hover .section__name {
   background: #309dff;
@@ -3658,8 +3678,22 @@ a.search-page__title b {
     filter: alpha(opacity=80);
   }
 }
+.catalog.catalog--list .page {
+  padding-top: 80px;
+}
+@media (min-width: 768px) {
+  .catalog.catalog--list .page {
+    padding-top: 0;
+  }
+}
 .catalog.catalog--list .filter {
   display: block !important;
+}
+@media (min-width: 992px) {
+  .catalog.catalog--list .filter .col-sm-8,
+  .catalog.catalog--list .filter .col-sm-4 {
+    margin-top: 0;
+  }
 }
 @media (min-width: 1200px) {
   .catalog.catalog--list .filter {
@@ -3961,10 +3995,18 @@ a.search-page__title b {
 .catalog .sections .section__image {
   top: 0 !important;
 }
+@media (min-width: 992px) {
+  .catalog .sections .section__logo {
+    margin-bottom: 10px;
+  }
+}
 @media (min-width: 1200px) {
   .catalog .sections .section__logo {
     margin-bottom: 15px;
     margin-top: 5px;
+  }
+  .catalog .sections .section__logo svg {
+    max-width: 160px;
   }
 }
 .catalog .sections .section__name {
@@ -3979,13 +4021,16 @@ a.search-page__title b {
 }
 @media (min-width: 992px) {
   .catalog .sections .section__name {
-    bottom: 40px;
+    background-color: rgba(34,38,47,0.9);
+    bottom: 30px;
+    min-height: 155px;
+    font-size: 15px;
   }
 }
 @media (min-width: 1200px) {
   .catalog .sections .section__name {
-    font-size: 16px;
-    min-height: 145px;
+    font-size: 19px;
+    height: 160px;
   }
 }
 .catalog .filter {

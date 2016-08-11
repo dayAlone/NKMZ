@@ -232,6 +232,14 @@
 				background-size contain
 				background-position center bottom
 				top 0
+				&--desktop
+					display none
+					@media (min-width: scr_md)
+						display block
+				&--mobile
+					display block
+					@media (min-width: scr_md)
+						display none
 			&:hover
 				.section
 					&__name
