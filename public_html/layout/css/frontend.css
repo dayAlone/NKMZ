@@ -6597,7 +6597,7 @@ a.search-page__title b {
   margin-bottom: 25px;
   padding: 15px 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page__title {
     padding: 0;
     height: 85px;
